@@ -8,6 +8,7 @@
 
 ## Overview
 ### Description
+NutriQ is a meal planner application that generates meals & recipes based on your caloric needs/goals.
 
 
 ### App Evaluation
