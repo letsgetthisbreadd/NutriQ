@@ -1,7 +1,4 @@
-Group Project - README Template
-===
-
-# APP_NAME_HERE
+# NutriQ
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,7 +8,7 @@ Group Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
