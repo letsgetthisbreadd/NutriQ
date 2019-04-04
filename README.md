@@ -27,19 +27,20 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 **Required Must-have Stories**
 
 *  User can create an account
-    * Email, Name, Password
+    * Username, Email, Password
 * User can log in
 * User can enter their information
     * Age, Gender, Height, Weight
-    * Allergies, Diet Preferences (Vegan, Vegetarian etc.)
+    * Fitness and weight goals
 * User can view customized meal plan (Table View)
+    * Nutrition requirements will be based on calcuated BMR (Basal Metablolic Rate)
 * User can click on a cell and view details
 
 
 **Optional Nice-to-have Stories**
 
 * User can add their own meals/recipes
-* 
+* Allergies, Diet Preferences (Vegan, Vegetarian etc.)
 
 ### 2. Screen Archetypes
 
