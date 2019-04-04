@@ -12,9 +12,8 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
+- **Category:** Health and Fitness
+- **Mobile:** 
 - **Story:**
 - **Market:**
 - **Habit:**
