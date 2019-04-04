@@ -69,9 +69,8 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-Wireframe 1           |  Wireframe 2
-:-------------------------:|:-------------------------:
-<img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Wireframe1.jpg" width=600> |  <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Wireframe2.jpg" width=600>
+<img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Wireframe1.jpg" width=600><br>
+<img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Wireframe2.jpg" width=600><br>
 
 
 ### [BONUS] Digital Wireframes & Mockups
