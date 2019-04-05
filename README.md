@@ -43,12 +43,12 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* [User Sign Up Screen]
+   * [User can create an account]
+   * [User can log in]
+* [Gather User Information Screen]
+   * [User can enter their information]
+   * []
 
 ### 3. Navigation
 
