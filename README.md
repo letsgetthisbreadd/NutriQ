@@ -83,12 +83,9 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 
 **Flow Navigation** (Screen to Screen)
 
-* [User Sign Up Screen]
-   * [Sign In Button]
-   * [Sign Up]
-* [Gather User Information Screen]
-   * [list screen navigation here]
-   * ...
+* User Sign Up Screen
+* Gather User Information Screen
+
 
 ## Wireframes
 <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Wireframe1.jpg" width=1000><br>
