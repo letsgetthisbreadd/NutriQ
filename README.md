@@ -15,7 +15,7 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 - **Category:** Health and Fitness
 - **Mobile:** 
 - **Story:**
-- **Market:**
+- **Market:** People who are health concious and are into fitness
 - **Habit:**
 - **Scope:**
 
@@ -31,9 +31,14 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 * User can enter their information
     * Age, Gender, Height, Weight
     * Fitness and weight goals
+* User can see customized daily calorie limit
 * User can view customized meal plan (Table View)
     * Nutrition requirements will be based on calcuated BMR (Basal Metablolic Rate)
 * User can click on a cell and view details
+* User can edit their goals
+* User can change password
+* User can delete account
+* User can update their weight and view progress
 
 
 **Optional Nice-to-have Stories**
@@ -48,22 +53,40 @@ NutriQ is a meal planner application that generates meals & recipes based on you
    * [User can log in]
 * [Gather User Information Screen]
    * [User can enter their information]
-   * []
+   * [Age, Gender, Height, Weight]
+* [Gather User Information Screen 2]
+   * [Activity Level]
+* [Gather User Information Screen 3]
+   * [Goals (Lose, gain, maintain weight]
+* [Gather User Information Screen 4]
+   * [Weekly goals (Pounds +/- per week]
+* [User Results Screen]
+   * [User can see daily calorie limit]
+* [Home]
+   * [User can view customized meal plan (Table View)]
+* [Cell Detail]
+   * [User can click on a cell and view meal details (ingredients, nutrition informaiton)]
+* [Settings]
+   * [User can edit their goals]
+   * [User can change password]
+   * [User can delete account]
+* [User Stats]
+   * [User can update weight and view progress]
+
+
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* [In progress]
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
+* [User Sign Up Screen]
+   * [Sign In Button]
+   * [Sign Up]
+* [Gather User Information Screen]
    * [list screen navigation here]
    * ...
 
