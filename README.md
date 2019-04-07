@@ -93,13 +93,17 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 
 
 ### [BONUS] Digital Wireframes & Mockups
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1%20-%20Sign%20Up-Login%402x.png" width=250>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1A%20-%20Complete%20Sign%20Up%402x.png" width=250>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1B%20-%20About%20User%20(You)%402x.png" width=250><br>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1C%20-%20About%20User%20(Activity%20Level)%402x.png" width=250>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1D%20-%20About%20User%20(General%20Goal)%402x.png" width=250>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1E-%20About%20User%20(Weekly%20Goal)%402x.png" width=250><br>
-<img align="left" src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1F-%20Results%20%E2%80%93%202%402x.png" width=250><br>
+<p float="left">
+    <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1%20-%20Sign%20Up-Login%402x.png" width=250>
+    <img  src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1A%20-%20Complete%20Sign%20Up%402x.png" width=250>
+    <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1B%20-%20About%20User%20(You)%402x.png" width=250>
+</p>
+<p float="left">
+    <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1C%20-%20About%20User%20(Activity%20Level)%402x.png" width=250>
+    <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1D%20-%20About%20User%20(General%20Goal)%402x.png" width=250>
+    <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1E-%20About%20User%20(Weekly%20Goal)%402x.png" width=250>
+</p>
+<img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Digital-Wireframes/1F-%20Results%20%E2%80%93%202%402x.png" width=250><br>
 
 ### [BONUS] Interactive Prototype
 <img src="https://github.com/letsgetthisbreadd/NutriQ/blob/master/Images-and-Videos/Prototypes/NutriQ-Prototype-Part1.gif" width=250><br>
