@@ -44,7 +44,7 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 **Optional Nice-to-have Stories**
 
 * User can add their own meals/recipes
-* Allergies, Diet Preferences (Vegan, Vegetarian etc.)
+* Allergies, Diet Preferences (Vegan, Vegetarian, etc.)
 
 ### 2. Screen Archetypes
 
@@ -55,17 +55,17 @@ NutriQ is a meal planner application that generates meals & recipes based on you
    * User can enter their information
    * Age, Gender, Height, Weight
 * Gather User Information Screen 2
-   * Activity Level]
+   * Activity Level
 * Gather User Information Screen 3
-   * Goals (Lose, gain, maintain weight)
+   * Goals (Lose, gain, or maintain weight)
 * Gather User Information Screen 4
-   * Weekly goals (Pounds +/- per week
+   * Weekly goals (Pounds +/- per week)
 * User Results Screen
    * User can see daily calorie limit
 * Home
    * User can view customized meal plan (Table View)
 * Cell Detail
-   * User can click on a cell and view meal details (ingredients, nutrition informaiton)
+   * User can click on a cell and view meal details (ingredients, nutrition information)
 * Settings
    * User can edit their goals
    * User can change password
