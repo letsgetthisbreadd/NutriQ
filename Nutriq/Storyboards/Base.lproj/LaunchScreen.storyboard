@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,19 +15,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="NutriQ" translatesAutoresizingMaskIntoConstraints="NO" id="ewL-jD-XdD">
-                                <rect key="frame" x="7" y="251" width="400" height="207"/>
+                                <rect key="frame" x="7" y="398" width="361" height="16"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2155764102935791" green="0.23236504197120667" blue="0.92099815607070923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ewL-jD-XdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="7Jx-JJ-vdG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ewL-jD-XdD" secondAttribute="bottom" constant="404" id="QqM-xq-joO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewL-jD-XdD" secondAttribute="trailing" constant="7" id="TWp-Od-25c"/>
-                            <constraint firstItem="ewL-jD-XdD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="207" id="aOE-QZ-5A2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewL-jD-XdD" secondAttribute="trailing" constant="7" id="7vf-Jj-J9F"/>
+                            <constraint firstItem="ewL-jD-XdD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QrI-4Y-u4h"/>
+                            <constraint firstItem="ewL-jD-XdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="m3Q-CN-fiU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NutriQ" width="900" height="600"/>
+        <image name="NutriQ" width="893" height="248"/>
     </resources>
 </document>

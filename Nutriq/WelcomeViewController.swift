@@ -17,11 +17,16 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
-        let htmlURL = URL(fileURLWithPath: htmlPath!)
-        let html = try? Data(contentsOf: htmlURL)
         
-        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
+// ************************************************** BACKGROUND GIF/VIDEO***************************************************************** //
+//        let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
+//        let htmlURL = URL(fileURLWithPath: htmlPath!)
+//        let html = try? Data(contentsOf: htmlURL)
+//
+//        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
+// *************************************************************************************************************************************** //
+        
+        
     }
     
 
