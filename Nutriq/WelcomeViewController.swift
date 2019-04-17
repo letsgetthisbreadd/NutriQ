@@ -12,19 +12,22 @@ import WebKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var webViewBG: WKWebView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 5
+        signupButton.layer.cornerRadius = 5
 
-        // Do any additional setup after loading the view.
+        
         
 // ************************************************** BACKGROUND GIF/VIDEO***************************************************************** //
-//        let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
-//        let htmlURL = URL(fileURLWithPath: htmlPath!)
-//        let html = try? Data(contentsOf: htmlURL)
-//
-//        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
-// *************************************************************************************************************************************** //
+        let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
+        let htmlURL = URL(fileURLWithPath: htmlPath!)
+        let html = try? Data(contentsOf: htmlURL)
+        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
+
         
         
     }

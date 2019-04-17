@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="NutriQ" translatesAutoresizingMaskIntoConstraints="NO" id="ewL-jD-XdD">
-                                <rect key="frame" x="7" y="398" width="361" height="16"/>
+                                <rect key="frame" x="7" y="282" width="361" height="248"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2155764102935791" green="0.23236504197120667" blue="0.92099815607070923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.36619782447814941" green="0.73588508367538452" blue="0.90599673986434937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewL-jD-XdD" secondAttribute="trailing" constant="7" id="7vf-Jj-J9F"/>
                             <constraint firstItem="ewL-jD-XdD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QrI-4Y-u4h"/>

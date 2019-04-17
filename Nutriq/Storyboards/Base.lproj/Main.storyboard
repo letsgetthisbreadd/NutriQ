@@ -184,7 +184,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-Er-C01">
-                                <rect key="frame" x="186" y="433" width="42" height="30"/>
+                                <rect key="frame" x="129.66666666666666" y="423" width="154.99999999999997" height="50"/>
+                                <color key="backgroundColor" red="0.30541801452636719" green="0.58494561910629272" blue="0.91084498167037964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="aJo-6Y-0ZF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="qXD-Fi-fxO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -193,7 +199,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nU6-T6-0J0">
-                                <rect key="frame" x="180" y="488" width="54" height="30"/>
+                                <rect key="frame" x="129.66666666666666" y="498" width="154.99999999999997" height="50"/>
+                                <color key="backgroundColor" red="0.30728524923324585" green="0.58525264263153076" blue="0.90907812118530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="TER-ea-cgy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="hf2-YT-rf7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -224,6 +236,8 @@
                         <viewLayoutGuide key="safeArea" id="Uwa-6a-yDq"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="t0k-Er-C01" id="Gsc-Rz-IV2"/>
+                        <outlet property="signupButton" destination="nU6-T6-0J0" id="Dit-v7-5ZY"/>
                         <outlet property="webViewBG" destination="Odi-J1-Ho4" id="Kek-kE-yLQ"/>
                     </connections>
                 </viewController>
