@@ -7,6 +7,11 @@ target 'Nutriq' do
 
   # Pods for Nutriq
   pod 'Firebase/Core'
+  pod 'FirebaseUI'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Facebook'
+  pod 'FirebaseUI/Twitter'
   pod 'Parse'
   pod 'AlamofireImage'
 

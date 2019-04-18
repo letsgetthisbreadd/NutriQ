@@ -17,6 +17,8 @@
 		27EDE5C5226141FB001C8A08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C4226141FB001C8A08 /* LoginViewController.swift */; };
 		27EDE5C722614579001C8A08 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C622614579001C8A08 /* SignUpViewController.swift */; };
 		27EDE5C9226146E8001C8A08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */; };
+		6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8C2267D853007A48AF /* Profile.storyboard */; };
+		6B876B8F2267E2D8007A48AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8E2267E2D8007A48AF /* GoogleService-Info.plist */; };
 		6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB136D2260676200C5C5E3 /* AppDelegate.swift */; };
 		6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13712260676200C5C5E3 /* Main.storyboard */; };
 		6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13742260676300C5C5E3 /* Assets.xcassets */; };
@@ -26,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Nutriq/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
-		2792EEA42261B83400F0AFB1 /* foodGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = foodGif.gif; path = ../../../foodGif.gif; sourceTree = "<group>"; };
+		2792EEA42261B83400F0AFB1 /* foodGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = foodGif.gif; sourceTree = "<group>"; };
 		2792EEA92261B94000F0AFB1 /* WebViewContent.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = WebViewContent.html; path = Nutriq/WebViewContent.html; sourceTree = SOURCE_ROOT; };
 		27D1DE462267061F00733B39 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27D1DE4822670EB500733B39 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
@@ -37,6 +39,8 @@
 		27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = Nutriq/SurveyViewController.swift; sourceTree = SOURCE_ROOT; };
 		466FBC2A3A36CA30F7C591C9 /* Pods-Nutriq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.debug.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.debug.xcconfig"; sourceTree = "<group>"; };
 		50398D06E5DEB649266F17C9 /* Pods-Nutriq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.release.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.release.xcconfig"; sourceTree = "<group>"; };
+		6B876B8C2267D853007A48AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		6B876B8E2267E2D8007A48AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6BAB136A2260676200C5C5E3 /* Nutriq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BAB136D2260676200C5C5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BAB13722260676200C5C5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				27EDE5C022614192001C8A08 /* Home.storyboard */,
 				27EDE5C2226141C1001C8A08 /* Settings.storyboard */,
 				6BAB13762260676300C5C5E3 /* LaunchScreen.storyboard */,
+				6B876B8C2267D853007A48AF /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
 				6BAB13742260676300C5C5E3 /* Assets.xcassets */,
 				6BAB13792260676300C5C5E3 /* Info.plist */,
+				6B876B8E2267E2D8007A48AF /* GoogleService-Info.plist */,
 				2792EEA92261B94000F0AFB1 /* WebViewContent.html */,
 			);
 			path = Nutriq;
@@ -151,6 +157,7 @@
 				6BAB13672260676200C5C5E3 /* Frameworks */,
 				6BAB13682260676200C5C5E3 /* Resources */,
 				D24FA00628016873903E3489 /* [CP] Embed Pods Frameworks */,
+				3E57EFDACB8789CB7770BB4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,10 +207,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BAB13782260676300C5C5E3 /* LaunchScreen.storyboard in Resources */,
+				6B876B8F2267E2D8007A48AF /* GoogleService-Info.plist in Resources */,
 				6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */,
 				6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */,
 				27EDE5C122614193001C8A08 /* Home.storyboard in Resources */,
 				2792EEAA2261B94000F0AFB1 /* WebViewContent.html in Resources */,
+				6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */,
 				27EDE5C3226141C1001C8A08 /* Settings.storyboard in Resources */,
 				2792EEA52261B83400F0AFB1 /* foodGif.gif in Resources */,
 			);
@@ -234,6 +243,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3E57EFDACB8789CB7770BB4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nutriq/Pods-Nutriq-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nutriq/Pods-Nutriq-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D24FA00628016873903E3489 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,8 +293,20 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -257,8 +316,20 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

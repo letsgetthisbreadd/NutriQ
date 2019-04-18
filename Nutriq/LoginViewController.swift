@@ -7,24 +7,32 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginButton.layer.cornerRadius = 5
 
-        // Do any additional setup after loading the view.
+        usernameField.becomeFirstResponder()
+        
     }
     
-    @IBAction func onLoginBtn(_ sender: Any) {
+    
+
+
+    @IBAction func onLoginButtonPressed(_ sender: Any) {
         // TODO:
         // Implement segue via login button
+        
     }
+    
+    
     
     /*
     // MARK: - Navigation
