@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import Firebase
 import GoogleSignIn
 
@@ -21,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        // Initialize Parse
-//        // Set applicationId and server based on the values in the Heroku settings.
-//        Parse.initialize(
-//            with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-//                configuration.applicationId = "NutriQ"
-//                configuration.server = "https://nutriq.herokuapp.com/parse"
-//            })
-//        )
         
         // This code set all embedded navigation bars to be transparent
         // Sets background to a blank/empty image
