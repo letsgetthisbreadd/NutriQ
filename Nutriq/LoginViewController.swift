@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
+    
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -21,16 +24,40 @@ class LoginViewController: UIViewController {
 
         usernameField.becomeFirstResponder()
         
+        if (FirebaseApp.app() == nil) {
+            FirebaseApp.configure()
+        }
+        
+        // FirebaseUI sign in flow
+        let authUI = FUIAuth.defaultAuthUI()
+        authUI!.delegate = self as? FUIAuthDelegate
+        
+        // Set the UI delegate of the GIDSignIn object
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        
+//        // Retrieve the credentials of a user who previously logged in
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: nil)
+//        }
+    }
     
-
 
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         // TODO:
         // Implement segue via login button
         
     }
+
+    
+    
+    
+    
+    
     
     
     
