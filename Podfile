@@ -12,7 +12,6 @@ target 'Nutriq' do
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Facebook'
   pod 'FirebaseUI/Twitter'
-  pod 'Parse'
   pod 'AlamofireImage'
 
 end
