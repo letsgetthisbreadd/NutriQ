@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733.60000000000002" y="-698.27586206896558"/>
+            <point key="canvasLocation" x="734" y="-686"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="7zl-CL-xqW">
@@ -196,37 +196,20 @@
                         <outlet property="emailField" destination="RyS-JZ-oC0" id="gQd-Td-GSa"/>
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="signupButton" destination="3zX-4T-MG1" id="YJ5-Wg-f79"/>
-                        <segue destination="9e2-jO-heg" kind="presentation" identifier="signupSegue" id="QNx-JG-wu2"/>
+                        <segue destination="LIp-Li-HYc" kind="presentation" identifier="signupSegue" id="b4i-M0-bKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.5999999999999" y="-698.27586206896558"/>
+            <point key="canvasLocation" x="1998" y="-686"/>
         </scene>
-        <!--Survey View Controller-->
-        <scene sceneID="U2M-Cs-Veu">
+        <!--SurveyViewController-->
+        <scene sceneID="C1j-s0-e0j">
             <objects>
-                <viewController id="9e2-jO-heg" customClass="SurveyViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zgT-ff-kud">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S6s-Bs-AMf">
-                                <rect key="frame" x="99" y="239" width="177" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="WKA-BY-FUv"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hLw-KX-wTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="SurveyViewController" storyboardName="Survey" referencedIdentifier="SurveyViewController" id="LIp-Li-HYc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="71"/>
+            <point key="canvasLocation" x="1998" y="-254"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">

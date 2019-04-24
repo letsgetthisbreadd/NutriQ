@@ -19,6 +19,7 @@
 		27EDE5C9226146E8001C8A08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */; };
 		6B0A6CFD22701EB500571380 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFC22701EB500571380 /* HomeViewController.swift */; };
 		6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFE2270246100571380 /* GoogleService-Info.plist */; };
+		6B0A6D01227044C100571380 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6D00227044C100571380 /* Survey.storyboard */; };
 		6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8C2267D853007A48AF /* Profile.storyboard */; };
 		6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB136D2260676200C5C5E3 /* AppDelegate.swift */; };
 		6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13712260676200C5C5E3 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		50398D06E5DEB649266F17C9 /* Pods-Nutriq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.release.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.release.xcconfig"; sourceTree = "<group>"; };
 		6B0A6CFC22701EB500571380 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6B0A6CFE2270246100571380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B0A6D00227044C100571380 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		6B876B8C2267D853007A48AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6BAB136A2260676200C5C5E3 /* Nutriq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BAB136D2260676200C5C5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				27EDE5C2226141C1001C8A08 /* Settings.storyboard */,
 				6BAB13762260676300C5C5E3 /* LaunchScreen.storyboard */,
 				6B876B8C2267D853007A48AF /* Profile.storyboard */,
+				6B0A6D00227044C100571380 /* Survey.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0A6D01227044C100571380 /* Survey.storyboard in Resources */,
 				6BAB13782260676300C5C5E3 /* LaunchScreen.storyboard in Resources */,
 				6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */,
 				6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */,

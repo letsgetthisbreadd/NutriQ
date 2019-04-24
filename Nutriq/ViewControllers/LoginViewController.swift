@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailField?.becomeFirstResponder()
+        emailField.becomeFirstResponder()
         
     }
     
