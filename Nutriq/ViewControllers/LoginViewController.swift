@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
                 return
             }
             print("Successfully logged user in...")
-//            self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "loginSegue", sender: self)
         }
     }
@@ -65,40 +64,5 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         handleLogin()
     }
-
-    
-    
-    
-    
-    
-    
-//    func signInUser(email: String, password: String) {
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//            if error == nil {
-//                // User is now signed in
-//                print("User is signed in")
-//                self.userDefaults.set(true, forKey: "usersignedin")
-//                self.userDefaults.synchronize()
-//                self.performSegue(withIdentifier: "loginSegue", sender: self)
-//            } else if (error?._code == AuthErrorCode.userNotFound.rawValue) {
-//                self.createUser(email: email, password: password)
-//            } else {
-//                print(error as Any)
-//            }
-//        }
-//    }
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

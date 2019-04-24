@@ -22,8 +22,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -51,7 +49,6 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 print("Successfully signed user up...")
-//                self.dismiss(animated: true, completion: nil)
                 self.performSegue(withIdentifier: "signupSegue", sender: self)
             })
             
@@ -96,33 +93,5 @@ class SignUpViewController: UIViewController {
         handleSignUp()
     }
 
-        
-//    @IBAction func onSignupButtonPressed(_ sender: Any) {
-//        // Make sure the password and confirmation password match
-//        if passwordField.text! != "" && passwordField.text! == confirmPasswordField.text! {
-//            // Sign the user up for an account
-//            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
-//                if error != nil {
-//                    print(error!)
-//                } else {
-//                    print("User registration successful")
-//                    self.performSegue(withIdentifier: "signupSegue", sender: self)
-//                }
-//            }
-//        } else {
-//            print("Please make sure both passwords match!")
-//        }
-//
-//    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
