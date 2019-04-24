@@ -9,10 +9,8 @@ target 'Nutriq' do
   pod 'Firebase/Core'
   pod 'FirebaseUI'
   pod 'Firebase/Auth'
-  pod 'FirebaseUI/Google'
-  pod 'FirebaseUI/Facebook'
-  pod 'FirebaseUI/Twitter'
-  pod 'Parse'
-  pod 'AlamofireImage'
+  pod 'GoogleSignIn'
+
+
 
 end
