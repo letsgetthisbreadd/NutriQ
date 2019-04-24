@@ -295,6 +295,7 @@
                         <outlet property="loginButton" destination="t0k-Er-C01" id="Gsc-Rz-IV2"/>
                         <outlet property="signupButton" destination="nU6-T6-0J0" id="Dit-v7-5ZY"/>
                         <outlet property="webViewBG" destination="Odi-J1-Ho4" id="Kek-kE-yLQ"/>
+                        <segue destination="4qi-Ac-9nz" kind="presentation" identifier="skipLoginSegue" id="tH9-P2-ZOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wef-0j-ftn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,4 +324,7 @@
     <resources>
         <image name="NutriQ" width="893" height="248"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tH9-P2-ZOf"/>
+    </inferredMetricsTieBreakers>
 </document>

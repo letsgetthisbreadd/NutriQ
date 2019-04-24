@@ -66,12 +66,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2792EEA32261B80D00F0AFB1 /* Image */ = {
+		2792EEA32261B80D00F0AFB1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				2792EEA42261B83400F0AFB1 /* foodGif.gif */,
 			);
-			path = Image;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		6B25938822606A4900764B9A /* ViewControllers */ = {
@@ -104,7 +104,7 @@
 			children = (
 				6BAB136C2260676200C5C5E3 /* Nutriq */,
 				6BAB136B2260676200C5C5E3 /* Products */,
-				2792EEA32261B80D00F0AFB1 /* Image */,
+				2792EEA32261B80D00F0AFB1 /* Images */,
 				AAF658626B7614DCD14DEB1F /* Pods */,
 				7B5C41196CD82C33C22690EB /* Frameworks */,
 			);

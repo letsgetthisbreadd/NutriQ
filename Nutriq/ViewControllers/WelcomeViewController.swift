@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
 
@@ -18,13 +19,18 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Login persistence - send user to Home screen if already signed in
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "skipLoginSegue", sender: nil)
+        }
 
-
-//// ************************ BACKGROUND GIF/VIDEO ************************ //
+//        // Background GIF/Video
 //        let htmlPath = Bundle.main.path(forResource: "WebViewContent", ofType: "html")
 //        let htmlURL = URL(fileURLWithPath: htmlPath!)
 //        let html = try? Data(contentsOf: htmlURL)
 //        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
+        
     }
     
     
