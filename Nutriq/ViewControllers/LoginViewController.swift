@@ -33,6 +33,17 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("Failed to sign user in with error: ", error.localizedDescription)
+                // If user input invalid password
+                if error.localizedDescription == "The password is invalid or the user does not have a password." {
+                    let invalidPasswordAlert = UIAlertController(title: "Invalid password", message: "The password you entered is invalid. Please try again.", preferredStyle: .alert)
+                    invalidPasswordAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(invalidPasswordAlert, animated: true)
+                } // If user input invalid username
+                else if error.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
+                    let invalidUsernameAlert = UIAlertController(title: "Invalid email", message: "The email address you entered is invalid. Please try again.", preferredStyle: .alert)
+                    invalidUsernameAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(invalidUsernameAlert, animated: true)
+                }
                 return
             }
             print("Successfully logged user in...")
