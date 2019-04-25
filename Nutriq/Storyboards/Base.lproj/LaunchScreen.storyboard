@@ -19,21 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="NutriQ" translatesAutoresizingMaskIntoConstraints="NO" id="ewL-jD-XdD">
-                                <rect key="frame" x="7" y="282" width="361" height="248"/>
+                                <rect key="frame" x="37.666666666666657" y="253.66666666666663" width="305" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="Gc4-hd-dge"/>
+                                    <constraint firstAttribute="height" constant="215" id="cLC-0E-Tm6"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.36619782447814941" green="0.73588508367538452" blue="0.90599673986434937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewL-jD-XdD" secondAttribute="trailing" constant="7" id="7vf-Jj-J9F"/>
-                            <constraint firstItem="ewL-jD-XdD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QrI-4Y-u4h"/>
-                            <constraint firstItem="ewL-jD-XdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="m3Q-CN-fiU"/>
+                            <constraint firstItem="ewL-jD-XdD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-45" id="I1F-Z2-gvC"/>
+                            <constraint firstItem="ewL-jD-XdD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="2.5" id="xpC-CG-70x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>
