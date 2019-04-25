@@ -119,6 +119,10 @@ class SignUpViewController: UIViewController {
     @IBAction func onSignupButtonPressed(_ sender: Any) {
         handleSignUp()
     }
+    
+    
+    // TODO: - Add Google sign in (sign up) button to this screen
+    // TODO: - Use a custom button to make the label say "Sign up with Google" instead of "Sign in with Google"; Refer to the TODO in the LoginViewController describing how to create the custom button (Hint: Refer to the 'userLogin' branch)
 
 
 }

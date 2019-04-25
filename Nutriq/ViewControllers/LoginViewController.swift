@@ -8,14 +8,17 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: ShadowButton!
-    
-    // MARK: - Properties
+    @IBOutlet weak var googleSigninButton: GIDSignInButton!
     
     
     // MARK: - Init
@@ -25,10 +28,20 @@ class LoginViewController: UIViewController {
 
         emailField.becomeFirstResponder()
         
+        // Set the UI delegate of the GIDSignIn object
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // Style Google sign in button
+        // TODO: - Possibly use own custom Google sign in button (must refactor code); refer to the way the custom Google UIButton was made on the userLogin branch (the button is actually called "Button" and is unchanged)
+        googleSigninButton.style = GIDSignInButtonStyle.wide
+        googleSigninButton.layer.cornerRadius = 5
+        
     }
     
     
-    // MARK: - User Login    
+    // MARK: - User Login
+    // TODO: - Allow user to log in with either username or email? If one is empty, the other one must be filled out. Use the one that is filled out to complete the user log in.
     func logUserIn(withEmail email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
@@ -51,6 +64,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
     // MARK: - Helper Functions & Actions
     
     @objc func handleLogin() {
@@ -72,8 +86,32 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Email login button
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         handleLogin()
     }
-
+    
+    // Google login button
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("Google sign in error occured with error: ", error.localizedDescription)
+            // TODO: - Add alert for error using localized description?
+            return
+        } else {
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+                if error == nil {
+                    // TODO: - If email associated with Google account does not exist in the database, this means the user hasn't signed up yet. Segue to the username creation page (only for users signing in with Google); otherwise, if the email is associated with a Google account and exists in the database (as well as a username for that Google email address), perform the login segue
+                    // TODO: - Add the Google user's email and username to the database
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                } else {
+                    // TODO: - Change this error code below to localized description and add alert?
+                    print(error as Any)
+                }
+            }
+        }
+    }
+    
+    
 }

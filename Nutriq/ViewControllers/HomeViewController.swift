@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class HomeViewController: UIViewController {
     
@@ -39,6 +40,8 @@ class HomeViewController: UIViewController {
     
     
     // MARK: - API
+    // TODO: - If user used Google sign in, set the welcome page to display their email
+    // TODO: - Future TODO --> Possibly use username to welcome the user instead of thier email?
     func loadUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         Database.database().reference().child("users").child(userID).child("email").observeSingleEvent(of: .value) { (snapshot) in
@@ -53,7 +56,9 @@ class HomeViewController: UIViewController {
     
     func signOut() {
         do {
+            // TODO: - If user signed in with Google account, end their session with GIDSignIn.sharedInstance().signOut()    ; Otherwise, if user signed in with email, perform the try Auth.auth().signout() block
             try Auth.auth().signOut()
+            
             self.dismiss(animated: true, completion: nil)
         } catch let error {
             print("Failed to sign out with error: ", error)
