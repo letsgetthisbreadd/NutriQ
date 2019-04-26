@@ -34,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		270649982272621500811A6C /* ToolbarPiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToolbarPiker.swift; path = /Users/mike/Docs/Projects/NutriQ/Nutriq/ToolbarPiker.swift; sourceTree = "<absolute>"; };
+		270649982272621500811A6C /* ToolbarPiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPiker.swift; sourceTree = "<group>"; };
 		277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt2ViewController.swift; path = Nutriq/ViewControllers/SurveyPt2ViewController.swift; sourceTree = SOURCE_ROOT; };
 		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = Nutriq/ViewControllers/SurveyPt3ViewController.swift; sourceTree = SOURCE_ROOT; };
 		277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt4ViewController.swift; path = Nutriq/ViewControllers/SurveyPt4ViewController.swift; sourceTree = SOURCE_ROOT; };
