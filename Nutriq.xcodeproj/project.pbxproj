@@ -35,21 +35,21 @@
 
 /* Begin PBXFileReference section */
 		270649982272621500811A6C /* ToolbarPiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPiker.swift; sourceTree = "<group>"; };
-		275799DD2272A818008C2859 /* SurveyResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyResultsViewController.swift; path = Nutriq/ViewControllers/SurveyResultsViewController.swift; sourceTree = SOURCE_ROOT; };
-		277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt2ViewController.swift; path = Nutriq/ViewControllers/SurveyPt2ViewController.swift; sourceTree = SOURCE_ROOT; };
-		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = Nutriq/ViewControllers/SurveyPt3ViewController.swift; sourceTree = SOURCE_ROOT; };
-		277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt4ViewController.swift; path = Nutriq/ViewControllers/SurveyPt4ViewController.swift; sourceTree = SOURCE_ROOT; };
+		275799DD2272A818008C2859 /* SurveyResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyResultsViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyResultsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt2ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt2ViewController.swift"; sourceTree = SOURCE_ROOT; };
+		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt3ViewController.swift"; sourceTree = SOURCE_ROOT; };
+		277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt4ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt4ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277EC51A22725D31006BB6AB /* Test.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Test.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Nutriq/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/WelcomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		2792EEA42261B83400F0AFB1 /* foodGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = foodGif.gif; sourceTree = "<group>"; };
 		2792EEA92261B94000F0AFB1 /* WebViewContent.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = WebViewContent.html; path = Nutriq/WebViewContent.html; sourceTree = SOURCE_ROOT; };
 		27D1DE462267061F00733B39 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27D1DE4822670EB500733B39 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		27EDE5C022614192001C8A08 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		27EDE5C2226141C1001C8A08 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		27EDE5C4226141FB001C8A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Nutriq/ViewControllers/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		27EDE5C622614579001C8A08 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = Nutriq/ViewControllers/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
-		27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = Nutriq/ViewControllers/SurveyViewController.swift; sourceTree = SOURCE_ROOT; };
+		27EDE5C4226141FB001C8A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
+		27EDE5C622614579001C8A08 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/SignUpViewController.swift"; sourceTree = SOURCE_ROOT; };
+		27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		466FBC2A3A36CA30F7C591C9 /* Pods-Nutriq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.debug.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.debug.xcconfig"; sourceTree = "<group>"; };
 		50398D06E5DEB649266F17C9 /* Pods-Nutriq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.release.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.release.xcconfig"; sourceTree = "<group>"; };
 		6B0A6CFC22701EB500571380 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +84,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2706DC6A2272B21C00F8B9A1 /* MAIN-ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
+				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
+				2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */,
+			);
+			path = "MAIN-ViewControllers";
+			sourceTree = "<group>";
+		};
+		2706DC6B2272B24500F8B9A1 /* SURVEY-ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				275799DD2272A818008C2859 /* SurveyResultsViewController.swift */,
+				277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */,
+				277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */,
+				277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */,
+				27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */,
+			);
+			path = "SURVEY-ViewControllers";
+			sourceTree = "<group>";
+		};
+		2706DC6C2272B27600F8B9A1 /* HOME-ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B0A6CFC22701EB500571380 /* HomeViewController.swift */,
+			);
+			path = "HOME-ViewControllers";
+			sourceTree = "<group>";
+		};
+		2706DC6D2272B2C100F8B9A1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27D1DE4822670EB500733B39 /* ShadowButton.swift */,
+				270649982272621500811A6C /* ToolbarPiker.swift */,
+				27D1DE462267061F00733B39 /* GradientView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		2792EEA32261B80D00F0AFB1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,15 +135,9 @@
 		6B25938822606A4900764B9A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */,
-				27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */,
-				277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */,
-				277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */,
-				277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */,
-				275799DD2272A818008C2859 /* SurveyResultsViewController.swift */,
-				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
-				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
-				6B0A6CFC22701EB500571380 /* HomeViewController.swift */,
+				2706DC6A2272B21C00F8B9A1 /* MAIN-ViewControllers */,
+				2706DC6B2272B24500F8B9A1 /* SURVEY-ViewControllers */,
+				2706DC6C2272B27600F8B9A1 /* HOME-ViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,9 +178,7 @@
 		6BAB136C2260676200C5C5E3 /* Nutriq */ = {
 			isa = PBXGroup;
 			children = (
-				27D1DE462267061F00733B39 /* GradientView.swift */,
-				270649982272621500811A6C /* ToolbarPiker.swift */,
-				27D1DE4822670EB500733B39 /* ShadowButton.swift */,
+				2706DC6D2272B2C100F8B9A1 /* Classes */,
 				6B25938922606A6100764B9A /* Storyboards */,
 				6B25938822606A4900764B9A /* ViewControllers */,
 				6BAB136D2260676200C5C5E3 /* AppDelegate.swift */,
