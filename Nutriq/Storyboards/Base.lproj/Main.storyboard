@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eva-HY-a2E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QQH-u6-wP3">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -206,7 +206,7 @@
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="signupButton" destination="3zX-4T-MG1" id="YJ5-Wg-f79"/>
                         <outlet property="usernameField" destination="Cox-Pr-mqT" id="NJ3-AI-fMh"/>
-                        <segue destination="LIp-Li-HYc" kind="presentation" identifier="signupSegue" id="b4i-M0-bKH"/>
+                        <segue destination="QQH-u6-wP3" kind="presentation" identifier="signupSegue" id="b4i-M0-bKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,10 +216,12 @@
         <!--SurveyViewController-->
         <scene sceneID="C1j-s0-e0j">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SurveyViewController" storyboardName="Survey" referencedIdentifier="SurveyViewController" id="LIp-Li-HYc" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="SurveyViewController" storyboardName="Survey" referencedIdentifier="SurveyViewController" id="LIp-Li-HYc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e9g-UM-O36"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-254"/>
+            <point key="canvasLocation" x="2885" y="83"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">
@@ -330,11 +332,29 @@
             </objects>
             <point key="canvasLocation" x="382" y="-1426"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UZ0-Wt-32n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQH-u6-wP3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eqO-BZ-1Rt">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LIp-Li-HYc" kind="relationship" relationship="rootViewController" id="2On-Xw-OP3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gvt-Xm-Sb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="83"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NutriQ" width="893" height="248"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tH9-P2-ZOf"/>
+        <segue reference="D6H-w8-qJn"/>
     </inferredMetricsTieBreakers>
 </document>
