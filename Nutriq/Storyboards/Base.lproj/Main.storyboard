@@ -317,7 +317,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fLU-8N-ftu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eva-HY-a2E" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WelcomeViewController" automaticallyAdjustsScrollViewInsets="NO" id="eva-HY-a2E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ydh-aY-p2c">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

@@ -22,15 +22,19 @@ class SurveyPt4ViewController: UIViewController {
     }
     
     @IBAction func lbsButton05Press(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue3", sender: self)
     }
     
     @IBAction func lbsButton1Press(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue3", sender: self)
     }
     
     @IBAction func lbsButton15Press(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue3", sender: self)
     }
     
     @IBAction func lbsButton2Press(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue3", sender: self)
     }
     
 

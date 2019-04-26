@@ -14,7 +14,7 @@ class SurveyPt3ViewController: UIViewController {
     @IBOutlet weak var gainButton: ShadowButton!
     @IBOutlet weak var maintainButton: ShadowButton!
     
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,12 +22,15 @@ class SurveyPt3ViewController: UIViewController {
     }
     
     @IBAction func loseBtnPress(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue2", sender: self)
     }
     
     @IBAction func gainBtnPress(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue2", sender: self)
     }
     
     @IBAction func maintainBtnPress(_ sender: Any) {
+        self.performSegue(withIdentifier: "surveySegue2", sender: self)
     }
     
 
