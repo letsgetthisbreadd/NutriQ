@@ -8,9 +8,13 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController { //, GIDSignInDelegate, GIDSignInUIDelegate
 
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!

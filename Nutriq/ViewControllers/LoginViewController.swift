@@ -86,28 +86,35 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
     
-    // Email login button
+    // Email login button pressed
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         handleLogin()
     }
     
-    // Google login button
+    // Google login button pressed
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print("Google sign in error occured with error: ", error.localizedDescription)
-            // TODO: - Add alert for error using localized description?
+            // TODO: - Remove googleSigninAlert before release
+            let googleSigninAlert = UIAlertController(title: "Google sign in error", message: "There was an error logging in with Google: \(error.localizedDescription)", preferredStyle: .alert)
+            googleSigninAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(googleSigninAlert, animated: true)
             return
         } else {
             guard let authentication = user.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            // Asynchronously signs in to Firebase with the given 3rd-party credentials (e.g. Google, Facebook) and returns additional identity provider data
             Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
                 if error == nil {
                     // TODO: - If email associated with Google account does not exist in the database, this means the user hasn't signed up yet. Segue to the username creation page (only for users signing in with Google); otherwise, if the email is associated with a Google account and exists in the database (as well as a username for that Google email address), perform the login segue
                     // TODO: - Add the Google user's email and username to the database
                     self.performSegue(withIdentifier: "loginSegue", sender: self)
                 } else {
-                    // TODO: - Change this error code below to localized description and add alert?
                     print(error as Any)
+                    // TODO: - Remove firebaseAsyncSigninErrorAlert before release
+                    let firebaseAsyncSigninErrorAlert = UIAlertController(title: "Firebase sign in error", message: "There was an error signing in to Firebase with the given Google credentials: \(error as Any)", preferredStyle: .alert)
+                    firebaseAsyncSigninErrorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(firebaseAsyncSigninErrorAlert, animated: true)
                 }
             }
         }
