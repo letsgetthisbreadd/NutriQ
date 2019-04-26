@@ -97,11 +97,11 @@
 		2706DC6B2272B24500F8B9A1 /* SURVEY-ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				275799DD2272A818008C2859 /* SurveyResultsViewController.swift */,
-				277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */,
-				277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */,
-				277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */,
 				27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */,
+				277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */,
+				277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */,
+				277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */,
+				275799DD2272A818008C2859 /* SurveyResultsViewController.swift */,
 			);
 			path = "SURVEY-ViewControllers";
 			sourceTree = "<group>";
@@ -146,11 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				6BAB13712260676200C5C5E3 /* Main.storyboard */,
+				6B0A6D00227044C100571380 /* Survey.storyboard */,
 				27EDE5C022614192001C8A08 /* Home.storyboard */,
+				6B876B8C2267D853007A48AF /* Profile.storyboard */,
 				27EDE5C2226141C1001C8A08 /* Settings.storyboard */,
 				6BAB13762260676300C5C5E3 /* LaunchScreen.storyboard */,
-				6B876B8C2267D853007A48AF /* Profile.storyboard */,
-				6B0A6D00227044C100571380 /* Survey.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

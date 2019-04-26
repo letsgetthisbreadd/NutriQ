@@ -185,7 +185,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3984.057971014493" y="70.982142857142847"/>
+            <point key="canvasLocation" x="1929" y="71"/>
         </scene>
         <!--Survey Pt2 View Controller-->
         <scene sceneID="K9Q-Gl-ugK">
@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ff-jF-UTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5197" y="71"/>
+            <point key="canvasLocation" x="3023" y="71"/>
         </scene>
         <!--Survey Pt3 View Controller-->
         <scene sceneID="myc-GS-BJG">
@@ -374,6 +374,7 @@
                                 </state>
                                 <connections>
                                     <action selector="maintainBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="1pY-RX-nay"/>
+                                    <segue destination="Kbq-rS-xWg" kind="show" identifier="maintainWeightSegue" id="Vly-xI-NSa"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSB-Vj-PX5" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -543,7 +544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcz-ah-GDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3074" y="834"/>
+            <point key="canvasLocation" x="3074" y="1189"/>
         </scene>
         <!--Survey Results View Controller-->
         <scene sceneID="uov-NT-IhR">
@@ -639,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNg-ba-Pzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4220" y="834"/>
+            <point key="canvasLocation" x="4219" y="834"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="QIi-Qd-fck">
@@ -650,4 +651,7 @@
             <point key="canvasLocation" x="5100" y="836"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vly-xI-NSa"/>
+    </inferredMetricsTieBreakers>
 </document>

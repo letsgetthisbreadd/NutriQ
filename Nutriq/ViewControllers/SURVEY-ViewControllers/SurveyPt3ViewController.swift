@@ -30,7 +30,8 @@ class SurveyPt3ViewController: UIViewController {
     }
     
     @IBAction func maintainBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue2", sender: self)
+        // TODO: - Remove this segue because it causes the segue to occur twice (once from the storyboard and again below. This makes the SurveyResultsViewController present twice
+//        self.performSegue(withIdentifier: "maintainWeightSegue", sender: self)
     }
     
 
