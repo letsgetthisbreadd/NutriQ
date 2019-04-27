@@ -37,6 +37,11 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         googleSigninButton.style = GIDSignInButtonStyle.wide
         googleSigninButton.layer.cornerRadius = 5
         
+        
+        // Create a tap gesture recognizer within the Google sign in button (UIView)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.performGoogleSignIn))
+        self.googleSigninButton.addGestureRecognizer(gesture)
+        
     }
     
     
@@ -67,7 +72,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     
     // MARK: - Helper Functions & Actions
     
-    @objc func handleLogin() {
+    @objc func handleEmailLogin() {
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
         
@@ -86,9 +91,46 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
     
-    // Email login button pressed
-    @IBAction func onLoginButtonPressed(_ sender: Any) {
-        handleLogin()
+    @objc func handleGoogleLogin(forUserEmail email: String) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
+        Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
+        
+            if (snapshot.value! is NSNull) {
+                print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
+                
+                let userInfo = [userID: ["email": email]]
+                
+                Database.database().reference().child("users").updateChildValues(userInfo, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        print("Failed to update database with error: ", error.localizedDescription)
+                        return
+                    }
+                    print("Succesfully added Google user's userID and email address to Firebase database!")
+                    
+                    // Transfer user to username retrieval screen
+                    let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
+                    self.segueFromRight()
+                    UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
+
+                })
+            } else if (!(snapshot.value! is NSNull) && !snapshot.hasChild("username")) {
+                // If snapshot returns user with associated email AND that email doesn't have a username associated with it, send the user to the username creation screen.
+                // If user signs in with Google and exists in the Firebase database but doesn't have a username, take them to the username creation screen. This scenario would happen if the user signed in with a Google account but didn't have an account to begin with. If that user exits and closes the app and then tries to sign in again, instead of being taking to the home page (which would result in an error since no stats are stored for that user), a check is performed to see if they created a username before exiting. If not, that means they didn't complete the survey either so the app takes them to the proper screen (to get the user's information)
+                // Transfer user to username retrieval screen
+                let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
+                self.segueFromRight()
+                UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
+            } else { // Current user has an email and username --> Send user to home screen
+                // Transfer user to username retrieval screen
+                let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+                self.segueFromRight()
+                UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
+//                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//                self.present(homeVC, animated: true, completion: nil)
+            }
+        }
     }
     
     // Google login button pressed
@@ -108,7 +150,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                 if error == nil {
                     // TODO: - If email associated with Google account does not exist in the database, this means the user hasn't signed up yet. Segue to the username creation page (only for users signing in with Google); otherwise, if the email is associated with a Google account and exists in the database (as well as a username for that Google email address), perform the login segue
                     // TODO: - Add the Google user's email and username to the database
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    // TODO: - Handle Google login here
+                    guard let email = user.profile.email else { return }
+                    self.handleGoogleLogin(forUserEmail: email)
                 } else {
                     print(error as Any)
                     // TODO: - Remove firebaseAsyncSigninErrorAlert before release
@@ -120,5 +164,25 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
     
+    // Email login button pressed
+    @IBAction func onLoginButtonPressed(_ sender: Any) {
+        handleEmailLogin()
+    }
+    
+    // Google login button pressed
+    @objc func performGoogleSignIn(_ sender: UIView) {
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
+    
+    // This animation forces the animation to look like the right-to-left segue animation
+    func segueFromRight() {
+        let transition = CATransition()
+        transition.duration = 0.45
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+    }
     
 }
