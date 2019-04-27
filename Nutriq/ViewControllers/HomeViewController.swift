@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     
-    // MARK: - API
+    // MARK: - Helper Functions & Actions
     // TODO: - If user used Google sign in, set the welcome page to display their email
     // TODO: - Future TODO --> Possibly use username to welcome the user instead of thier email?
     func loadUserData() {
@@ -66,9 +66,6 @@ class HomeViewController: UIViewController {
             print("Failed to sign out with error: ", error.localizedDescription)
         }
     }
-    
-    
-    // MARK: - Helper Functions & Actions
     
     @IBAction func signoutButtonPressed(_ sender: Any) {
         handleSignOut()

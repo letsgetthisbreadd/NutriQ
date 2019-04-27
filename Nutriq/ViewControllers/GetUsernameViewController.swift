@@ -39,7 +39,7 @@ class GetUsernameViewController: UIViewController {
             Database.database().reference().child("users").queryOrdered(byChild: "username").queryEqual(toValue: username).observeSingleEvent(of: .value) { (snapshot) in
                 print(snapshot.value!) // Snapshot of the keys/values in DB that have matching username
                 
-                if (snapshot.value! is NSNull) {
+                if (!snapshot.exists()) {
                     print("Username:", username, "does not exist in the Firebase database. Updating the database...")
                     
                     let userInfo = ["username": username]

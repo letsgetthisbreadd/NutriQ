@@ -93,11 +93,25 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     
     @objc func handleGoogleLogin(forUserEmail email: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        // Check if "username" key exists for the current user
+        let usernameValue = Database.database().reference().child("users/\(userID)/username")
+        var usernameExists = false
+        
+        usernameValue.observeSingleEvent(of: .value) { (snapshot) in
+            if (snapshot.exists()) {
+                usernameExists = true
+            }
+            print(usernameExists)
+            print(snapshot.value!) // Snapshot of the keys/values in DB that have the "username" key
+
+        }
+        
         // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
         Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
         
-            if (snapshot.value! is NSNull) {
+            if (!snapshot.exists()) {
                 print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
                 
                 let userInfo = [userID: ["email": email]]
@@ -115,20 +129,20 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
 
                 })
-            } else if (!(snapshot.value! is NSNull) && !snapshot.hasChild("username")) {
+            } else if (snapshot.exists() && !usernameExists) {
                 // If snapshot returns user with associated email AND that email doesn't have a username associated with it, send the user to the username creation screen.
                 // If user signs in with Google and exists in the Firebase database but doesn't have a username, take them to the username creation screen. This scenario would happen if the user signed in with a Google account but didn't have an account to begin with. If that user exits and closes the app and then tries to sign in again, instead of being taking to the home page (which would result in an error since no stats are stored for that user), a check is performed to see if they created a username before exiting. If not, that means they didn't complete the survey either so the app takes them to the proper screen (to get the user's information)
                 // Transfer user to username retrieval screen
+                print("Username has not been created yet for:", userID, "Segueing to username creation screen...")
                 let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
                 self.segueFromRight()
                 UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
             } else { // Current user has an email and username --> Send user to home screen
+                print("Email and username for:", userID, "are stored in the database. Segueing home...")
                 // Transfer user to username retrieval screen
-                let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-                self.segueFromRight()
+                let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+                self.segueFromTop()
                 UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
-//                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                self.present(homeVC, animated: true, completion: nil)
             }
         }
     }
@@ -181,6 +195,15 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.duration = 0.45
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    func segueFromTop() {
+        let transition = CATransition()
+        transition.duration = 0.45
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
     }

@@ -122,7 +122,7 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeViewController" id="4qi-Ac-9nz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emx-GF-bWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="-254"/>
+            <point key="canvasLocation" x="1364" y="-599"/>
         </scene>
         <!--Get Username View Controller-->
         <scene sceneID="Sbe-c6-PjR">
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="127"/>
+            <point key="canvasLocation" x="382" y="98"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Bxd-vc-ZZg">
