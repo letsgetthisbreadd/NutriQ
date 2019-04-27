@@ -124,9 +124,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     print("Succesfully added Google user's userID and email address to Firebase database!")
                     
                     // Transfer user to username retrieval screen
-                    let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
-                    self.segueFromRight()
-                    UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
+                    self.takeUserToUsernameScreen()
 
                 })
             } else if (snapshot.exists() && !usernameExists) {
@@ -134,15 +132,11 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                 // If user signs in with Google and exists in the Firebase database but doesn't have a username, take them to the username creation screen. This scenario would happen if the user signed in with a Google account but didn't have an account to begin with. If that user exits and closes the app and then tries to sign in again, instead of being taking to the home page (which would result in an error since no stats are stored for that user), a check is performed to see if they created a username before exiting. If not, that means they didn't complete the survey either so the app takes them to the proper screen (to get the user's information)
                 // Transfer user to username retrieval screen
                 print("Username has not been created yet for:", userID, "Segueing to username creation screen...")
-                let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
-                self.segueFromRight()
-                UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
+                self.takeUserToUsernameScreen()
             } else { // Current user has an email and username --> Send user to home screen
                 print("Email and username for:", userID, "are stored in the database. Segueing home...")
                 // Transfer user to username retrieval screen
-                let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-                self.segueFromTop()
-                UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
+                self.takeUserToHomeScreen()
             }
         }
     }
@@ -192,7 +186,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     // This animation forces the animation to look like the right-to-left segue animation
     func segueFromRight() {
         let transition = CATransition()
-        transition.duration = 0.45
+        transition.duration = 0.5
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
@@ -201,11 +195,23 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     
     func segueFromTop() {
         let transition = CATransition()
-        transition.duration = 0.45
+        transition.duration = 0.5
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromTop
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    func takeUserToHomeScreen() {
+        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+        self.segueFromTop()
+        UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
+    }
+    
+    func takeUserToUsernameScreen() {
+        let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
+        self.segueFromRight()
+        UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
     }
     
 }
