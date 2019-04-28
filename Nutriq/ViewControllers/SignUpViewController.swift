@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class SignUpViewController: UIViewController { //, GIDSignInDelegate, GIDSignInUIDelegate
+class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     
     // MARK: - Properties
@@ -71,17 +71,17 @@ class SignUpViewController: UIViewController { //, GIDSignInDelegate, GIDSignInU
         guard let password = passwordField.text else { return }
         guard let confirmPassword = confirmPasswordField.text else { return }
         
-        if email == "" {
-            print("The email field is empty. Please input an email address and try to sign up again!")
-            let emptyEmailAlert = UIAlertController(title: "Empty email field", message: "The email field is empty. Please input an email address and try to sign up again.", preferredStyle: .alert)
-            emptyEmailAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(emptyEmailAlert, animated: true)
-            return
-        } else if username == "" {
+        if username == "" {
             print("The username field is empty. Please input a username and try to sign up again!")
             let emptyUsernameAlert = UIAlertController(title: "Empty username field", message: "The username field is empty. Please input a username and try to sign up again.", preferredStyle: .alert)
             emptyUsernameAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(emptyUsernameAlert, animated: true)
+            return
+        } else if email == "" {
+            print("The email field is empty. Please input an email address and try to sign up again!")
+            let emptyEmailAlert = UIAlertController(title: "Empty email field", message: "The email field is empty. Please input an email address and try to sign up again.", preferredStyle: .alert)
+            emptyEmailAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(emptyEmailAlert, animated: true)
             return
         } else if password == "" {
             print("The first password field is empty. Please input a password and try to sign up again!")

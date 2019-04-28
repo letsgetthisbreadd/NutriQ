@@ -122,7 +122,7 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeViewController" id="4qi-Ac-9nz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emx-GF-bWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="-599"/>
+            <point key="canvasLocation" x="1364" y="-806"/>
         </scene>
         <!--Get Username View Controller-->
         <scene sceneID="Sbe-c6-PjR">
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="98"/>
+            <point key="canvasLocation" x="1364" y="-188"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Bxd-vc-ZZg">
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-686"/>
+            <point key="canvasLocation" x="2346" y="-686"/>
         </scene>
         <!--SurveyViewController-->
         <scene sceneID="C1j-s0-e0j">
@@ -303,7 +303,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="SurveyViewController" storyboardName="Survey" referencedIdentifier="SurveyViewController" id="LIp-Li-HYc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-254"/>
+            <point key="canvasLocation" x="2344" y="-188"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">

@@ -1,3 +1,4 @@
+
 //
 //  LoginViewController.swift
 //  Nutriq
@@ -12,39 +13,39 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
-    
+
     // MARK: - Properties
-    
+
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: ShadowButton!
     @IBOutlet weak var googleSigninButton: GIDSignInButton!
-    
-    
+
+
     // MARK: - Init
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         emailField.becomeFirstResponder()
-        
+
         // Set the UI delegate of the GIDSignIn object
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        
+
         // Style Google sign in button
         // TODO: - Possibly use own custom Google sign in button (must refactor code); refer to the way the custom Google UIButton was made on the userLogin branch (the button is actually called "Button" and is unchanged)
         googleSigninButton.style = GIDSignInButtonStyle.wide
         googleSigninButton.layer.cornerRadius = 5
-        
-        
+
+
         // Create a tap gesture recognizer within the Google sign in button (UIView)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.performGoogleSignIn))
         self.googleSigninButton.addGestureRecognizer(gesture)
-        
+
     }
-    
-    
+
+
     // MARK: - User Login
     // TODO: - Allow user to log in with either username or email? If one is empty, the other one must be filled out. Use the one that is filled out to complete the user log in.
     func logUserIn(withEmail email: String, password: String) {
@@ -68,14 +69,14 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             self.performSegue(withIdentifier: "loginSegue", sender: self)
         }
     }
-    
-    
+
+
     // MARK: - Helper Functions & Actions
-    
+
     @objc func handleEmailLogin() {
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
-        
+
         if email == "" {
             print("The email field is empty. Please input an email address and try to sign up again!")
             let emptyEmailAlert = UIAlertController(title: "Empty email field", message: "The email field is empty. Please input an email address and try to sign up again.", preferredStyle: .alert)
@@ -90,39 +91,40 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             logUserIn(withEmail: email, password: password)
         }
     }
-    
+
     @objc func handleGoogleLogin(forUserEmail email: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        
+
         // Check if "username" key exists for the current user
         let usernameValue = Database.database().reference().child("users/\(userID)/username")
         var usernameExists = false
         
+        // FIXME: - The handleGoogleLogin function continues running despite this closure not finishing the test of whether the "username" key exists for the currnet user. Because of this, it sometimes takes a user logging in with Google authentication to the username creation page despite that user already having a username. To recreate this bug: Run the app --> Sign in with Google as you normally would --> Sign out --> Force quit the app --> Open the app again. You should now be on the Welcome Screen. Choose 'Sign in with Google' --> Sign in as you normally would --> BUG occurs (takes you to the username creation screen even if you already have a username associated with that account). Possible solution --> Implement user defaults and check if user defaults has key of "usernameCreated" with a value of "true"
         usernameValue.observeSingleEvent(of: .value) { (snapshot) in
             if (snapshot.exists()) {
                 usernameExists = true
             }
             print(usernameExists)
-            print(snapshot.value!) // Snapshot of the keys/values in DB that have the "username" key
+            print(snapshot.value!) // Snapshot of the current user's "username" key (if it exists; otherwise it returns null)
 
         }
-        
+
         // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
         Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
-        
+
             if (!snapshot.exists()) {
                 print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
-                
+
                 let userInfo = [userID: ["email": email]]
-                
+
                 Database.database().reference().child("users").updateChildValues(userInfo, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         print("Failed to update database with error: ", error.localizedDescription)
                         return
                     }
                     print("Succesfully added Google user's userID and email address to Firebase database!")
-                    
+
                     // Transfer user to username retrieval screen
                     self.takeUserToUsernameScreen()
 
@@ -140,7 +142,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             }
         }
     }
-    
+
     // Google login button pressed
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
@@ -171,19 +173,19 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             }
         }
     }
-    
+
     // Email login button pressed
     @IBAction func onLoginButtonPressed(_ sender: Any) {
         handleEmailLogin()
     }
-    
+
     // Google login button pressed
     @objc func performGoogleSignIn(_ sender: UIView) {
         GIDSignIn.sharedInstance().signIn()
-        
+
     }
-    
-    // This animation forces the animation to look like the right-to-left segue animation
+
+    // Right-to-left segue animation
     func segueFromRight() {
         let transition = CATransition()
         transition.duration = 0.5
@@ -192,8 +194,9 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
     }
-    
-    func segueFromTop() {
+
+    // Bottom-to-top segue animation
+    func segueToTop() {
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = CATransitionType.push
@@ -201,17 +204,17 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
     }
-    
+
     func takeUserToHomeScreen() {
         let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-        self.segueFromTop()
+        self.segueToTop()
         UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
     }
-    
+
     func takeUserToUsernameScreen() {
         let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
         self.segueFromRight()
         UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
     }
-    
+
 }
