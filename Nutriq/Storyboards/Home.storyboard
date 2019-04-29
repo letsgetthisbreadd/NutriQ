@@ -44,7 +44,6 @@
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signoutButtonPressed:" destination="0M1-3d-DUv" eventType="touchUpInside" id="7JT-sS-LiA"/>
-                                    <segue destination="mUG-D0-wDy" kind="presentation" identifier="signoutSegue" id="Bv3-Gt-xie"/>
                                 </connections>
                             </button>
                         </subviews>
