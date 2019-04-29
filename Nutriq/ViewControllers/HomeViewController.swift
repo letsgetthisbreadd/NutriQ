@@ -57,10 +57,10 @@ class HomeViewController: UIViewController {
     }
     
     func signOut() {
+        GIDSignIn.sharedInstance().signOut() // Google sign out
         do {
             // TODO: - Before release, check to make sure that not checking which sign out is occuring will not impact the app in any way
             try Auth.auth().signOut() // Email sign out
-            GIDSignIn.sharedInstance().signOut() // Google sign out
             self.dismiss(animated: true, completion: nil)
         } catch let error {
             print("Failed to sign out with error: ", error.localizedDescription)

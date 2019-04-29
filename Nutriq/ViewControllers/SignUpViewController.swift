@@ -20,6 +20,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var signupButton: ShadowButton!
+    @IBOutlet weak var googleSignupButton: UIButton!
     
     
     // MARK: - Init
@@ -127,6 +128,127 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     // TODO: - Add Google sign in (sign up) button to this screen
     // TODO: - Use a custom button to make the label say "Sign up with Google" instead of "Sign in with Google"; Refer to the TODO in the LoginViewController describing how to create the custom button (Hint: Refer to the 'userLogin' branch)
-
+    
+    @IBAction func onGoogleSignupButtonPressed(_ sender: Any) {
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    
+    // Google signup button pressed
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("Google sign up error occured with error: ", error.localizedDescription)
+            // TODO: - Remove googleSigninAlert before release
+            let googleSignupAlert = UIAlertController(title: "Google sign up error", message: "There was an error signing up with Google: \(error.localizedDescription)", preferredStyle: .alert)
+            googleSignupAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(googleSignupAlert, animated: true)
+            return
+        } else {
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            // Asynchronously signs in to Firebase with the given 3rd-party credentials (e.g. Google, Facebook) and returns additional identity provider data
+            Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
+                if error == nil {
+                    // TODO: - If email associated with Google account does not exist in the database, this means the user hasn't signed up yet. Segue to the username creation page (only for users signing in with Google); otherwise, if the email is associated with a Google account and exists in the database (as well as a username for that Google email address), perform the login segue
+                    // TODO: - Add the Google user's email and username to the database
+                    // TODO: - Handle Google login here
+                    guard let email = user.profile.email else { return }
+                    self.handleGoogleSignup(forUserEmail: email)
+                } else {
+                    print(error as Any)
+                    // TODO: - Remove firebaseAsyncSigninErrorAlert before release
+                    let firebaseAsyncSigninErrorAlert = UIAlertController(title: "Firebase sign in error", message: "There was an error signing in to Firebase with the given Google credentials: \(error as Any)", preferredStyle: .alert)
+                    firebaseAsyncSigninErrorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(firebaseAsyncSigninErrorAlert, animated: true)
+                }
+            }
+        }
+    }
+    
+    @objc func handleGoogleSignup(forUserEmail email: String) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        // Check if "username" key exists for the current user
+        let usernameValue = Database.database().reference().child("users/\(userID)/username")
+        var usernameExists = false
+        
+        // FIXME: - The handleGoogleLogin function continues running despite this closure not finishing the test of whether the "username" key exists for the currnet user. Because of this, it sometimes takes a user logging in with Google authentication to the username creation page despite that user already having a username. To recreate this bug: Run the app --> Sign in with Google as you normally would --> Sign out --> Force quit the app --> Open the app again. You should now be on the Welcome Screen. Choose 'Sign in with Google' --> Sign in as you normally would --> BUG occurs (takes you to the username creation screen even if you already have a username associated with that account). Possible solution --> Implement user defaults and check if user defaults has key of "usernameCreated" with a value of "true"
+        usernameValue.observeSingleEvent(of: .value) { (snapshot) in
+            if (snapshot.exists()) {
+                usernameExists = true
+            }
+            print(usernameExists)
+            print(snapshot.value!) // Snapshot of the current user's "username" key (if it exists; otherwise it returns null)
+            
+        }
+        
+        // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
+        Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
+            
+            if (!snapshot.exists()) {
+                print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
+                
+                let userInfo = [userID: ["email": email]]
+                
+                Database.database().reference().child("users").updateChildValues(userInfo, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        print("Failed to update database with error: ", error.localizedDescription)
+                        return
+                    }
+                    print("Succesfully added Google user's userID and email address to Firebase database!")
+                    
+                    // Transfer user to username retrieval screen
+                    self.takeUserToUsernameScreen()
+                    
+                })
+            } else if (snapshot.exists() && !usernameExists) {
+                // If snapshot returns user with associated email AND that email doesn't have a username associated with it, send the user to the username creation screen.
+                // If user signs in with Google and exists in the Firebase database but doesn't have a username, take them to the username creation screen. This scenario would happen if the user signed in with a Google account but didn't have an account to begin with. If that user exits and closes the app and then tries to sign in again, instead of being taking to the home page (which would result in an error since no stats are stored for that user), a check is performed to see if they created a username before exiting. If not, that means they didn't complete the survey either so the app takes them to the proper screen (to get the user's information)
+                // Transfer user to username retrieval screen
+                print("Username has not been created yet for:", userID, "Segueing to username creation screen...")
+                self.takeUserToUsernameScreen()
+            } else { // Current user has an email and username --> Send user to home screen
+                print("Email and username for:", userID, "are stored in the database. Segueing home...")
+                // Transfer user to username retrieval screen
+                self.takeUserToHomeScreen()
+            }
+        }
+    }
+    
+    func takeUserToHomeScreen() {
+        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+        self.segueToTop()
+        UIApplication.topViewController()?.present(homeVC, animated: false, completion: nil)
+    }
+    
+    func takeUserToUsernameScreen() {
+        let getUsernameVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GetUsernameViewController")
+        self.segueFromRight()
+        UIApplication.topViewController()?.present(getUsernameVC, animated: false, completion: nil)
+    }
+    
+    // Right-to-left segue animation
+    func segueFromRight() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    // Bottom-to-top segue animation
+    func segueToTop() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
 
 }

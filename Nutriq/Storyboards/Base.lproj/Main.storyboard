@@ -251,6 +251,18 @@
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="qzc-kp-vgT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-aN-8rP" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="100" y="487" width="175" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="H4P-fo-mBh"/>
+                                    <constraint firstAttribute="height" constant="50" id="IBd-zz-4yw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Sign up with Google"/>
+                                <connections>
+                                    <action selector="onGoogleSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="HQU-71-cQp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -260,8 +272,10 @@
                             <constraint firstItem="AQW-US-sQf" firstAttribute="leading" secondItem="5ra-qc-Fb4" secondAttribute="leading" constant="10" id="CvM-Iw-6Z7"/>
                             <constraint firstItem="RyS-JZ-oC0" firstAttribute="leading" secondItem="5ra-qc-Fb4" secondAttribute="leading" constant="10" id="Ghd-46-xmC"/>
                             <constraint firstItem="yOL-hI-cIN" firstAttribute="top" secondItem="5ra-qc-Fb4" secondAttribute="top" constant="30" id="HGB-bZ-KZ5"/>
+                            <constraint firstItem="pXC-aN-8rP" firstAttribute="top" secondItem="3zX-4T-MG1" secondAttribute="bottom" constant="15" id="I1f-JJ-S9N"/>
                             <constraint firstItem="oZM-6T-dYf" firstAttribute="leading" secondItem="5ra-qc-Fb4" secondAttribute="leading" constant="10" id="ID3-80-7Sl"/>
                             <constraint firstItem="3zX-4T-MG1" firstAttribute="top" secondItem="oZM-6T-dYf" secondAttribute="bottom" constant="45" id="Id9-Yn-F4D"/>
+                            <constraint firstItem="pXC-aN-8rP" firstAttribute="centerX" secondItem="MTo-mn-wWB" secondAttribute="centerX" id="LPw-Gd-sg7"/>
                             <constraint firstItem="RyS-JZ-oC0" firstAttribute="top" secondItem="Cox-Pr-mqT" secondAttribute="bottom" constant="20" id="cTV-LA-vDl"/>
                             <constraint firstItem="yOL-hI-cIN" firstAttribute="centerX" secondItem="MTo-mn-wWB" secondAttribute="centerX" id="lpH-6e-pRA"/>
                             <constraint firstItem="5ra-qc-Fb4" firstAttribute="trailing" secondItem="oZM-6T-dYf" secondAttribute="trailing" constant="10" id="qiP-Tv-Ng0"/>
@@ -287,6 +301,7 @@
                     <connections>
                         <outlet property="confirmPasswordField" destination="oZM-6T-dYf" id="Oyb-re-jGf"/>
                         <outlet property="emailField" destination="RyS-JZ-oC0" id="gQd-Td-GSa"/>
+                        <outlet property="googleSignupButton" destination="pXC-aN-8rP" id="6hT-RG-UG5"/>
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="signupButton" destination="3zX-4T-MG1" id="YJ5-Wg-f79"/>
                         <outlet property="usernameField" destination="Cox-Pr-mqT" id="NJ3-AI-fMh"/>
@@ -419,6 +434,6 @@
         <image name="NutriQ" width="893" height="248"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F0n-2s-udD"/>
+        <segue reference="b4i-M0-bKH"/>
     </inferredMetricsTieBreakers>
 </document>
