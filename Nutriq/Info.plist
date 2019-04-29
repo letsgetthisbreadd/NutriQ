@@ -52,5 +52,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Proxima-Nova-Light.otf</string>
+		<string>Proxima-Nova-Reg.ttf</string>
+		<string>timeburnerbold.ttf</string>
+		<string>timeburnernormal.ttf</string>
+	</array>
 </dict>
 </plist>

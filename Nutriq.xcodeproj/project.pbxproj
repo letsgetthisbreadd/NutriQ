@@ -18,6 +18,10 @@
 		27995FB822778C0A004A8CB7 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27995FB722778C0A004A8CB7 /* ShadowButton.swift */; };
 		27995FBA22778C13004A8CB7 /* ToolbarPiker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27995FB922778C13004A8CB7 /* ToolbarPiker.swift */; };
 		27995FBC22778CB7004A8CB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27995FBB22778CB7004A8CB7 /* HomeViewController.swift */; };
+		27995FDD22779E95004A8CB7 /* Proxima-Nova_Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */; };
+		27995FDF22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */; };
+		27995FE22277A1F2004A8CB7 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */; };
+		27995FE32277A1F2004A8CB7 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27995FE12277A1F2004A8CB7 /* timeburnerbold.ttf */; };
 		27EDE5C122614193001C8A08 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EDE5C022614192001C8A08 /* Home.storyboard */; };
 		27EDE5C3226141C1001C8A08 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27EDE5C2226141C1001C8A08 /* Settings.storyboard */; };
 		27EDE5C5226141FB001C8A08 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C4226141FB001C8A08 /* LoginViewController.swift */; };
@@ -48,6 +52,10 @@
 		27995FB722778C0A004A8CB7 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		27995FB922778C13004A8CB7 /* ToolbarPiker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarPiker.swift; sourceTree = "<group>"; };
 		27995FBB22778CB7004A8CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../../Downloads/NutriQ-vcSetup-getUserInfo/Nutriq/ViewControllers/HOME-ViewControllers/HomeViewController.swift"; sourceTree = "<group>"; };
+		27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova_Light.otf"; sourceTree = "<group>"; };
+		27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-Reg.ttf"; sourceTree = "<group>"; };
+		27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
+		27995FE12277A1F2004A8CB7 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		27EDE5C022614192001C8A08 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		27EDE5C2226141C1001C8A08 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		27EDE5C4226141FB001C8A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -137,6 +145,17 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		27995FDB22779E70004A8CB7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				27995FE12277A1F2004A8CB7 /* timeburnerbold.ttf */,
+				27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */,
+				27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */,
+				27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6B15FFB322743C4E003F13E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +192,7 @@
 			children = (
 				6BAB136C2260676200C5C5E3 /* Nutriq */,
 				6BAB136B2260676200C5C5E3 /* Products */,
+				27995FDB22779E70004A8CB7 /* Fonts */,
 				2792EEA32261B80D00F0AFB1 /* Images */,
 				AAF658626B7614DCD14DEB1F /* Pods */,
 				7B5C41196CD82C33C22690EB /* Frameworks */,
@@ -310,11 +330,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27995FDD22779E95004A8CB7 /* Proxima-Nova_Light.otf in Resources */,
 				6B0A6D01227044C100571380 /* Survey.storyboard in Resources */,
 				6BAB13782260676300C5C5E3 /* LaunchScreen.storyboard in Resources */,
+				27995FE22277A1F2004A8CB7 /* timeburnernormal.ttf in Resources */,
 				6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */,
+				27995FDF22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf in Resources */,
 				6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */,
 				6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */,
+				27995FE32277A1F2004A8CB7 /* timeburnerbold.ttf in Resources */,
 				27EDE5C122614193001C8A08 /* Home.storyboard in Resources */,
 				2792EEAA2261B94000F0AFB1 /* WebViewContent.html in Resources */,
 				6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */,
