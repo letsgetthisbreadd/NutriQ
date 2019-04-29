@@ -25,6 +25,8 @@
 		6B0A6CFD22701EB500571380 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFC22701EB500571380 /* HomeViewController.swift */; };
 		6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFE2270246100571380 /* GoogleService-Info.plist */; };
 		6B0A6D01227044C100571380 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6D00227044C100571380 /* Survey.storyboard */; };
+		6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */; };
+		6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */; };
 		6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8C2267D853007A48AF /* Profile.storyboard */; };
 		6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB136D2260676200C5C5E3 /* AppDelegate.swift */; };
 		6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13712260676200C5C5E3 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		6B0A6CFC22701EB500571380 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6B0A6CFE2270246100571380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B0A6D00227044C100571380 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
+		6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsernameViewController.swift; sourceTree = "<group>"; };
+		6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		6B876B8C2267D853007A48AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6BAB136A2260676200C5C5E3 /* Nutriq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BAB136D2260676200C5C5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,12 +136,26 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		6B15FFB322743C4E003F13E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6B25938822606A4900764B9A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2706DC6A2272B21C00F8B9A1 /* MAIN-ViewControllers */,
 				2706DC6B2272B24500F8B9A1 /* SURVEY-ViewControllers */,
 				2706DC6C2272B27600F8B9A1 /* HOME-ViewControllers */,
+				2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */,
+				27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */,
+				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
+				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
+				6B0A6CFC22701EB500571380 /* HomeViewController.swift */,
+				6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				2706DC6D2272B2C100F8B9A1 /* Classes */,
+				6B15FFB322743C4E003F13E6 /* Extensions */,
+				27D1DE462267061F00733B39 /* GradientView.swift */,
+				27D1DE4822670EB500733B39 /* ShadowButton.swift */,
 				6B25938922606A6100764B9A /* Storyboards */,
 				6B25938822606A4900764B9A /* ViewControllers */,
 				6BAB136D2260676200C5C5E3 /* AppDelegate.swift */,
@@ -445,9 +466,11 @@
 				27EDE5C5226141FB001C8A08 /* LoginViewController.swift in Sources */,
 				275799DE2272A818008C2859 /* SurveyResultsViewController.swift in Sources */,
 				270649992272621500811A6C /* ToolbarPiker.swift in Sources */,
+				6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */,
 				27EDE5C9226146E8001C8A08 /* SurveyViewController.swift in Sources */,
 				277BB7DC22726B1300CA8FBA /* SurveyPt3ViewController.swift in Sources */,
 				27D1DE4922670EB500733B39 /* ShadowButton.swift in Sources */,
+				6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */,
 				6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

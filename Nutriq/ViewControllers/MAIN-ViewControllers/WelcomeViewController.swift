@@ -12,6 +12,8 @@ import Firebase
 
 class WelcomeViewController: UIViewController {
 
+    
+    // MARK: - Properties
     @IBOutlet weak var webViewBG: WKWebView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!

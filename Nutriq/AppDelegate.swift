@@ -12,18 +12,14 @@ import GoogleSignIn
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate { //, GIDSignInDelegate
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        FirebaseApp.configure()
-//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-//        GIDSignIn.sharedInstance().delegate = self
-
+    
         
         // This code set all embedded navigation bars to be transparent
         // Sets background to a blank/empty image
@@ -34,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate { //, GIDSignInDelegate
         UINavigationBar.appearance().backgroundColor = .clear
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
+        
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
         
         
         return true
@@ -66,10 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate { //, GIDSignInDelegate
         -> Bool {
             return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
     }
-    
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//
-//    }
 
 
 }
