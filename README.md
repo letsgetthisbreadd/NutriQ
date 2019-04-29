@@ -39,9 +39,9 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 * [x] User can log in
     * [x] User can log in with email
     * [ ] User can log in with Google
-* [ ] User can enter their information
-    * [ ] Age, Gender, Height, Weight
-    * [ ] Fitness and weight goals
+* [x] User can enter their information
+    * [x] Age, Gender, Height, Weight
+    * [x] Fitness and weight goals
 * [ ] User can see customized daily calorie limit
 * [ ] User can view customized meal plan (TableView)
     * [ ] Nutrition requirements will be based on calculated BMR (Basal Metabolic Rate)
