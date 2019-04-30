@@ -48,6 +48,7 @@ class GetUsernameViewController: UIViewController {
                             print("Failed to update database with error: ", error.localizedDescription)
                             return
                         }
+                        UserDefaults.standard.set(username, forKey: "username") // Store the username in UserDefaults
                         self.performSegue(withIdentifier: "usernameToSurveySegue", sender: self)
                     })
                 } else {
@@ -64,5 +65,7 @@ class GetUsernameViewController: UIViewController {
             return
         }
     }
+    
+    
     
 }
