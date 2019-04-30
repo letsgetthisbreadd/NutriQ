@@ -56,6 +56,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // Sign user out - works for BOTH Google and email sign out
     func signOut() {
         GIDSignIn.sharedInstance().signOut() // Google sign out
         do {

@@ -14,10 +14,13 @@ class WelcomeViewController: UIViewController {
 
     
     // MARK: - Properties
+    
     @IBOutlet weak var webViewBG: WKWebView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,6 @@ class WelcomeViewController: UIViewController {
 //        self.webViewBG.load(html!, mimeType: "text/html", characterEncodingName: "UTF-8", baseURL: htmlURL.deletingLastPathComponent())
         
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -10,6 +10,9 @@ import UIKit
 
 class SurveyViewController: UIViewController {
 
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var genderPicker: UISegmentedControl!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
@@ -17,6 +20,9 @@ class SurveyViewController: UIViewController {
     @IBOutlet weak var weightTextField: UITextField!
     
     private var datePicker: UIDatePicker?
+    
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +35,10 @@ class SurveyViewController: UIViewController {
         let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(SurveyViewController.dismissPicker))
         dobTextField.inputAccessoryView = toolBar
         
-        
-    
-
-        // Do any additional setup after loading the view.
     }
+    
+    
+    // MARK: - Date Picker Helper Functions
 
     @objc func dismissPicker() {
         view.endEditing(true)
@@ -51,15 +56,5 @@ class SurveyViewController: UIViewController {
         view.endEditing(true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

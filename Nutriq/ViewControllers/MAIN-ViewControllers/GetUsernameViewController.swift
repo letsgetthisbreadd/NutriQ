@@ -31,7 +31,6 @@ class GetUsernameViewController: UIViewController {
     // MARK: - Helper Functions and Actions
     
     @IBAction func onContinueButtonPressed(_ sender: Any) {
-        print("test!\n\n\n")
         guard let userID = Auth.auth().currentUser?.uid else { return }
         guard let username = usernameField.text else { return }
         // If username field isn't empty and username is unique to the database, send user to survey
