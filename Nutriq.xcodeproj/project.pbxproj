@@ -51,7 +51,7 @@
 		27995FB522778BFE004A8CB7 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27995FB722778C0A004A8CB7 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		27995FB922778C13004A8CB7 /* ToolbarPiker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarPiker.swift; sourceTree = "<group>"; };
-		27995FBB22778CB7004A8CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../../Downloads/NutriQ-vcSetup-getUserInfo/Nutriq/ViewControllers/HOME-ViewControllers/HomeViewController.swift"; sourceTree = "<group>"; };
+		27995FBB22778CB7004A8CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova_Light.otf"; sourceTree = "<group>"; };
 		27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-Reg.ttf"; sourceTree = "<group>"; };
 		27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
@@ -99,10 +99,10 @@
 		2706DC6A2272B21C00F8B9A1 /* MAIN-ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
-				6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */,
-				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
 				2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */,
+				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
+				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
+				6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */,
 			);
 			path = "MAIN-ViewControllers";
 			sourceTree = "<group>";
