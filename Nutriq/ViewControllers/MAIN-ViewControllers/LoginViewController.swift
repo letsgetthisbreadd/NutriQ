@@ -214,6 +214,11 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
     }
+    
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
 
 
 }
