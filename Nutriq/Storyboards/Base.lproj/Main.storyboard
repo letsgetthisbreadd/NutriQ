@@ -312,6 +312,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="qzc-kp-vgT"/>
+                                    <segue destination="LIp-Li-HYc" kind="presentation" identifier="signupSegue" id="ZBC-71-MyH"/>
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-jU-4CZ">
@@ -558,4 +559,7 @@
         <image name="NutriQ" width="893" height="248"/>
         <image name="backArrow" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZBC-71-MyH"/>
+    </inferredMetricsTieBreakers>
 </document>
