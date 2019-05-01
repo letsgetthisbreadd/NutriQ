@@ -37,6 +37,7 @@
 		<string>Proxima-Nova-Reg.ttf</string>
 		<string>timeburnerbold.ttf</string>
 		<string>timeburnernormal.ttf</string>
+		<string>Proxima-Nova-Semibold.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

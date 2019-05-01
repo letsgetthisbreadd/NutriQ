@@ -10,11 +10,16 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - CollectionView Arrays
+    
+    let mealName = ["Manwich", "Chicken Tortilla", "Steak and Mashed Potatoes"]
+    let mealImage = [UIImage(named: "food5"), UIImage(named: "food1"), UIImage(named: "food7")]
+    let mealDescription = ["A nice sandwich", "Spicy mami", "Bland but gud"]
     
     
     // MARK: - Properties
-    
     @IBOutlet weak var userEmailLabel: UILabel!
     
     
@@ -28,8 +33,58 @@ class HomeViewController: UIViewController {
         loadUserData()
     }
     
+    // MARK: Cell Functions
     
-    // MARK: - Selectors
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mealName.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodCell
+        
+        cell.mealName.text = mealName[indexPath.row]
+        cell.mealImage.image = mealImage[indexPath.row]
+        cell.mealDescription.text = mealDescription[indexPath.row]
+        
+        
+        //This creates the shadows and modifies the cards a little bit
+        cell.contentView.layer.cornerRadius = 4.0
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        cell.layer.shadowRadius = 4.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
+
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // MARK: - Sign Out Handling
     
     @objc func handleSignOut() {
         let signOutAlertController = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .actionSheet)

@@ -11,6 +11,7 @@
 		277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */; };
 		277BB7DC22726B1300CA8FBA /* SurveyPt3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */; };
 		277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */; };
+		2787BBEC2279960200AFE68A /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787BBEB2279960200AFE68A /* FoodCell.swift */; };
 		2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */; };
 		2792EEA52261B83400F0AFB1 /* foodGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2792EEA42261B83400F0AFB1 /* foodGif.gif */; };
 		2792EEAA2261B94000F0AFB1 /* WebViewContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 2792EEA92261B94000F0AFB1 /* WebViewContent.html */; };
@@ -45,6 +46,8 @@
 		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt3ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt4ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt4ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277EC51A22725D31006BB6AB /* Test.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Test.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2787BBEA227991EF00AFE68A /* Proxima-Nova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-Semibold.otf"; sourceTree = "<group>"; };
+		2787BBEB2279960200AFE68A /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/WelcomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		2792EEA42261B83400F0AFB1 /* foodGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = foodGif.gif; sourceTree = "<group>"; };
 		2792EEA92261B94000F0AFB1 /* WebViewContent.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = WebViewContent.html; path = Nutriq/WebViewContent.html; sourceTree = SOURCE_ROOT; };
@@ -123,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				27995FBB22778CB7004A8CB7 /* HomeViewController.swift */,
+				2787BBEB2279960200AFE68A /* FoodCell.swift */,
 			);
 			path = "HOME-ViewControllers";
 			sourceTree = "<group>";
@@ -152,6 +156,7 @@
 				27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */,
 				27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */,
 				27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */,
+				2787BBEA227991EF00AFE68A /* Proxima-Nova-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EDE5C722614579001C8A08 /* SignUpViewController.swift in Sources */,
+				2787BBEC2279960200AFE68A /* FoodCell.swift in Sources */,
 				277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */,
 				2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */,
 				277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */,
