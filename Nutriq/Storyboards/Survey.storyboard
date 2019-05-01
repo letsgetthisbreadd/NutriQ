@@ -342,28 +342,11 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loseButtonPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="pTd-Kh-gpp"/>
-                                    <action selector="loseButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="hcl-pi-vNk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W68-fg-gsw" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="75" y="338" width="225" height="50"/>
-                                <color key="backgroundColor" red="0.28943714500000001" green="0.91376262900000005" blue="0.75961238149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YTV-eD-4Sa"/>
-                                    <constraint firstAttribute="width" constant="225" id="Ykr-Tb-SBm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
-                                <state key="normal" title="Gain weight">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="gainButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="Ynw-DU-IF6"/>
+                                    <action selector="loseWeightButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="Ma0-To-7xI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flq-qe-0o2" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="75" y="438" width="225" height="50"/>
+                                <rect key="frame" x="75" y="338" width="225" height="50"/>
                                 <color key="backgroundColor" red="0.28943714500000001" green="0.91376262900000005" blue="0.75961238149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="MtW-y8-7TU"/>
@@ -375,28 +358,44 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="maintainButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="PyG-T8-Paa"/>
+                                    <action selector="maintainWeightButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="QAb-Uj-hDK"/>
                                     <segue destination="Kbq-rS-xWg" kind="show" identifier="maintainWeightSegue" id="Vly-xI-NSa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W68-fg-gsw" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="75" y="438" width="225" height="50"/>
+                                <color key="backgroundColor" red="0.28943714500000001" green="0.91376262900000005" blue="0.75961238149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YTV-eD-4Sa"/>
+                                    <constraint firstAttribute="width" constant="225" id="Ykr-Tb-SBm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
+                                <state key="normal" title="Gain weight">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gainWeightButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="igH-Pb-v9t"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Flq-qe-0o2" firstAttribute="centerX" secondItem="VEM-xb-8WS" secondAttribute="centerX" id="5ea-PJ-NUf"/>
-                            <constraint firstItem="Flq-qe-0o2" firstAttribute="top" secondItem="W68-fg-gsw" secondAttribute="bottom" constant="50" id="Ali-MM-xcO"/>
                             <constraint firstItem="tid-GF-bR4" firstAttribute="centerX" secondItem="VEM-xb-8WS" secondAttribute="centerX" id="MVk-cS-kyy"/>
                             <constraint firstItem="tid-GF-bR4" firstAttribute="top" secondItem="14e-Bh-Eso" secondAttribute="top" constant="40" id="Mgw-4J-qqb"/>
-                            <constraint firstItem="W68-fg-gsw" firstAttribute="top" secondItem="p8h-1d-ME9" secondAttribute="bottom" constant="50" id="RId-43-BXe"/>
                             <constraint firstItem="p8h-1d-ME9" firstAttribute="top" secondItem="tid-GF-bR4" secondAttribute="bottom" constant="70" id="Tvs-px-jJx"/>
+                            <constraint firstItem="Flq-qe-0o2" firstAttribute="top" secondItem="p8h-1d-ME9" secondAttribute="bottom" constant="50" id="Xqm-U0-Jve"/>
                             <constraint firstItem="W68-fg-gsw" firstAttribute="centerX" secondItem="VEM-xb-8WS" secondAttribute="centerX" id="bN0-sB-gNv"/>
+                            <constraint firstItem="W68-fg-gsw" firstAttribute="top" secondItem="Flq-qe-0o2" secondAttribute="bottom" constant="50" id="hQg-lh-XKB"/>
                             <constraint firstItem="p8h-1d-ME9" firstAttribute="centerX" secondItem="VEM-xb-8WS" secondAttribute="centerX" id="myW-gH-MuG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="14e-Bh-Eso"/>
                     </view>
                     <connections>
-                        <outlet property="gainButton" destination="W68-fg-gsw" id="7dL-4J-1s6"/>
-                        <outlet property="loseButton" destination="p8h-1d-ME9" id="VD4-xv-8s6"/>
-                        <outlet property="maintainButton" destination="Flq-qe-0o2" id="ZJq-aB-xbD"/>
+                        <outlet property="gainWeightButton" destination="Flq-qe-0o2" id="K2N-dX-Xrk"/>
+                        <outlet property="loseWeightButton" destination="p8h-1d-ME9" id="a6S-b7-kve"/>
+                        <outlet property="maintainWeightButton" destination="W68-fg-gsw" id="MIt-EI-Ask"/>
                         <segue destination="L3d-Gv-nm2" kind="show" identifier="surveySegue2" id="w0Q-Ld-j9S"/>
                     </connections>
                 </viewController>
@@ -432,7 +431,6 @@
                                 </state>
                                 <connections>
                                     <action selector="halfPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Uof-Ns-7cc"/>
-                                    <action selector="lbsButton05Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="mvd-NZ-8cC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcS-qY-NBP" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -448,7 +446,6 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lbsButton1Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Cjy-zB-wXb"/>
                                     <action selector="onePoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="gys-p3-3fB"/>
                                 </connections>
                             </button>
@@ -465,7 +462,6 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lbsButton2Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Jwc-N9-31P"/>
                                     <action selector="twoPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="RGT-kf-muh"/>
                                 </connections>
                             </button>
@@ -482,7 +478,6 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lbsButton15Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="ZyC-ea-1Vn"/>
                                     <action selector="oneAndHalfPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="x36-m6-3I9"/>
                                 </connections>
                             </button>
