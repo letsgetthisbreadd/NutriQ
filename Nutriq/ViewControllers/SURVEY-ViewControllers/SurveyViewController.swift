@@ -13,13 +13,12 @@ class SurveyViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var datePicker: UIDatePicker?
     @IBOutlet weak var genderPicker: UISegmentedControl!
     @IBOutlet weak var dobTextField: UITextField!
-    @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var heightFeetTextField: UITextField!
     @IBOutlet weak var heightInchesTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
-    
-    private var datePicker: UIDatePicker?
     
     
     // MARK: - Init
