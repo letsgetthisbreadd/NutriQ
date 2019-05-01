@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EY4-eV-dDo">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,17 +26,17 @@
             <objects>
                 <viewController id="0M1-3d-DUv" customClass="HomeViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3Q-1l-61B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7My-4S-tuB">
-                                <rect key="frame" x="163.66666666666666" y="744" width="48" height="24"/>
+                                <rect key="frame" x="183" y="786" width="48" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-3v-akS">
-                                <rect key="frame" x="147.66666666666666" y="773" width="80" height="35"/>
+                                <rect key="frame" x="167" y="815" width="80" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="lQO-os-Kiu"/>
                                     <constraint firstAttribute="width" constant="80" id="pUd-iv-jiS"/>
@@ -45,7 +45,7 @@
                                 <state key="normal" title="Sign Out"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sIC-9M-bIt">
-                                <rect key="frame" x="0.0" y="88" width="375" height="648"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="15" id="J9A-pM-rRf">
                                     <size key="itemSize" width="345" height="300"/>
@@ -55,7 +55,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="T5T-t7-8pi" customClass="FoodCell" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="10" width="345" height="300"/>
+                                        <rect key="frame" x="34.666666666666664" y="10" width="345" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="300"/>
@@ -136,17 +136,11 @@
             <objects>
                 <viewController id="7QF-7I-7i8" customClass="ProfileViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xou-v6-Kyk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zby-vY-dtV">
-                                <rect key="frame" x="150.66666666666666" y="246.66666666666663" width="74" height="19"/>
-                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-0P-x4M" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="110" y="381" width="155" height="50"/>
+                                <rect key="frame" x="129.66666666666666" y="423" width="154.99999999999997" height="50"/>
                                 <color key="backgroundColor" red="0.28943714499473572" green="0.91376262903213501" blue="0.75961238145828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="HkI-PA-KUM"/>
@@ -161,7 +155,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-vz-zVj">
-                                <rect key="frame" x="171" y="266.66666666666669" width="33" height="19"/>
+                                <rect key="frame" x="190.66666666666666" y="308.66666666666669" width="33" height="19"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -172,8 +166,6 @@
                             <constraint firstItem="GVe-vz-zVj" firstAttribute="centerY" secondItem="xou-v6-Kyk" secondAttribute="centerY" constant="-130" id="9Ig-Ue-i3m"/>
                             <constraint firstItem="nJo-0P-x4M" firstAttribute="centerX" secondItem="xou-v6-Kyk" secondAttribute="centerX" id="AHV-8v-4M5"/>
                             <constraint firstItem="GVe-vz-zVj" firstAttribute="centerX" secondItem="xou-v6-Kyk" secondAttribute="centerX" id="AVl-h3-fPp"/>
-                            <constraint firstItem="Zby-vY-dtV" firstAttribute="centerX" secondItem="xou-v6-Kyk" secondAttribute="centerX" id="DBN-9P-882"/>
-                            <constraint firstItem="Zby-vY-dtV" firstAttribute="centerY" secondItem="xou-v6-Kyk" secondAttribute="centerY" constant="-150" id="pzR-o3-IFF"/>
                             <constraint firstItem="nJo-0P-x4M" firstAttribute="centerY" secondItem="xou-v6-Kyk" secondAttribute="centerY" id="znC-g1-zLo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4cK-k1-JiQ"/>
@@ -192,11 +184,11 @@
             <objects>
                 <viewController id="gmV-Ug-fQx" customClass="MealDetailViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T5f-fn-R5r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-fd-dg2">
-                                <rect key="frame" x="37.666666666666657" y="116" width="300" height="30"/>
+                                <rect key="frame" x="57" y="158" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="cUz-EG-KZB"/>
                                 </constraints>
@@ -253,7 +245,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="XoP-I7-KV0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Pv-e7-vhc">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -272,7 +264,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="8Ax-ds-A8M"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yCd-YD-1PF">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
