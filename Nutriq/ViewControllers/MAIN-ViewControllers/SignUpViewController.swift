@@ -170,23 +170,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     
     @objc func handleGoogleSignup(forUserEmail email: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-//        // Check if "username" key exists for the current user
-//        let usernameValue = Database.database().reference().child("users/\(userID)/username")
-//        var usernameExists = false
-//
-//        // FIXME: - The handleGoogleLogin function continues running despite this closure not finishing the test of whether the "username" key exists for the currnet user. Because of this, it sometimes takes a user logging in with Google authentication to the username creation page despite that user already having a username. To recreate this bug: Run the app --> Sign in with Google as you normally would --> Sign out --> Force quit the app --> Open the app again. You should now be on the Welcome Screen. Choose 'Sign in with Google' --> Sign in as you normally would --> BUG occurs (takes you to the username creation screen even if you already have a username associated with that account). Possible solution --> Implement user defaults and check if user defaults has key of "usernameCreated" with a value of "true"
-//        usernameValue.observeSingleEvent(of: .value) { (snapshot) in
-//            if (snapshot.exists()) {
-//                usernameExists = true
-//            }
-//            print(usernameExists)
-//            print(snapshot.value!) // Snapshot of the current user's "username" key (if it exists; otherwise it returns null)
-//
-//        }
-        
-        
-        
+    
         // If user that is signing up with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
         Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID

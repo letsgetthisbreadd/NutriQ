@@ -86,15 +86,14 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-RT-qUq" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-RT-qUq" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
                                 <rect key="frame" x="129.5" y="623" width="155" height="50"/>
                                 <color key="backgroundColor" red="0.28943714500000001" green="0.91376262900000005" blue="0.75961238149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7tJ-fW-i3V"/>
                                     <constraint firstAttribute="width" constant="155" id="lJ6-hW-6bS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" image="rightArrow">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -669,6 +668,9 @@
             <point key="canvasLocation" x="1928.985507246377" y="70.982142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rightArrow" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ost-7K-aVi"/>
     </inferredMetricsTieBreakers>
