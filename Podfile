@@ -10,6 +10,7 @@ target 'Nutriq' do
   pod 'FirebaseUI'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Cards'
 
 
 
