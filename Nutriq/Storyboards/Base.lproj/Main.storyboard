@@ -206,7 +206,7 @@
                                 <connections>
                                     <action selector="onContinueButtonPressed:" destination="pkF-1e-Plc" eventType="touchUpInside" id="cyB-Zv-sH5"/>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="BFD-by-I32"/>
-                                    <segue destination="LIp-Li-HYc" kind="presentation" identifier="usernameToSurveySegue" id="F0n-2s-udD"/>
+                                    <segue destination="rAc-ga-sHm" kind="presentation" identifier="usernameToSurveySegue" id="F0n-2s-udD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="-188"/>
+            <point key="canvasLocation" x="1210" y="11"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Bxd-vc-ZZg">
@@ -338,6 +338,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="uyG-Kv-lq3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TimeBurner-Bold" family="TimeBurner" pointSize="19"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Sign up with Google"/>
                                 <connections>
                                     <action selector="onGoogleSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="HQU-71-cQp"/>
@@ -390,7 +391,6 @@
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="signupButton" destination="3zX-4T-MG1" id="YJ5-Wg-f79"/>
                         <outlet property="usernameField" destination="Cox-Pr-mqT" id="NJ3-AI-fMh"/>
-                        <segue destination="QQH-u6-wP3" kind="presentation" identifier="signupSegue" id="b4i-M0-bKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -405,7 +405,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344" y="-188"/>
+            <point key="canvasLocation" x="3110" y="11"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">
@@ -509,30 +509,26 @@
             <point key="canvasLocation" x="382" y="-1426"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="UZ0-Wt-32n">
+        <scene sceneID="puA-7p-G37">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQH-u6-wP3" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAB-i2-yDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAc-ga-sHm" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="backArrow" id="eqO-BZ-1Rt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIO-hk-Hfb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LIp-Li-HYc" kind="relationship" relationship="rootViewController" id="2On-Xw-OP3"/>
+                        <segue destination="LIp-Li-HYc" kind="relationship" relationship="rootViewController" id="p7P-oS-dUK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gvt-Xm-Sb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3490" y="-686"/>
+            <point key="canvasLocation" x="2343" y="12"/>
         </scene>
     </scenes>
     <resources>
         <image name="NutriQ" width="893" height="248"/>
         <image name="backArrow" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="2On-Xw-OP3"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
