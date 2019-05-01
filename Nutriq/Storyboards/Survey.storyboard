@@ -225,7 +225,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="notActiveBtnPress:" destination="syl-wq-Ij4" eventType="touchUpInside" id="r41-AD-oxM"/>
+                                    <action selector="notVeryActiveButtonPressed:" destination="syl-wq-Ij4" eventType="touchUpInside" id="tyz-Qx-ZGO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfU-xI-i15" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -241,7 +241,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lightlyActiveBtnPress:" destination="syl-wq-Ij4" eventType="touchUpInside" id="avi-Fc-jqX"/>
+                                    <action selector="lightlyActiveButtonPressed:" destination="syl-wq-Ij4" eventType="touchUpInside" id="sJG-f0-5c7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgg-vb-hvt" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -257,7 +257,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="modActiveBtnPress:" destination="syl-wq-Ij4" eventType="touchUpInside" id="2Dm-WW-Iul"/>
+                                    <action selector="moderatelyActiveButtonPressed:" destination="syl-wq-Ij4" eventType="touchUpInside" id="gLW-H7-K6o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh8-xu-UUc" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -273,7 +273,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="veryActiveBtnPress:" destination="syl-wq-Ij4" eventType="touchUpInside" id="9e0-W1-JEo"/>
+                                    <action selector="veryActiveButtonPressed:" destination="syl-wq-Ij4" eventType="touchUpInside" id="KaX-C6-pFe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How active are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vf3-FI-QAz">
@@ -300,10 +300,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="aVX-C0-2ov"/>
                     <connections>
-                        <outlet property="lightlyActiveBtn" destination="lfU-xI-i15" id="6uc-ew-DaK"/>
-                        <outlet property="modActiveBtn" destination="hgg-vb-hvt" id="9nB-Ox-t83"/>
-                        <outlet property="notActiveBtn" destination="LCp-xZ-GEw" id="Z7m-Oe-4Lr"/>
-                        <outlet property="veryActiveBtn" destination="zh8-xu-UUc" id="kSF-78-fbc"/>
+                        <outlet property="lightlyActiveButton" destination="lfU-xI-i15" id="gTV-DO-0fF"/>
+                        <outlet property="moderatelyActiveButton" destination="hgg-vb-hvt" id="Dfp-cX-rn3"/>
+                        <outlet property="notActiveButton" destination="LCp-xZ-GEw" id="r6A-za-7AC"/>
+                        <outlet property="veryActiveButton" destination="zh8-xu-UUc" id="1ct-Kb-d6u"/>
                         <segue destination="IO1-9B-ptU" kind="show" identifier="surveySegue1" id="jC9-ki-wWD"/>
                     </connections>
                 </viewController>
@@ -342,7 +342,8 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loseBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="pnG-oQ-aiu"/>
+                                    <action selector="loseButtonPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="pTd-Kh-gpp"/>
+                                    <action selector="loseButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="hcl-pi-vNk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W68-fg-gsw" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -358,7 +359,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="gainBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="dph-Zi-okz"/>
+                                    <action selector="gainButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="Ynw-DU-IF6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flq-qe-0o2" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -374,7 +375,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="maintainBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="1pY-RX-nay"/>
+                                    <action selector="maintainButtonPressed:" destination="IO1-9B-ptU" eventType="touchUpInside" id="PyG-T8-Paa"/>
                                     <segue destination="Kbq-rS-xWg" kind="show" identifier="maintainWeightSegue" id="Vly-xI-NSa"/>
                                 </connections>
                             </button>
@@ -393,9 +394,9 @@
                         <viewLayoutGuide key="safeArea" id="14e-Bh-Eso"/>
                     </view>
                     <connections>
-                        <outlet property="gainButton" destination="W68-fg-gsw" id="A3q-nX-eBY"/>
-                        <outlet property="loseButton" destination="p8h-1d-ME9" id="bBw-xB-bWy"/>
-                        <outlet property="maintainButton" destination="Flq-qe-0o2" id="cce-oG-3WE"/>
+                        <outlet property="gainButton" destination="W68-fg-gsw" id="7dL-4J-1s6"/>
+                        <outlet property="loseButton" destination="p8h-1d-ME9" id="VD4-xv-8s6"/>
+                        <outlet property="maintainButton" destination="Flq-qe-0o2" id="ZJq-aB-xbD"/>
                         <segue destination="L3d-Gv-nm2" kind="show" identifier="surveySegue2" id="w0Q-Ld-j9S"/>
                     </connections>
                 </viewController>
@@ -430,8 +431,8 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="halfPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Uof-Ns-7cc"/>
                                     <action selector="lbsButton05Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="mvd-NZ-8cC"/>
-                                    <action selector="loseBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="pA8-VT-TAi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcS-qY-NBP" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -448,7 +449,7 @@
                                 </state>
                                 <connections>
                                     <action selector="lbsButton1Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Cjy-zB-wXb"/>
-                                    <action selector="loseBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="Ajd-Zz-YCq"/>
+                                    <action selector="onePoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="gys-p3-3fB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gB-g8-7tw" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -465,7 +466,7 @@
                                 </state>
                                 <connections>
                                     <action selector="lbsButton2Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="Jwc-N9-31P"/>
-                                    <action selector="loseBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="aOk-H8-gA8"/>
+                                    <action selector="twoPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="RGT-kf-muh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niV-nO-ktz" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -482,7 +483,7 @@
                                 </state>
                                 <connections>
                                     <action selector="lbsButton15Press:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="ZyC-ea-1Vn"/>
-                                    <action selector="loseBtnPress:" destination="IO1-9B-ptU" eventType="touchUpInside" id="vEL-mt-6AW"/>
+                                    <action selector="oneAndHalfPoundButtonPressed:" destination="L3d-Gv-nm2" eventType="touchUpInside" id="x36-m6-3I9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -502,10 +503,10 @@
                         <viewLayoutGuide key="safeArea" id="7kE-Oe-n4B"/>
                     </view>
                     <connections>
-                        <outlet property="lbsButton05" destination="HhC-ud-58G" id="PCX-Uf-19U"/>
-                        <outlet property="lbsButton1" destination="FcS-qY-NBP" id="6fh-kJ-DZ7"/>
-                        <outlet property="lbsButton15" destination="niV-nO-ktz" id="cN3-ku-IAP"/>
-                        <outlet property="lbsButton2" destination="3gB-g8-7tw" id="bQf-zH-eKV"/>
+                        <outlet property="halfPoundButton" destination="HhC-ud-58G" id="nla-Qp-gtO"/>
+                        <outlet property="oneAndHalfPoundButton" destination="niV-nO-ktz" id="x2d-q2-fFd"/>
+                        <outlet property="onePoundButton" destination="FcS-qY-NBP" id="fEB-lt-dGO"/>
+                        <outlet property="twoPoundButton" destination="3gB-g8-7tw" id="4Md-tC-FRU"/>
                         <segue destination="Kbq-rS-xWg" kind="show" identifier="surveySegue3" id="u4A-Hb-Wjk"/>
                     </connections>
                 </viewController>
@@ -644,6 +645,6 @@
         <image name="rightArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vly-xI-NSa"/>
+        <segue reference="u4A-Hb-Wjk"/>
     </inferredMetricsTieBreakers>
 </document>

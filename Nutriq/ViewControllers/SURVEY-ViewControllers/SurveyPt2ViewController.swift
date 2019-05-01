@@ -13,10 +13,10 @@ class SurveyPt2ViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var notActiveBtn: ShadowButton!
-    @IBOutlet weak var lightlyActiveBtn: ShadowButton!
-    @IBOutlet weak var modActiveBtn: ShadowButton!
-    @IBOutlet weak var veryActiveBtn: ShadowButton!
+    @IBOutlet weak var notActiveButton: ShadowButton!
+    @IBOutlet weak var lightlyActiveButton: ShadowButton!
+    @IBOutlet weak var moderatelyActiveButton: ShadowButton!
+    @IBOutlet weak var veryActiveButton: ShadowButton!
     
     
     // MARK: - Init
@@ -28,20 +28,24 @@ class SurveyPt2ViewController: UIViewController {
     
     
     // MARK: - Helper Functions & Actions
-    
-    @IBAction func notActiveBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue1", sender: self)
+
+    @IBAction func notVeryActiveButtonPressed(_ sender: Any) {
+        performSegue1()
+    }
+
+    @IBAction func lightlyActiveButtonPressed(_ sender: Any) {
+        performSegue1()
     }
     
-    @IBAction func lightlyActiveBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue1", sender: self)
+    @IBAction func moderatelyActiveButtonPressed(_ sender: Any) {
+        performSegue1()
     }
     
-    @IBAction func modActiveBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue1", sender: self)
+    @IBAction func veryActiveButtonPressed(_ sender: Any) {
+        performSegue1()
     }
     
-    @IBAction func veryActiveBtnPress(_ sender: Any) {
+    func performSegue1() {
         self.performSegue(withIdentifier: "surveySegue1", sender: self)
     }
     

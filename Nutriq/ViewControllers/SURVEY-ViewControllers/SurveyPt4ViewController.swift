@@ -13,10 +13,10 @@ class SurveyPt4ViewController: UIViewController {
     
     // MARK: - Properties
 
-    @IBOutlet weak var lbsButton05: ShadowButton!
-    @IBOutlet weak var lbsButton1: ShadowButton!
-    @IBOutlet weak var lbsButton15: ShadowButton!
-    @IBOutlet weak var lbsButton2: ShadowButton!
+    @IBOutlet weak var halfPoundButton: ShadowButton!
+    @IBOutlet weak var onePoundButton: ShadowButton!
+    @IBOutlet weak var oneAndHalfPoundButton: ShadowButton!
+    @IBOutlet weak var twoPoundButton: ShadowButton!
     
     
     // MARK: - Init
@@ -28,22 +28,25 @@ class SurveyPt4ViewController: UIViewController {
     
     
     // MARK: - Helper Functions & Actions
-    
-    @IBAction func lbsButton05Press(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+
+    @IBAction func halfPoundButtonPressed(_ sender: Any) {
+        performSegue3()
     }
     
-    @IBAction func lbsButton1Press(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+    @IBAction func onePoundButtonPressed(_ sender: Any) {
+        performSegue3()
     }
     
-    @IBAction func lbsButton15Press(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+    @IBAction func oneAndHalfPoundButtonPressed(_ sender: Any) {
+        performSegue3()
     }
     
-    @IBAction func lbsButton2Press(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+    @IBAction func twoPoundButtonPressed(_ sender: Any) {
+        performSegue3()
     }
     
+    func performSegue3() {
+        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+    }
 
 }

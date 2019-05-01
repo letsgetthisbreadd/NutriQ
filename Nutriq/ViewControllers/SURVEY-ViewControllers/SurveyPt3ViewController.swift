@@ -28,17 +28,22 @@ class SurveyPt3ViewController: UIViewController {
     
     // MARK: - Helper Functions & Actions
     
-    @IBAction func loseBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue2", sender: self)
+    
+    @IBAction func loseButtonPressed(_ sender: Any) {
+        performSegue2()
     }
     
-    @IBAction func gainBtnPress(_ sender: Any) {
-        self.performSegue(withIdentifier: "surveySegue2", sender: self)
+    @IBAction func gainButtonPressed(_ sender: Any) {
+        performSegue2()
     }
     
-    @IBAction func maintainBtnPress(_ sender: Any) {
+    @IBAction func maintainButtonPressed(_ sender: Any) {
         // TODO: - Remove this segue because it causes the segue to occur twice (once from the storyboard and again below. This makes the SurveyResultsViewController present twice
 //        self.performSegue(withIdentifier: "maintainWeightSegue", sender: self)
+    }
+    
+    func performSegue2() {
+        self.performSegue(withIdentifier: "surveySegue2", sender: self)
     }
     
 
