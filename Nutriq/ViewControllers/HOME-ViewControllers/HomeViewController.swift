@@ -63,7 +63,6 @@ class HomeViewController: UIViewController {
             // TODO: - Before release, check to make sure that not checking which sign out is occuring will not impact the app in any way
             try Auth.auth().signOut() // Email sign out
             self.takeUserToUsernameScreen()
-//            self.dismiss(animated: true, completion: nil)
         } catch let error {
             print("Failed to sign out with error: ", error.localizedDescription)
         }
