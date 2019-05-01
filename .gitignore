@@ -18,7 +18,6 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 .DS_Store
-Info.plist
 
 ## Obj-C/Swift specific
 *.hmap
