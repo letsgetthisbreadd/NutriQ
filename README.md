@@ -35,7 +35,8 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 **Required Must-have Stories**
 
 * [x]  User can create an account
-    * [x] Email, Password
+    * [x] Username, Email, Password (Email signup)
+    * [x] Google signup
 * [x] User can log in
     * [x] User can log in with email
     * [x] User can log in with Google
