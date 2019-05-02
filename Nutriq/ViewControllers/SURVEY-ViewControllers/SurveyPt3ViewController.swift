@@ -46,11 +46,16 @@ class SurveyPt3ViewController: UIViewController {
         performSegue2()
     }
     
-    func storeSurveyInfo(_ goal: String) {
+    func storeSurveyInfo(_ overallGoal: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
+        var userGoal: [String : Any] = [:]
         
         // Create the health-stats object which will be added to the current user's data
-        let userGoal = ["overall-goal": goal]
+        if overallGoal == "Maintain" {
+            userGoal = ["overall-goal": overallGoal, "weekly-goal": 0]
+        } else {
+            userGoal = ["overall-goal": overallGoal]
+        }
         
         Database.database().reference().child("users").child(userID).child("health-stats").updateChildValues(userGoal) { (error, ref) in
             if let error = error {
@@ -62,10 +67,13 @@ class SurveyPt3ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Passing data to Survey Part 4 View Controller...")
-        
-        let surveyPt4ViewController = segue.destination as! SurveyPt4ViewController
-        surveyPt4ViewController.overallGoal = overallGoal
+        // Prepare for segue only if "Lose weight" or "Gain weight" buttons tapped
+        if segue.identifier == "surveySegue2" {
+            print("Passing data to Survey Part 4 View Controller...")
+            
+            let surveyPt4ViewController = segue.destination as! SurveyPt4ViewController
+            surveyPt4ViewController.overallGoal = overallGoal
+        }
     }
     
     func performSegue2() {

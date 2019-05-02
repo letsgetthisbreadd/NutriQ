@@ -78,78 +78,9 @@ class SurveyPt4ViewController: UIViewController {
             }
             print("Successfully added user's health-stats(4) to Firebase database!")
         }
-        
-        
-        // Calculate user's daily caloric needs and store them in the Firebase database
-        calculateDailyCaloricNeeds()
-        
-    }
-    
-    func calculateDailyCaloricNeeds() {
-       // Male --> CaloricResults = ((9.99 * (weight * 0.45359237)) + (6.25 * (height * 2.54)) - (4.92 * age) + 5) * multiplier
-       // Female -->  CaloricResults = ((9.99 * (weight * 0.45359237)) + (6.25 * (height * 2.54)) - (4.92 * age) - 161) * multiplier
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        let healthStatsReference = Database.database().reference().child("users/\(userID)/health-stats")
-        
-        healthStatsReference.observeSingleEvent(of: .value) { (snapshot) in
-            print("Snapshot of the user's health stats:\n", snapshot.value!) // Returns snapshot of all user's health stats
-            
-            // Get all user inputs necessary to calculate daily caloric needs from the Firebase database
-            let snapshotValue = snapshot.value! as? NSDictionary
-            let gender = snapshotValue?["gender"] as! String
-            let weight = snapshotValue?["weight-pounds"] as! Double
-            let height = snapshotValue?["height-inches"] as! Int
-            let dateOfBirth = snapshotValue?["date-of-birth"] as! String
-            let activityMultiplier = snapshotValue?["activity-multiplier"] as! Double
-            let weeklyGoal = snapshotValue?["weekly-goal"] as! Double
-            self.age = self.calculateAge(birthday: dateOfBirth)
-            
-            print("Your age is:", self.age)
-            
-            // Calculate the user's daily caloric maintenance needs based on gender
-            if gender == "Male" {
-                self.maintenanceCalories = Int(round(((9.99 * (weight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) + 5) * activityMultiplier))
-            } else {
-                self.maintenanceCalories = Int(round(((9.99 * (weight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) - 161) * activityMultiplier))
-            }
-            print("Your daily caloric needs to maintain weight are:", self.maintenanceCalories)
-            
-            // Calculate the user's goal caloric maintenance based on how much weight they want to lose weekly
-            print("Weekly goal is: ", weeklyGoal, "and weekly goal * 500 is:", Int(round(weeklyGoal * 500)))
-            self.goalCalories = self.maintenanceCalories + Int(round(weeklyGoal * 500))
-            print("Your daily caloric GOAL needs are:", self.goalCalories)
-            
-            self.storeSurveyInfo(self.age, self.maintenanceCalories, self.goalCalories)
-        }
-    }
-    
-    func calculateAge(birthday: String) -> Int {
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "MM/dd/yyyy"
-        let birthdayDate = dateFormater.date(from: birthday)
-        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
-        let now = Date()
-        let calcAge = calendar.components(.year, from: birthdayDate!, to: now, options: [])
-        let age = calcAge.year
-        return age!
-    }
-    
-    func storeSurveyInfo(_ age: Int, _ maintenanceCalories: Int, _ goalCalories: Int) {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-        // Create the objects to be stored in the health-stats object in the Firebase database
-        let ageAndCalorieDetails = ["age": age, "maintenance-calories": maintenanceCalories, "goal-calories": goalCalories]
-        
-        Database.database().reference().child("users").child(userID).child("health-stats").updateChildValues(ageAndCalorieDetails) { (error, ref) in
-            if let error = error {
-                print("Failed to udpate database with error: ", error.localizedDescription)
-                return
-            }
-            print("Successfully added user's health-stats(4) to Firebase database!")
-        }
-        
         performSegue3()
     }
+    
     
     func performSegue3() {
         self.performSegue(withIdentifier: "surveySegue3", sender: self)
@@ -163,13 +94,3 @@ class SurveyPt4ViewController: UIViewController {
     }
 
 }
-
-
-//func storeSurveyInfo(_ goal: String) {
-//    guard let userID = Auth.auth().currentUser?.uid else { return }
-//
-//    // Create the health-stats object which will be added to the current user's data
-//    let userGoal = ["overall-goal": goal]
-//
-
-//}
