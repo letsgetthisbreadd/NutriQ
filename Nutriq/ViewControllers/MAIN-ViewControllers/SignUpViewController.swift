@@ -248,7 +248,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromTop
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        self.view.window!.layer.add(transition, forKey: kCATransition)
+        self.view.window?.layer.add(transition, forKey: kCATransition)
     }
     
 

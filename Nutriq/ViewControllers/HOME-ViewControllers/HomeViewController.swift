@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Make the label transparent for a nice transition
+        // Make the user email label transparent for a nice transition
         userEmailLabel.alpha = 0
         loadUserData()
     }

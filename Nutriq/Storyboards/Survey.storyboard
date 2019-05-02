@@ -50,7 +50,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chv-zP-dFC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm/dd/yyyy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chv-zP-dFC">
                                 <rect key="frame" x="117.66666666666669" y="339" width="140" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Jr4-FC-oYd"/>
@@ -130,6 +130,7 @@
                                     <color key="titleShadowColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="onRightArrowPressed:" destination="ed5-pN-bST" eventType="touchUpInside" id="Sa0-Ke-a4W"/>
                                     <segue destination="syl-wq-Ij4" kind="show" id="v7M-I2-kfj"/>
                                 </connections>
                             </button>
@@ -528,37 +529,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your daily calorie goal is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYI-5f-KV2">
-                                <rect key="frame" x="20" y="356" width="335" height="100"/>
+                                <rect key="frame" x="20" y="388.66666666666669" width="335" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="946-UA-Kh8"/>
+                                    <constraint firstAttribute="height" constant="35" id="946-UA-Kh8"/>
                                     <constraint firstAttribute="width" constant="335" id="mWe-b9-3Py"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxx" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZF-0e-mbG">
-                                <rect key="frame" x="50" y="476" width="120" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="RKn-q1-bzX"/>
-                                    <constraint firstAttribute="height" constant="55" id="pZ3-iA-nd4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2z-da-8IE">
-                                <rect key="frame" x="205" y="476" width="120" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="RNn-Ue-XDQ"/>
-                                    <constraint firstAttribute="width" constant="120" id="Ydr-2N-sAJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoB-s8-p1a" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="110" y="606" width="155" height="50"/>
+                                <rect key="frame" x="110" y="607.66666666666663" width="155" height="50"/>
                                 <color key="backgroundColor" red="0.28943714500000001" green="0.91376262900000005" blue="0.75961238149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="9T5-uc-2Vu"/>
@@ -583,26 +564,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgA-JP-p1O">
+                                <rect key="frame" x="149.66666666666666" y="433.66666666666669" width="76" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AZF-0e-mbG" firstAttribute="top" secondItem="CYI-5f-KV2" secondAttribute="bottom" constant="20" id="1Tr-4p-Fqy"/>
-                            <constraint firstItem="dRl-4B-mOm" firstAttribute="trailing" secondItem="p2z-da-8IE" secondAttribute="trailing" constant="50" id="5A6-Ks-qQW"/>
                             <constraint firstItem="CYI-5f-KV2" firstAttribute="centerX" secondItem="wix-FB-eZQ" secondAttribute="centerX" id="7Pi-30-iba"/>
                             <constraint firstItem="N4e-4v-LgJ" firstAttribute="centerX" secondItem="wix-FB-eZQ" secondAttribute="centerX" id="8GJ-HN-Lis"/>
                             <constraint firstItem="CYI-5f-KV2" firstAttribute="centerY" secondItem="wix-FB-eZQ" secondAttribute="centerY" id="C4p-m1-sPr"/>
                             <constraint firstItem="SoB-s8-p1a" firstAttribute="centerX" secondItem="wix-FB-eZQ" secondAttribute="centerX" id="ETu-nb-byd"/>
                             <constraint firstItem="nej-PV-clk" firstAttribute="centerX" secondItem="wix-FB-eZQ" secondAttribute="centerX" id="Maw-Rk-hMN"/>
-                            <constraint firstItem="AZF-0e-mbG" firstAttribute="leading" secondItem="dRl-4B-mOm" secondAttribute="leading" constant="50" id="QvU-FI-iSt"/>
-                            <constraint firstItem="SoB-s8-p1a" firstAttribute="top" secondItem="AZF-0e-mbG" secondAttribute="bottom" constant="75" id="ST0-Gf-H8B"/>
+                            <constraint firstItem="SoB-s8-p1a" firstAttribute="top" secondItem="bgA-JP-p1O" secondAttribute="bottom" constant="135" id="QkQ-l4-kpV"/>
                             <constraint firstItem="nej-PV-clk" firstAttribute="top" secondItem="dRl-4B-mOm" secondAttribute="top" constant="10" id="aFD-3K-X3p"/>
                             <constraint firstItem="N4e-4v-LgJ" firstAttribute="top" secondItem="nej-PV-clk" secondAttribute="bottom" constant="30" id="aKK-mj-iMz"/>
-                            <constraint firstItem="p2z-da-8IE" firstAttribute="top" secondItem="CYI-5f-KV2" secondAttribute="bottom" constant="20" id="kRZ-1H-U9f"/>
+                            <constraint firstItem="bgA-JP-p1O" firstAttribute="top" secondItem="CYI-5f-KV2" secondAttribute="bottom" constant="10" id="fNx-0f-LGk"/>
+                            <constraint firstItem="bgA-JP-p1O" firstAttribute="centerX" secondItem="wix-FB-eZQ" secondAttribute="centerX" id="pa8-sw-5wk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dRl-4B-mOm"/>
                     </view>
                     <connections>
-                        <outlet property="calorieCountLabel" destination="AZF-0e-mbG" id="rhx-L0-Vra"/>
+                        <outlet property="goalCaloriesLabel" destination="bgA-JP-p1O" id="PnN-WY-d6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNg-ba-Pzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
