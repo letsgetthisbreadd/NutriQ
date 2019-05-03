@@ -312,11 +312,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="qzc-kp-vgT"/>
-<<<<<<< HEAD
-                                    <segue destination="rAc-ga-sHm" kind="presentation" identifier="signupSegue" id="tUF-dY-4le"/>
-=======
-                                    <segue destination="LIp-Li-HYc" kind="presentation" identifier="signupSegue" id="ZBC-71-MyH"/>
->>>>>>> mealPlanScreen
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-jU-4CZ">
@@ -418,6 +413,7 @@
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="signupButton" destination="3zX-4T-MG1" id="YJ5-Wg-f79"/>
                         <outlet property="usernameField" destination="Cox-Pr-mqT" id="NJ3-AI-fMh"/>
+                        <segue destination="rAc-ga-sHm" kind="presentation" identifier="signupSegue" id="i0u-uG-y5q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -564,10 +560,6 @@
         <image name="backArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="tUF-dY-4le"/>
-=======
-        <segue reference="ZBC-71-MyH"/>
->>>>>>> mealPlanScreen
+        <segue reference="i0u-uG-y5q"/>
     </inferredMetricsTieBreakers>
 </document>
