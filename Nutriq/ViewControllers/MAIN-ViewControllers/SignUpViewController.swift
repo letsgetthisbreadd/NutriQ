@@ -251,5 +251,9 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         self.view.window?.layer.add(transition, forKey: kCATransition)
     }
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
 
 }

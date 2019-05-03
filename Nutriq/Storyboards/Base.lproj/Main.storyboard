@@ -116,6 +116,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="eBM-q1-44S" secondAttribute="trailing" constant="2" id="0fV-Fb-aMJ"/>
                             <constraint firstItem="VHs-qu-rii" firstAttribute="top" secondItem="1wr-lR-IEx" secondAttribute="bottom" constant="50" id="8Yp-uu-9FN"/>
@@ -148,6 +149,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cZk-LW-LHW" appends="YES" id="Znb-y3-O6v"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="zFM-hd-F10"/>
                     <connections>
@@ -158,6 +162,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cZk-LW-LHW">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="Pvu-te-PMK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="381.15942028985512" y="-686.38392857142856"/>
         </scene>
@@ -211,6 +220,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="EQ4-uD-6GR" firstAttribute="centerX" secondItem="k9c-XP-SOt" secondAttribute="centerX" id="3o1-qq-Uwz"/>
                             <constraint firstItem="6Hz-gm-GvO" firstAttribute="centerX" secondItem="k9c-XP-SOt" secondAttribute="centerX" id="Jil-bD-xDN"/>
@@ -232,6 +242,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="i4r-2x-MHB" appends="YES" id="fte-7o-xxW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="continueButton" destination="6Hz-gm-GvO" id="3xh-bE-Oe7"/>
@@ -239,6 +252,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="i4r-2x-MHB">
+                    <connections>
+                        <action selector="onTap:" destination="pkF-1e-Plc" id="Cav-5f-HoQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1209" y="76"/>
         </scene>
@@ -294,7 +312,11 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="qzc-kp-vgT"/>
+<<<<<<< HEAD
                                     <segue destination="rAc-ga-sHm" kind="presentation" identifier="signupSegue" id="tUF-dY-4le"/>
+=======
+                                    <segue destination="LIp-Li-HYc" kind="presentation" identifier="signupSegue" id="ZBC-71-MyH"/>
+>>>>>>> mealPlanScreen
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-jU-4CZ">
@@ -347,6 +369,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="pXC-aN-8rP" firstAttribute="centerX" secondItem="MTo-mn-wWB" secondAttribute="centerX" id="1AF-J0-Xip"/>
                             <constraint firstItem="5ra-qc-Fb4" firstAttribute="trailing" secondItem="AQW-US-sQf" secondAttribute="trailing" constant="10" id="3jG-Af-EGk"/>
@@ -383,6 +406,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gq0-wr-kmV" appends="YES" id="ukl-YX-34a"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="YIF-So-Fws"/>
                     <connections>
@@ -395,6 +421,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gq0-wr-kmV">
+                    <connections>
+                        <action selector="onTap:" destination="KCm-cZ-ejV" id="WhG-pl-Oux"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2344.8000000000002" y="-686.45320197044339"/>
         </scene>
@@ -533,6 +564,10 @@
         <image name="backArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="tUF-dY-4le"/>
+=======
+        <segue reference="ZBC-71-MyH"/>
+>>>>>>> mealPlanScreen
     </inferredMetricsTieBreakers>
 </document>
