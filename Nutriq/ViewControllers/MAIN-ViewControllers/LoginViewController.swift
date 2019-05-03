@@ -83,11 +83,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             let emptyEmailAlert = UIAlertController(title: "Empty email field", message: "The email field is empty. Please input an email address and try to sign up again.", preferredStyle: .alert)
             emptyEmailAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(emptyEmailAlert, animated: true)
+            return
         } else if password == "" {
             print("The password field is empty. Please input a password and try to sign up again!")
             let emptyPasswordAlert = UIAlertController(title: "Empty password field", message: "The first password field is empty. Please input a password and try to sign up again.", preferredStyle: .alert)
             emptyPasswordAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(emptyPasswordAlert, animated: true)
+            return
         } else {
             logUserIn(withEmail: email, password: password)
         }
@@ -212,7 +214,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromTop
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        self.view.window!.layer.add(transition, forKey: kCATransition)
+        self.view.window?.layer.add(transition, forKey: kCATransition)
     }
 
 

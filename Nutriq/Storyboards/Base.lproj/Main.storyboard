@@ -240,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="11"/>
+            <point key="canvasLocation" x="1209" y="76"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Bxd-vc-ZZg">
@@ -294,6 +294,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="qzc-kp-vgT"/>
+                                    <segue destination="rAc-ga-sHm" kind="presentation" identifier="signupSegue" id="tUF-dY-4le"/>
                                 </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-jU-4CZ">
@@ -405,7 +406,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3110" y="11"/>
+            <point key="canvasLocation" x="3091" y="76"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">
@@ -511,7 +512,6 @@
         <!--Navigation Controller-->
         <scene sceneID="puA-7p-G37">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NAB-i2-yDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAc-ga-sHm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIO-hk-Hfb">
@@ -523,12 +523,16 @@
                         <segue destination="LIp-Li-HYc" kind="relationship" relationship="rootViewController" id="p7P-oS-dUK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAB-i2-yDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343" y="12"/>
+            <point key="canvasLocation" x="2343" y="77"/>
         </scene>
     </scenes>
     <resources>
         <image name="NutriQ" width="893" height="248"/>
         <image name="backArrow" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tUF-dY-4le"/>
+    </inferredMetricsTieBreakers>
 </document>
