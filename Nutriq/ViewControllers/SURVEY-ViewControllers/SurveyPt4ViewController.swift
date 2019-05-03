@@ -15,9 +15,6 @@ class SurveyPt4ViewController: UIViewController {
     // MARK: - Properties
     var overallGoal = ""
     var weeklyGoal: Double = 0
-    var maintenanceCalories: Int = 0
-    var goalCalories: Int = 0
-    var age: Int = 0
     @IBOutlet weak var halfPoundButton: ShadowButton!
     @IBOutlet weak var onePoundButton: ShadowButton!
     @IBOutlet weak var oneAndHalfPoundButton: ShadowButton!
@@ -84,13 +81,6 @@ class SurveyPt4ViewController: UIViewController {
     
     func performSegue3() {
         self.performSegue(withIdentifier: "surveySegue3", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Passing data to Survey Results View Controller...")
-        
-        let surveyResultsViewController = segue.destination as! SurveyResultsViewController
-        surveyResultsViewController.goalCalories = goalCalories
     }
 
 }
