@@ -13,10 +13,16 @@ NutriQ is a meal planner application that generates meals & recipes based on you
 ## Build Progress
 * [x] User can create and account (Email/Password)
 * [x] User can log in (Email/Password)
+* [x] User can enter their information
+    * [x] Age, Gender, Height, Weight
+    * [x] Fitness and weight goals
+* [x] User can see customized daily calorie limit
 
 <p float= "left">
-   <img src="https://media.giphy.com/media/IdOMSDenTu0XjfZexn/giphy.gif" width=250>
-      <img src="https://media.giphy.com/media/Jnulzcott1WwX4gQI0/giphy.gif" width=250><br>
+   <img src="https://media.giphy.com/media/MBIIIluiUA497RKRJE/giphy.gif" width=250>
+      <img src="https://media.giphy.com/media/gHce15H4T5kOABJwjS/giphy.gif" width=250>
+   <img src="https://media.giphy.com/media/WrUrHkB7bifcE5cq7d/giphy.gif" width=250>
+      
 </p>
 
 
