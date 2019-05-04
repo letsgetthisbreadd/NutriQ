@@ -109,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */,
-				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
 				27EDE5C622614579001C8A08 /* SignUpViewController.swift */,
+				27EDE5C4226141FB001C8A08 /* LoginViewController.swift */,
 				6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */,
 			);
 			path = "MAIN-ViewControllers";
