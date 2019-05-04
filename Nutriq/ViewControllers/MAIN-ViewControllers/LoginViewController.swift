@@ -18,7 +18,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     let username = UserDefaults.standard.string(forKey: "username") ?? "Username does not exist"
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginButton: ShadowButton!
+    @IBOutlet weak var emailSigninButtonView: UIView!
+    @IBOutlet weak var emailSigninLabel: UILabel!
     @IBOutlet weak var googleSigninButton: GIDSignInButton!
     @IBOutlet weak var googleSigninButtonView: UIView!
     @IBOutlet weak var googleSigninLabel: UILabel!
@@ -30,16 +31,27 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
 
         emailField.becomeFirstResponder()
         
-        googleSigninButtonView.layer.cornerRadius = 5;
-        googleSigninButtonView.layer.masksToBounds = true;
+        // Customize email signin button
+        emailSigninButtonView.layer.cornerRadius = 5
+        emailSigninButtonView.layer.masksToBounds = true
+        emailSigninLabel.font = UIFont(name: "Roboto-Bold", size: 14)
+        
+        // Customize Google signin button
+        googleSigninButtonView.layer.cornerRadius = 5
+        googleSigninButtonView.layer.masksToBounds = true
+        googleSigninLabel.font = UIFont(name: "Roboto-Bold", size: 14)
         
         // Set the UI delegate of the GIDSignIn object
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        // Create a tap gesture recognizer within the email sign up button (UIView)
+        let emailButtonTappedGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleEmailLogin))
+        self.emailSigninButtonView.addGestureRecognizer(emailButtonTappedGesture)
+        
         // Create a tap gesture recognizer within the Google sign up button (UIView)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.performGoogleSignIn))
-        self.googleSigninButtonView.addGestureRecognizer(gesture)
+        let googleButtonTappedGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.performGoogleSignIn))
+        self.googleSigninButtonView.addGestureRecognizer(googleButtonTappedGesture)
     }
 
 
@@ -165,11 +177,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                 }
             }
         }
-    }
-
-    // Email login button pressed
-    @IBAction func onLoginButtonPressed(_ sender: Any) {
-        handleEmailLogin()
     }
 
     // Google login button pressed

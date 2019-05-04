@@ -20,10 +20,11 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
-    @IBOutlet weak var signupButton: ShadowButton!
-    @IBOutlet weak var googleSigninButton: GIDSignInButton!
+    @IBOutlet weak var emailSignupButtonView: UIView!
+    @IBOutlet weak var emailSignupLabel: UILabel!
     @IBOutlet weak var googleSignupButtonView: UIView!
     @IBOutlet weak var googleSignupLabel: UILabel!
+    @IBOutlet weak var googleSigninButton: GIDSignInButton!
     
     
     // MARK: - Init
@@ -31,17 +32,28 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Customize email signup button
+        emailSignupButtonView.layer.cornerRadius = 5
+        emailSignupButtonView.layer.masksToBounds = true
+        emailSignupLabel.font = UIFont(name: "Roboto-Bold", size: 14)
+        
+        // Customize Google signup button
+        googleSignupButtonView.layer.cornerRadius = 5
+        googleSignupButtonView.layer.masksToBounds = true
         googleSignupLabel.font = UIFont(name: "Roboto-Bold", size: 14)
-        googleSignupButtonView.layer.cornerRadius = 5;
-        googleSignupButtonView.layer.masksToBounds = true;
+        
         
         // Set the UI delegate of the GIDSignIn object
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        // Create a tap gesture recognizer within the email sign up button (UIView)
+        let emailButtonTappedGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSignUp))
+        self.emailSignupButtonView.addGestureRecognizer(emailButtonTappedGesture)
+        
         // Create a tap gesture recognizer within the Google sign up button (UIView)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.performGoogleSignUp))
-        self.googleSignupButtonView.addGestureRecognizer(gesture)
+        let googleButtonTappedGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.performGoogleSignUp))
+        self.googleSignupButtonView.addGestureRecognizer(googleButtonTappedGesture)
         
     }
     
@@ -136,12 +148,6 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         createUser(withEmail: email, password: password, username: username)
     }
     
-    // Email signup
-    @IBAction func onSignupButtonPressed(_ sender: Any) {
-        handleSignUp()
-    }
-    
-        
     // Google signup button pressed --> CUSTOM
     @objc func performGoogleSignUp(_ sender: UIView) {
         GIDSignIn.sharedInstance().signIn()

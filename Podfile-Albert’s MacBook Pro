@@ -11,6 +11,7 @@ target 'Nutriq' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Cards'
+  pod 'FBSDKCoreKit', '~> 4.44.1'
 
 
 
