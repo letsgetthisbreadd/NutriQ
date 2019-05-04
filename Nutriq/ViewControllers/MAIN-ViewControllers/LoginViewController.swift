@@ -112,7 +112,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                         print("Failed to update database with error: ", error.localizedDescription)
                         return
                     }
-                    print("Succesfully added Google user's userID and email address to Firebase database!")
+                    print("Successfully added Google user's userID and email address to Firebase database!")
 
                     // Transfer user to username retrieval screen
                     self.takeUserToUsernameScreen()

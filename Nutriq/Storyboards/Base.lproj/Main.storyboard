@@ -215,7 +215,6 @@
                                 <connections>
                                     <action selector="onContinueButtonPressed:" destination="pkF-1e-Plc" eventType="touchUpInside" id="cyB-Zv-sH5"/>
                                     <action selector="onSignupButtonPressed:" destination="KCm-cZ-ejV" eventType="touchUpInside" id="BFD-by-I32"/>
-                                    <segue destination="rAc-ga-sHm" kind="presentation" identifier="usernameToSurveySegue" id="F0n-2s-udD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -249,6 +248,7 @@
                     <connections>
                         <outlet property="continueButton" destination="6Hz-gm-GvO" id="3xh-bE-Oe7"/>
                         <outlet property="usernameField" destination="vVU-L1-tJ6" id="dtt-vJ-iSn"/>
+                        <segue destination="rAc-ga-sHm" kind="presentation" identifier="usernameToSurveySegue" id="0Id-ZG-72O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,6 +560,6 @@
         <image name="backArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i0u-uG-y5q"/>
+        <segue reference="0Id-ZG-72O"/>
     </inferredMetricsTieBreakers>
 </document>
