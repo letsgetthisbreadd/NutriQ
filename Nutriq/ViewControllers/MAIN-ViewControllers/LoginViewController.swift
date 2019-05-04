@@ -15,35 +15,31 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
 
 
     // MARK: - Properties
-    
     let username = UserDefaults.standard.string(forKey: "username") ?? "Username does not exist"
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: ShadowButton!
     @IBOutlet weak var googleSigninButton: GIDSignInButton!
-
-
+    @IBOutlet weak var googleSigninButtonView: UIView!
+    @IBOutlet weak var googleSigninLabel: UILabel!
+    
     // MARK: - Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         emailField.becomeFirstResponder()
-
+        
+        googleSigninButtonView.layer.cornerRadius = 5;
+        googleSigninButtonView.layer.masksToBounds = true;
+        
         // Set the UI delegate of the GIDSignIn object
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-
-        // Style Google sign in button
-        // TODO: - Possibly use own custom Google sign in button (must refactor code); refer to the way the custom Google UIButton was made on the userLogin branch (the button is actually called "Button" and is unchanged)
-        googleSigninButton.style = GIDSignInButtonStyle.wide
-        googleSigninButton.layer.cornerRadius = 5
-
-
-        // Create a tap gesture recognizer within the Google sign in button (UIView)
+        
+        // Create a tap gesture recognizer within the Google sign up button (UIView)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.performGoogleSignIn))
-        self.googleSigninButton.addGestureRecognizer(gesture)
-
+        self.googleSigninButtonView.addGestureRecognizer(gesture)
     }
 
 
@@ -179,7 +175,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     // Google login button pressed
     @objc func performGoogleSignIn(_ sender: UIView) {
         GIDSignIn.sharedInstance().signIn()
-
     }
     
     

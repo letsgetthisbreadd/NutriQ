@@ -21,13 +21,27 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var signupButton: ShadowButton!
-    @IBOutlet weak var googleSignupButton: UIButton!
+    @IBOutlet weak var googleSigninButton: GIDSignInButton!
+    @IBOutlet weak var googleSignupButtonView: UIView!
+    @IBOutlet weak var googleSignupLabel: UILabel!
     
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        googleSignupLabel.font = UIFont(name: "Roboto-Bold", size: 14)
+        googleSignupButtonView.layer.cornerRadius = 5;
+        googleSignupButtonView.layer.masksToBounds = true;
+        
+        // Set the UI delegate of the GIDSignIn object
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // Create a tap gesture recognizer within the Google sign up button (UIView)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.performGoogleSignUp))
+        self.googleSignupButtonView.addGestureRecognizer(gesture)
         
     }
     
@@ -122,21 +136,18 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         createUser(withEmail: email, password: password, username: username)
     }
     
+    // Email signup
     @IBAction func onSignupButtonPressed(_ sender: Any) {
         handleSignUp()
     }
     
-    
-    // TODO: - Add Google sign in (sign up) button to this screen
-    // TODO: - Use a custom button to make the label say "Sign up with Google" instead of "Sign in with Google"; Refer to the TODO in the LoginViewController describing how to create the custom button (Hint: Refer to the 'userLogin' branch)
-    
-    @IBAction func onGoogleSignupButtonPressed(_ sender: Any) {
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
+        
+    // Google signup button pressed --> CUSTOM
+    @objc func performGoogleSignUp(_ sender: UIView) {
         GIDSignIn.sharedInstance().signIn()
+        
     }
-    
-    
+
     // Google signup button pressed
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
