@@ -34,6 +34,7 @@
 		6B0A6D01227044C100571380 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6D00227044C100571380 /* Survey.storyboard */; };
 		6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */; };
 		6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */; };
+		6B3CBD63227D873F00D0BD30 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */; };
 		6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8C2267D853007A48AF /* Profile.storyboard */; };
 		6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB136D2260676200C5C5E3 /* AppDelegate.swift */; };
 		6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13712260676200C5C5E3 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		6B0A6D00227044C100571380 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsernameViewController.swift; sourceTree = "<group>"; };
 		6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		6B876B8C2267D853007A48AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		6BAB136A2260676200C5C5E3 /* Nutriq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutriq.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BAB136D2260676200C5C5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */,
 				27995FDE22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf */,
 				27995FDC22779E95004A8CB7 /* Proxima-Nova_Light.otf */,
+				6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */,
 				2787BBEA227991EF00AFE68A /* Proxima-Nova-Semibold.otf */,
 			);
 			path = Fonts;
@@ -346,6 +349,7 @@
 				6BAB13782260676300C5C5E3 /* LaunchScreen.storyboard in Resources */,
 				27995FE22277A1F2004A8CB7 /* timeburnernormal.ttf in Resources */,
 				6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */,
+				6B3CBD63227D873F00D0BD30 /* Roboto-Medium.ttf in Resources */,
 				27995FDF22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf in Resources */,
 				6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */,
 				6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */,
@@ -692,13 +696,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BXWA3MUQ3P;
+				DEVELOPMENT_TEAM = VQD57JJ22G;
 				INFOPLIST_FILE = Nutriq/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = codepath.Nutriq.Mcmanus;
+				PRODUCT_BUNDLE_IDENTIFIER = codepath.Nutriq.Gertskis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -711,13 +715,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BXWA3MUQ3P;
+				DEVELOPMENT_TEAM = VQD57JJ22G;
 				INFOPLIST_FILE = Nutriq/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = codepath.Nutriq.Mcmanus;
+				PRODUCT_BUNDLE_IDENTIFIER = codepath.Nutriq.Gertskis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

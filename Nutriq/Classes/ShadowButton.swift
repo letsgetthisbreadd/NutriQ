@@ -19,7 +19,7 @@ class ShadowButton: UIButton {
         self.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 10.0
-        self.layer.masksToBounds = true
+        self.layer.masksToBounds = true // Set to false or else shadow won't show
         self.layer.cornerRadius = 5
     }
 
