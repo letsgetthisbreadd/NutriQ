@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>codepath.Nutriq.Gertskis</string>
+	<string>codepath.Nutriq.Mcmanus</string>
 	<key>PROJECT_ID</key>
 	<string>nutriq-9b99e</string>
 	<key>STORAGE_BUCKET</key>
 	<string>nutriq-9b99e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:92191670743:ios:583db34dcc8a6d7c</string>
 	<key>DATABASE_URL</key>

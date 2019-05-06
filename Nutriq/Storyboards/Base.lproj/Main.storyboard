@@ -526,14 +526,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-J1-Ho4">
-                                <rect key="frame" x="0.0" y="-50" width="414" height="996"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration" allowsPictureInPictureMediaPlayback="NO">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-Er-C01" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
                                 <rect key="frame" x="129.66666666666666" y="423" width="154.99999999999997" height="50"/>
                                 <color key="backgroundColor" red="0.28943714499473572" green="0.91376262903213501" blue="0.75961238145828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -578,14 +570,10 @@
                         <constraints>
                             <constraint firstItem="t0k-Er-C01" firstAttribute="centerY" secondItem="z2f-0Y-Wb0" secondAttribute="centerY" id="45C-LZ-MjF"/>
                             <constraint firstItem="9yN-ac-uCq" firstAttribute="top" secondItem="Uwa-6a-yDq" secondAttribute="top" constant="76" id="4Cz-Yx-N5m"/>
-                            <constraint firstItem="Odi-J1-Ho4" firstAttribute="top" secondItem="z2f-0Y-Wb0" secondAttribute="top" constant="-50" id="9SA-hv-Mvj"/>
                             <constraint firstItem="t0k-Er-C01" firstAttribute="centerX" secondItem="z2f-0Y-Wb0" secondAttribute="centerX" id="Kq0-FX-PzE"/>
                             <constraint firstItem="nU6-T6-0J0" firstAttribute="centerX" secondItem="z2f-0Y-Wb0" secondAttribute="centerX" id="PZs-dz-AG1"/>
                             <constraint firstItem="9yN-ac-uCq" firstAttribute="centerX" secondItem="z2f-0Y-Wb0" secondAttribute="centerX" id="Ree-wo-Lfs"/>
-                            <constraint firstAttribute="bottom" secondItem="Odi-J1-Ho4" secondAttribute="bottom" constant="-50" id="d6S-gd-DHK"/>
-                            <constraint firstItem="Odi-J1-Ho4" firstAttribute="leading" secondItem="Uwa-6a-yDq" secondAttribute="leading" id="gWg-bx-vWB"/>
                             <constraint firstItem="nU6-T6-0J0" firstAttribute="top" secondItem="t0k-Er-C01" secondAttribute="bottom" constant="25" id="lIj-8l-JWs"/>
-                            <constraint firstItem="Odi-J1-Ho4" firstAttribute="trailing" secondItem="Uwa-6a-yDq" secondAttribute="trailing" id="tDk-9L-Vwg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uwa-6a-yDq"/>
                     </view>
@@ -593,13 +581,12 @@
                     <connections>
                         <outlet property="loginButton" destination="t0k-Er-C01" id="Gsc-Rz-IV2"/>
                         <outlet property="signupButton" destination="nU6-T6-0J0" id="Dit-v7-5ZY"/>
-                        <outlet property="webViewBG" destination="Odi-J1-Ho4" id="Kek-kE-yLQ"/>
                         <segue destination="4qi-Ac-9nz" kind="presentation" identifier="skipLoginSegue" id="tH9-P2-ZOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wef-0j-ftn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="-1426.1083743842364"/>
+            <point key="canvasLocation" x="1362.3188405797102" y="-1426.3392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fLU-8N-ftu">
@@ -645,6 +632,6 @@
         <image name="backArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i0u-uG-y5q"/>
+        <segue reference="0Id-ZG-72O"/>
     </inferredMetricsTieBreakers>
 </document>
