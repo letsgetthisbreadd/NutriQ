@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27392D3A22812CB8005275C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27392D3922812CB8005275C0 /* SettingsViewController.swift */; };
 		275799DE2272A818008C2859 /* SurveyResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275799DD2272A818008C2859 /* SurveyResultsViewController.swift */; };
 		277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */; };
 		277BB7DC22726B1300CA8FBA /* SurveyPt3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27392D3922812CB8005275C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		275799DD2272A818008C2859 /* SurveyResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyResultsViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyResultsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt2ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt2ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt3ViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -147,6 +149,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		27392D3822812C79005275C0 /* SETTINGS - ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				27392D3922812CB8005275C0 /* SettingsViewController.swift */,
+			);
+			path = "SETTINGS - ViewControllers";
+			sourceTree = "<group>";
+		};
 		2792EEA32261B80D00F0AFB1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 		6B25938822606A4900764B9A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				27392D3822812C79005275C0 /* SETTINGS - ViewControllers */,
 				2706DC6A2272B21C00F8B9A1 /* MAIN-ViewControllers */,
 				2706DC6B2272B24500F8B9A1 /* SURVEY-ViewControllers */,
 				2706DC6C2272B27600F8B9A1 /* HOME-ViewControllers */,
@@ -496,6 +507,7 @@
 				2787BBEC2279960200AFE68A /* FoodCell.swift in Sources */,
 				277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */,
 				2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */,
+				27392D3A22812CB8005275C0 /* SettingsViewController.swift in Sources */,
 				277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */,
 				27B90BE52279A76A00BE7938 /* ProfileViewController.swift in Sources */,
 				27995FB822778C0A004A8CB7 /* ShadowButton.swift in Sources */,

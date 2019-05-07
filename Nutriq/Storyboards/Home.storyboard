@@ -170,7 +170,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4cK-k1-JiQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CcM-38-qft"/>
+                    <navigationItem key="navigationItem" id="CcM-38-qft">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7yT-v8-hcP">
+                            <connections>
+                                <segue destination="XTA-XG-6Mm" kind="show" id="YSc-LJ-kbv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userEmailLabel" destination="GVe-vz-zVj" id="An7-Dn-Saa"/>
                     </connections>
@@ -178,6 +184,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBU-bp-lbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1164" y="696.79802955665025"/>
+        </scene>
+        <!--settingsViewController-->
+        <scene sceneID="Msc-lf-pxw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="settingsViewController" storyboardName="Settings" referencedIdentifier="settingsViewController" id="XTA-XG-6Mm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHh-PE-n3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1963" y="651"/>
         </scene>
         <!--Meal Detail View Controller-->
         <scene sceneID="WN3-um-hac">

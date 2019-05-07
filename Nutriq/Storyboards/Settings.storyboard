@@ -1,7 +1,128 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="glJ-hU-cJC">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="Proxima-Nova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="u13-aF-OtJ">
+            <objects>
+                <viewController storyboardIdentifier="settingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="glJ-hU-cJC" customClass="SettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DF4-Il-aKR" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-Nr-9MX" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="51" y="133" width="312" height="55"/>
+                                <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="FK3-ZY-pnW"/>
+                                    <constraint firstAttribute="width" constant="312" id="hry-9G-LvI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
+                                <state key="normal" title="Goal Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xbP-ya-8me" kind="show" id="dIT-IH-SjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-MX-PIh" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="51" y="658" width="312" height="55"/>
+                                <color key="backgroundColor" red="0.16463811015980842" green="0.23313343299270725" blue="0.91376262900000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="LgZ-XJ-R1g"/>
+                                    <constraint firstAttribute="height" constant="55" id="XpZ-ij-Vtx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-OJ-1WO" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="51" y="255" width="312" height="55"/>
+                                <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="312" id="6iP-pP-nHq"/>
+                                    <constraint firstAttribute="height" constant="55" id="qFJ-Tz-kCp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
+                                <state key="normal" title="Account Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c1o-DA-Jp8" kind="show" id="eZP-nK-1IA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="TTS-Nr-9MX" secondAttribute="trailing" constant="51" id="6oI-Gn-vWv"/>
+                            <constraint firstItem="tU5-f4-787" firstAttribute="bottom" secondItem="7Va-MX-PIh" secondAttribute="bottom" constant="149" id="AaT-bG-EFU"/>
+                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="dVx-OJ-1WO" secondAttribute="trailing" constant="51" id="H9t-7O-z1j"/>
+                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="PtC-3b-2Fa"/>
+                            <constraint firstItem="7Va-MX-PIh" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="kLV-VR-aQ7"/>
+                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="top" secondItem="tU5-f4-787" secondAttribute="top" constant="89" id="ohe-qt-bo2"/>
+                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="qe9-Xb-8Ja"/>
+                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="top" secondItem="TTS-Nr-9MX" secondAttribute="bottom" constant="67" id="sDP-GT-Uuc"/>
+                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="7Va-MX-PIh" secondAttribute="trailing" constant="51" id="tte-y1-lTT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tU5-f4-787"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.62952831006173882" green="0.97368152015229059" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.91418537919999998" green="1" blue="0.98755480600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJc-0R-R7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.91304347826087" y="-12.053571428571429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FBP-vo-zNV">
+            <objects>
+                <viewController id="xbP-ya-8me" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2aV-Rt-1p1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fe9-dA-lVk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wta-wH-jzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-557" y="721"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ee8-Ck-c8b">
+            <objects>
+                <viewController id="c1o-DA-Jp8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BL3-DF-YXj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vYq-j1-dcs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDK-Ag-ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="721"/>
+        </scene>
+    </scenes>
 </document>
