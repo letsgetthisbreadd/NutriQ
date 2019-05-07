@@ -36,6 +36,10 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
         emailSignupButtonView.layer.cornerRadius = 5
         emailSignupButtonView.layer.masksToBounds = true
         emailSignupLabel.font = UIFont(name: "Roboto-Bold", size: 14)
+        emailSignupButtonView.layer.shadowColor = UIColor.black.cgColor
+        emailSignupButtonView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        emailSignupButtonView.layer.shadowRadius = 5
+        emailSignupButtonView.layer.shadowOpacity = 1.0
         
         // Customize Google signup button
         googleSignupButtonView.layer.cornerRadius = 5

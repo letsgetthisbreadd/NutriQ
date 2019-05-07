@@ -182,6 +182,7 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - SwiftVideoBackground (3.3.0)
   - TwitterCore (3.2.0)
   - TwitterKit (3.4.2):
     - TwitterCore (>= 3.2.0)
@@ -192,6 +193,7 @@ DEPENDENCIES:
   - Firebase/Core
   - FirebaseUI
   - GoogleSignIn
+  - SwiftVideoBackground
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -222,6 +224,7 @@ SPEC REPOS:
     - Player
     - Protobuf
     - SDWebImage
+    - SwiftVideoBackground
     - TwitterCore
     - TwitterKit
 
@@ -253,9 +256,10 @@ SPEC CHECKSUMS:
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SwiftVideoBackground: ebcc843d4cbcfc520e42472dad80925a6433da06
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 5d48f68cc395713dcd6ce487f0f79dcadd7c6937
+PODFILE CHECKSUM: 09ab2dcd3f00db21629bca057aaa832733158dfc
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.6.0
