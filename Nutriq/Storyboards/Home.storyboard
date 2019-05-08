@@ -16,9 +16,6 @@
         <array key="Proxima-Nova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
         </array>
-        <array key="timeburnernormal.ttf">
-            <string>TimeBurner</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -131,67 +128,15 @@
             </objects>
             <point key="canvasLocation" x="-735" y="698"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="u91-Uy-uCh">
+        <!--ProfileViewController-->
+        <scene sceneID="QJs-0n-rxf">
             <objects>
-                <viewController id="7QF-7I-7i8" customClass="ProfileViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xou-v6-Kyk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-0P-x4M" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="129.66666666666666" y="423" width="154.99999999999997" height="50"/>
-                                <color key="backgroundColor" red="0.28943714499473572" green="0.91376262903213501" blue="0.75961238145828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="HkI-PA-KUM"/>
-                                    <constraint firstAttribute="height" constant="50" id="l2C-bJ-9md"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TimeBurner" family="TimeBurner" pointSize="25"/>
-                                <state key="normal" title="Sign out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signoutButtonPressed:" destination="7QF-7I-7i8" eventType="touchUpInside" id="cbt-Mz-3uZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-vz-zVj">
-                                <rect key="frame" x="190.66666666666666" y="308.66666666666669" width="33" height="19"/>
-                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="GVe-vz-zVj" firstAttribute="centerY" secondItem="xou-v6-Kyk" secondAttribute="centerY" constant="-130" id="9Ig-Ue-i3m"/>
-                            <constraint firstItem="nJo-0P-x4M" firstAttribute="centerX" secondItem="xou-v6-Kyk" secondAttribute="centerX" id="AHV-8v-4M5"/>
-                            <constraint firstItem="GVe-vz-zVj" firstAttribute="centerX" secondItem="xou-v6-Kyk" secondAttribute="centerX" id="AVl-h3-fPp"/>
-                            <constraint firstItem="nJo-0P-x4M" firstAttribute="centerY" secondItem="xou-v6-Kyk" secondAttribute="centerY" id="znC-g1-zLo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4cK-k1-JiQ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="CcM-38-qft">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7yT-v8-hcP">
-                            <connections>
-                                <segue destination="XTA-XG-6Mm" kind="show" id="YSc-LJ-kbv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="userEmailLabel" destination="GVe-vz-zVj" id="An7-Dn-Saa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tBU-bp-lbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileViewController" id="Zj4-nK-lj2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U9S-HK-VuB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6f-ZE-EjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="696.79802955665025"/>
-        </scene>
-        <!--settingsViewController-->
-        <scene sceneID="Msc-lf-pxw">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="settingsViewController" storyboardName="Settings" referencedIdentifier="settingsViewController" id="XTA-XG-6Mm" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dHh-PE-n3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1963" y="651"/>
+            <point key="canvasLocation" x="1164" y="483"/>
         </scene>
         <!--Meal Detail View Controller-->
         <scene sceneID="WN3-um-hac">
@@ -283,7 +228,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7QF-7I-7i8" kind="relationship" relationship="rootViewController" id="9Fr-m6-Bsy"/>
+                        <segue destination="Zj4-nK-lj2" kind="relationship" relationship="rootViewController" id="gCb-fr-R6c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgi-kP-8CK" userLabel="First Responder" sceneMemberID="firstResponder"/>
