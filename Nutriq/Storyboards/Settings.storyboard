@@ -50,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onLogoutBtnPressed:" destination="glJ-hU-cJC" eventType="touchUpInside" id="Moy-Mu-Nxw"/>
+                                    <action selector="onLogoutButtonPressed:" destination="glJ-hU-cJC" eventType="touchUpInside" id="KgB-HL-hbT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-OJ-1WO" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
