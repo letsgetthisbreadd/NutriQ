@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="glJ-hU-cJC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nty-j8-V8n">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-Nr-9MX" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="51" y="133" width="312" height="55"/>
+                                <rect key="frame" x="51" y="177" width="312" height="55"/>
                                 <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="FK3-ZY-pnW"/>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-OJ-1WO" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="51" y="255" width="312" height="55"/>
+                                <rect key="frame" x="51" y="299" width="312" height="55"/>
                                 <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="312" id="6iP-pP-nHq"/>
@@ -92,10 +92,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="NWd-Nj-rQi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJc-0R-R7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173.91304347826087" y="-12.053571428571429"/>
+            <point key="canvasLocation" x="1084.0579710144928" y="-12.053571428571429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FBP-vo-zNV">
@@ -119,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wta-wH-jzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-557" y="721"/>
+            <point key="canvasLocation" x="393" y="721"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ee8-Ck-c8b">
@@ -143,7 +144,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDK-Ag-ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="721"/>
+            <point key="canvasLocation" x="1822" y="721"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Fd-p9-s2u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nty-j8-V8n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EiQ-UU-cdX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="glJ-hU-cJC" kind="relationship" relationship="rootViewController" id="QvP-9i-evc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="noR-aa-O9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.91304347826087" y="-12.053571428571429"/>
         </scene>
     </scenes>
 </document>
