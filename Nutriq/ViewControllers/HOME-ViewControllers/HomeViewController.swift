@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - Properties
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     // MARK: - CollectionView Arrays
     
@@ -18,18 +21,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     let mealImage = [UIImage(named: "food5"), UIImage(named: "food1"), UIImage(named: "food7")]
     let mealDescription = ["A nice sandwich", "Spicy mami", "Bland but gud"]
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-
-    
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
     }
+    
     
     // MARK: Cell Functions
     
@@ -62,10 +61,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-     // MARK: - Navigation
-  
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Passing data to MealDetails VC...")
         
         // Find the selected meal name
@@ -75,9 +73,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let detailsViewController = segue.destination as! MealDetailViewController
         detailsViewController.mealTitle = mealTitle
-        
-        
-     }
+    }
     
 
 }

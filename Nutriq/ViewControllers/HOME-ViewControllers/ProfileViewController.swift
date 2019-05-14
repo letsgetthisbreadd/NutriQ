@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     // TODO: - Future TODO --> Possibly use username to welcome the user instead of thier email?
     func loadUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(userID).child("email").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child("users").child(userID).child("username").observeSingleEvent(of: .value) { (snapshot) in
             guard let username = snapshot.value as? String else { return }
             self.userEmailLabel.text = "Welcome, \(username)"
             
