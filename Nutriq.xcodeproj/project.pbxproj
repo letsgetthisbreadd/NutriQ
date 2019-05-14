@@ -30,6 +30,8 @@
 		27EDE5C722614579001C8A08 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C622614579001C8A08 /* SignUpViewController.swift */; };
 		27EDE5C9226146E8001C8A08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */; };
 		27F5187C2280D4F700EE3697 /* FoodVideo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 27F5187B2280D4F600EE3697 /* FoodVideo1.mp4 */; };
+		6B02467F22865BD200F8815C /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B02467E22865BD200F8815C /* AccountSettingsViewController.swift */; };
+		6B04033E228A4FF900F98CFB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04033D228A4FF900F98CFB /* ChangePasswordViewController.swift */; };
 		6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFE2270246100571380 /* GoogleService-Info.plist */; };
 		6B0A6D01227044C100571380 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6D00227044C100571380 /* Survey.storyboard */; };
 		6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */; };
@@ -40,6 +42,9 @@
 		6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13712260676200C5C5E3 /* Main.storyboard */; };
 		6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13742260676300C5C5E3 /* Assets.xcassets */; };
 		6BAB13782260676300C5C5E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB13762260676300C5C5E3 /* LaunchScreen.storyboard */; };
+		6BBB5AFB228664EF00B0DF3D /* Proxima-Nova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2787BBEA227991EF00AFE68A /* Proxima-Nova-Semibold.otf */; };
+		6BBB5AFF228679B800B0DF3D /* UIViewController+customActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBB5AFE228679B800B0DF3D /* UIViewController+customActivityIndicator.swift */; };
+		6BF36B7E228A9DE500E55CC5 /* GetCurrentPasswordPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF36B7D228A9DE500E55CC5 /* GetCurrentPasswordPopupViewController.swift */; };
 		D7ACEC9FFEFCA779FB8B0B59 /* Pods_Nutriq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7821371823EF85D88EDF66B9 /* Pods_Nutriq.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,8 @@
 		27F5187B2280D4F600EE3697 /* FoodVideo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FoodVideo1.mp4; sourceTree = "<group>"; };
 		466FBC2A3A36CA30F7C591C9 /* Pods-Nutriq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.debug.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.debug.xcconfig"; sourceTree = "<group>"; };
 		50398D06E5DEB649266F17C9 /* Pods-Nutriq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutriq.release.xcconfig"; path = "Target Support Files/Pods-Nutriq/Pods-Nutriq.release.xcconfig"; sourceTree = "<group>"; };
+		6B02467E22865BD200F8815C /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		6B04033D228A4FF900F98CFB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		6B0A6CFE2270246100571380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B0A6D00227044C100571380 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsernameViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +90,8 @@
 		6BAB13742260676300C5C5E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BAB13772260676300C5C5E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BAB13792260676300C5C5E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BBB5AFE228679B800B0DF3D /* UIViewController+customActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+customActivityIndicator.swift"; sourceTree = "<group>"; };
+		6BF36B7D228A9DE500E55CC5 /* GetCurrentPasswordPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentPasswordPopupViewController.swift; sourceTree = "<group>"; };
 		7821371823EF85D88EDF66B9 /* Pods_Nutriq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nutriq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				27392D3922812CB8005275C0 /* SettingsViewController.swift */,
+				6B04033C228A4FBD00F98CFB /* Account Settings */,
 			);
 			path = "SETTINGS - ViewControllers";
 			sourceTree = "<group>";
@@ -178,10 +188,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6B04033C228A4FBD00F98CFB /* Account Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6B02467E22865BD200F8815C /* AccountSettingsViewController.swift */,
+				6BF36B7D228A9DE500E55CC5 /* GetCurrentPasswordPopupViewController.swift */,
+				6B04033D228A4FF900F98CFB /* ChangePasswordViewController.swift */,
+			);
+			path = "Account Settings";
+			sourceTree = "<group>";
+		};
 		6B15FFB322743C4E003F13E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */,
+				6BBB5AFE228679B800B0DF3D /* UIViewController+customActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +381,7 @@
 				6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */,
 				6B3CBD63227D873F00D0BD30 /* Roboto-Medium.ttf in Resources */,
 				27995FDF22779FAC004A8CB7 /* Proxima-Nova-Reg.ttf in Resources */,
+				6BBB5AFB228664EF00B0DF3D /* Proxima-Nova-Semibold.otf in Resources */,
 				6BAB13752260676300C5C5E3 /* Assets.xcassets in Resources */,
 				6BAB13732260676200C5C5E3 /* Main.storyboard in Resources */,
 				27995FE32277A1F2004A8CB7 /* timeburnerbold.ttf in Resources */,
@@ -509,10 +531,13 @@
 				2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */,
 				27392D3A22812CB8005275C0 /* SettingsViewController.swift in Sources */,
 				277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */,
+				6B02467F22865BD200F8815C /* AccountSettingsViewController.swift in Sources */,
 				27B90BE52279A76A00BE7938 /* ProfileViewController.swift in Sources */,
 				27995FB822778C0A004A8CB7 /* ShadowButton.swift in Sources */,
+				6BBB5AFF228679B800B0DF3D /* UIViewController+customActivityIndicator.swift in Sources */,
 				27995FBC22778CB7004A8CB7 /* HomeViewController.swift in Sources */,
 				27EDE5C5226141FB001C8A08 /* LoginViewController.swift in Sources */,
+				6BF36B7E228A9DE500E55CC5 /* GetCurrentPasswordPopupViewController.swift in Sources */,
 				275799DE2272A818008C2859 /* SurveyResultsViewController.swift in Sources */,
 				27995FBA22778C13004A8CB7 /* ToolbarPiker.swift in Sources */,
 				6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */,
@@ -521,6 +546,7 @@
 				27995FB622778BFE004A8CB7 /* GradientView.swift in Sources */,
 				6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */,
 				6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */,
+				6B04033E228A4FF900F98CFB /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

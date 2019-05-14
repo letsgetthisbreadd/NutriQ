@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
         do {
             // TODO: - Before release, check to make sure that not checking which sign out is occuring will not impact the app in any way
             try Auth.auth().signOut() // Email sign out
-            self.takeUserToUsernameScreen()
+            self.takeUserToLoginScreen()
         } catch let error {
             print("Failed to sign out with error: ", error.localizedDescription)
         }
@@ -51,13 +51,13 @@ class SettingsViewController: UIViewController {
         present(signOutAlertController, animated: true, completion: nil)
     }
     
-    func takeUserToUsernameScreen() {
+    func takeUserToLoginScreen() {
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         self.segueToBottom()
         UIApplication.topViewController()?.present(loginVC, animated: false, completion: nil)
     }
     
-    // Right-to-left segue animation
+    // Top-to-bttom segue animation
     func segueToBottom() {
         let transition = CATransition()
         transition.duration = 0.5

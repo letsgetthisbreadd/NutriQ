@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Make the label transparent for a nice transition
         userEmailLabel.alpha = 0
         loadUserData()
@@ -25,7 +25,6 @@ class ProfileViewController: UIViewController {
     
     
     // MARK: - Helper Functions & Actions
-    // TODO: - If user used Google sign in, set the welcome page to display their email
     // TODO: - Future TODO --> Possibly use username to welcome the user instead of thier email?
     func loadUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -39,12 +38,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }

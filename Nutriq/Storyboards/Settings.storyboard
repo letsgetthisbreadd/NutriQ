@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Proxima-Nova-Reg.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
         <array key="Proxima-Nova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
         </array>
@@ -18,7 +21,7 @@
         <!--Settings View Controller-->
         <scene sceneID="u13-aF-OtJ">
             <objects>
-                <viewController storyboardIdentifier="settingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="glJ-hU-cJC" customClass="SettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="glJ-hU-cJC" customClass="SettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DF4-Il-aKR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +96,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="NWd-Nj-rQi"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJc-0R-R7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +105,7 @@
         <!--View Controller-->
         <scene sceneID="FBP-vo-zNV">
             <objects>
-                <viewController id="xbP-ya-8me" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="xbP-ya-8me" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2aV-Rt-1p1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,34 +126,94 @@
             </objects>
             <point key="canvasLocation" x="393" y="721"/>
         </scene>
-        <!--View Controller-->
+        <!--Account Settings View Controller-->
         <scene sceneID="Ee8-Ck-c8b">
             <objects>
-                <viewController id="c1o-DA-Jp8" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="c1o-DA-Jp8" customClass="AccountSettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BL3-DF-YXj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change password, delete account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95v-EJ-NZ5">
-                                <rect key="frame" x="77" y="223" width="261" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-xh-27f">
+                                <rect key="frame" x="144.5" y="163" width="125" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="KxO-ny-sDh"/>
+                                    <constraint firstAttribute="height" constant="30" id="hBS-EO-G5d"/>
+                                </constraints>
+                                <state key="normal" title="Change Password"/>
+                                <connections>
+                                    <action selector="onChangePasswordButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="jK0-zm-gyC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-db-qfp">
+                                <rect key="frame" x="152" y="293" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MAx-mc-85r"/>
+                                    <constraint firstAttribute="width" constant="110" id="yo0-Ac-kYT"/>
+                                </constraints>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="1" green="0.23025548458099365" blue="0.17956149578094482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onResetPasswordButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="jPq-SV-c3S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mih-pM-iYd">
+                                <rect key="frame" x="154.5" y="423" width="105" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="Ohf-Y2-VYU"/>
+                                    <constraint firstAttribute="height" constant="30" id="YqA-fB-yn5"/>
+                                </constraints>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="1" green="0.2302554846" blue="0.1795614958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDeleteAccountButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="2lz-Ie-JOm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Va-xh-27f" firstAttribute="top" secondItem="vYq-j1-dcs" secondAttribute="top" constant="75" id="09C-G9-xI4"/>
+                            <constraint firstItem="6Va-xh-27f" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="1Az-xO-Er4"/>
+                            <constraint firstItem="Mih-pM-iYd" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="1DQ-99-c08"/>
+                            <constraint firstItem="PjW-db-qfp" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="VCi-dH-vl1"/>
+                            <constraint firstItem="Mih-pM-iYd" firstAttribute="top" secondItem="PjW-db-qfp" secondAttribute="bottom" constant="100" id="blN-8J-UCb"/>
+                            <constraint firstItem="PjW-db-qfp" firstAttribute="top" secondItem="6Va-xh-27f" secondAttribute="bottom" constant="100" id="gFY-MV-OOL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vYq-j1-dcs"/>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="changePasswordButton" destination="6Va-xh-27f" id="OA9-Aq-m4w"/>
+                        <outlet property="deleteAccountButton" destination="Mih-pM-iYd" id="xZq-eh-ZjP"/>
+                        <outlet property="resetPasswordButton" destination="PjW-db-qfp" id="Rud-1G-BiV"/>
+                        <segue destination="iec-Ba-mNs" kind="show" identifier="changePasswordSegue" id="WtU-eh-eXn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDK-Ag-ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="721"/>
+            <point key="canvasLocation" x="1822" y="733"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="faR-zL-mNo">
+            <objects>
+                <viewController id="iec-Ba-mNs" customClass="ChangePasswordViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x1J-pu-AWy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OP8-a6-iBI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RA-hU-MA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="1481"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Fd-p9-s2u">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nty-j8-V8n" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" toolbarHidden="NO" id="nty-j8-V8n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EiQ-UU-cdX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -163,6 +227,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noR-aa-O9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="173.91304347826087" y="-12.053571428571429"/>
+        </scene>
+        <!--GetCurrentPasswordPopupViewController-->
+        <scene sceneID="IkC-vW-8hQ">
+            <objects>
+                <viewController storyboardIdentifier="GetCurrentPasswordPopupViewController" title="GetCurrentPasswordPopupViewController" hidesBottomBarWhenPushed="YES" id="8zM-hH-nUv" customClass="GetCurrentPasswordPopupViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DKK-h5-fkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-IX-Iml">
+                                <rect key="frame" x="47" y="333" width="320" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKi-Sz-JAE">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                        <color key="backgroundColor" red="0.054546527560000002" green="0.73212450740000001" blue="0.63167697190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="TBv-Tw-4rv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efa-kt-hxh">
+                                        <rect key="frame" x="10" y="100" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="H4E-ne-Ux1"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRb-So-ERL">
+                                        <rect key="frame" x="0.0" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.87315261570000002" green="0.8840582521" blue="0.89272310129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Gto-Yv-ohx"/>
+                                            <constraint firstAttribute="width" constant="160" id="nwz-a7-caS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="onCancelButtonPressed:" destination="8zM-hH-nUv" eventType="touchUpInside" id="73j-7E-aMx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3l-U5-HY2">
+                                        <rect key="frame" x="160" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.054546527560000002" green="0.73212450740000001" blue="0.63167697190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="G2R-7q-XKc"/>
+                                            <constraint firstAttribute="height" constant="45" id="xPU-ME-15d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="onConfirmButtonPressed:" destination="8zM-hH-nUv" eventType="touchUpInside" id="QPg-Mp-FkR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="top" secondItem="ybs-IX-Iml" secondAttribute="top" id="0Uo-sL-6Ia"/>
+                                    <constraint firstItem="nRb-So-ERL" firstAttribute="leading" secondItem="ybs-IX-Iml" secondAttribute="leading" id="2xM-ew-brK"/>
+                                    <constraint firstAttribute="trailing" secondItem="GKi-Sz-JAE" secondAttribute="trailing" id="3Lr-aJ-9uS"/>
+                                    <constraint firstItem="z3l-U5-HY2" firstAttribute="leading" secondItem="nRb-So-ERL" secondAttribute="trailing" id="46T-00-7n3"/>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="leading" secondItem="ybs-IX-Iml" secondAttribute="leading" id="ANa-JZ-49E"/>
+                                    <constraint firstAttribute="height" constant="230" id="B6A-EL-eNB"/>
+                                    <constraint firstAttribute="bottom" secondItem="nRb-So-ERL" secondAttribute="bottom" id="Cqr-yi-fYl"/>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="top" secondItem="ybs-IX-Iml" secondAttribute="top" id="Def-uD-On8"/>
+                                    <constraint firstAttribute="bottom" secondItem="z3l-U5-HY2" secondAttribute="bottom" id="DtE-cS-g9N"/>
+                                    <constraint firstAttribute="width" constant="320" id="GUd-9t-fdv"/>
+                                    <constraint firstAttribute="trailing" secondItem="GKi-Sz-JAE" secondAttribute="trailing" id="I6G-5E-XdJ"/>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="top" secondItem="ybs-IX-Iml" secondAttribute="top" id="RE6-ey-5Wh"/>
+                                    <constraint firstItem="z3l-U5-HY2" firstAttribute="leading" secondItem="nRb-So-ERL" secondAttribute="trailing" id="UfF-y7-x8c"/>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="leading" secondItem="ybs-IX-Iml" secondAttribute="leading" id="Vye-HV-MZR"/>
+                                    <constraint firstItem="GKi-Sz-JAE" firstAttribute="centerX" secondItem="ybs-IX-Iml" secondAttribute="centerX" id="Zym-it-qkH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Efa-kt-hxh" secondAttribute="trailing" constant="10" id="fYX-Qe-bIo"/>
+                                    <constraint firstAttribute="trailing" secondItem="z3l-U5-HY2" secondAttribute="trailing" id="oHx-80-Zry"/>
+                                    <constraint firstItem="Efa-kt-hxh" firstAttribute="top" secondItem="GKi-Sz-JAE" secondAttribute="bottom" constant="55" id="qOA-bo-52s"/>
+                                    <constraint firstItem="Efa-kt-hxh" firstAttribute="leading" secondItem="ybs-IX-Iml" secondAttribute="leading" constant="10" id="tK2-rb-JlT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39113394605931895" green="0.39113394605931895" blue="0.39113394605931895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ybs-IX-Iml" firstAttribute="centerX" secondItem="DKK-h5-fkZ" secondAttribute="centerX" id="OBy-Mp-iAt"/>
+                            <constraint firstItem="ybs-IX-Iml" firstAttribute="centerY" secondItem="DKK-h5-fkZ" secondAttribute="centerY" id="dsn-F4-TiR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kEm-di-ANt"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentPasswordField" destination="Efa-kt-hxh" id="0uB-4u-uID"/>
+                        <outlet property="popupView" destination="ybs-IX-Iml" id="Lf5-qr-kbs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBl-Kz-8VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541" y="733"/>
         </scene>
     </scenes>
 </document>

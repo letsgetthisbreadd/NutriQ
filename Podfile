@@ -14,5 +14,4 @@ target 'Nutriq' do
   pod 'SwiftVideoBackground'
 
 
-
 end
