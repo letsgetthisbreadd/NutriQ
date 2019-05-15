@@ -55,6 +55,10 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     }
 
 
+    @IBAction func onForgotPasswordButtonPressed(_ sender: Any) {
+        showResetPasswordPopup()
+    }
+    
     // MARK: - User Login
     // TODO: - Allow user to log in with either username or email? If one is empty, the other one must be filled out. Use the one that is filled out to complete the user log in.
     func logUserIn(withEmail email: String, password: String) {
@@ -140,19 +144,22 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     print("User has been signed in silently from LoginViewController...\n")
                     return
                 } else { // If user is on LoginViewController (or any other VC)
+                    // TODO: - Remove the commented code below after testing if username for a user is not changing to something it shouldn't and all segues are performed correctly + no bugs
+                    
                     // Current user has an email and username --> Send user to home screen
-                    let usernameInfo = ["username": self.username]
+//                    let usernameInfo = ["username": self.username]
+//
+//                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
+//                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
+//                        if let error = error {
+//                            print("Failed to update database with error: ", error.localizedDescription)
+//                            return
+//                        }
+//                        print("Succesfully added Google user's username to Firebase database!")
+//                    })
+//                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
                     
-                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
-                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
-                        if let error = error {
-                            print("Failed to update database with error: ", error.localizedDescription)
-                            return
-                        }
-                        print("Succesfully added Google user's username to Firebase database!")
-                    })
-                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
-                    
+                    print("Segueing home...\n")
                     // Transfer user to username retrieval screen
                     self.takeUserToHomeScreen()
                 }
@@ -227,6 +234,15 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         transition.subtype = CATransitionSubtype.fromTop
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         self.view.window?.layer.add(transition, forKey: kCATransition)
+    }
+    
+    // Pops up a small view controller which reauthenticates the current user by getting user to input current password
+    func showResetPasswordPopup() {
+        let resetPasswordVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+        self.addChild(resetPasswordVC)
+        resetPasswordVC.view.frame = self.view.frame
+        self.view.addSubview(resetPasswordVC.view)
+        resetPasswordVC.didMove(toParent: self)
     }
     
     @IBAction func onTap(_ sender: Any) {

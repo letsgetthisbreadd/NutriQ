@@ -228,21 +228,24 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 if NSStringFromClass(UIApplication.topViewController()!.classForCoder).components(separatedBy: ".").last! == "AccountSettingsViewController" {
                     print("User has been signed in silently from SignUpViewControlller...\n")
                     return
-                } else {
-                    // Current user has an email and username --> Send user to home screen
-                    let usernameInfo = ["username": self.username]
+                } else { // If user is on LoginViewController (or any other VC)
+                    // TODO: - Remove the commented code below after testing if username for a user is not changing to something it shouldn't and all segues are performed correctly + no bugs
                     
-                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
-                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
-                        if let error = error {
-                            print("Failed to update database with error: ", error.localizedDescription)
-                            return
-                        }
-                        print("Succesfully added Google user's username to Firebase database!")
-                    })
-                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
+//                    // Current user has an email and username --> Send user to home screen
+//                    let usernameInfo = ["username": self.username]
+//                    
+//                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
+//                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
+//                        if let error = error {
+//                            print("Failed to update database with error: ", error.localizedDescription)
+//                            return
+//                        }
+//                        print("Succesfully added Google user's username to Firebase database!")
+//                    })
+//                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
                     
-                    // Transfer user to username retrieval screen
+                     print("Segueing home...\n")
+                    // Transfer user to home screen
                     self.takeUserToHomeScreen()
                 }
             }

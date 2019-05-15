@@ -26,7 +26,13 @@ class AccountSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // If account type is a Google account, hide the "Change Password" button
+        reauthenticateUserAndGetAccountType(userID!) {
+            if self.accountType == "Google" {
+                self.changePasswordButton.isHidden = true
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,49 +42,19 @@ class AccountSettingsViewController: UIViewController {
     
 
     // MARK: - Helper Functions & Actions
-    
-    // TODO: - Implement "Change Password" button functionality; Sends user to new screen (or pops up?). Contains "current password, new password, confirm new password
-    @IBAction func onChangePasswordButtonPressed(_ sender: Any) {
-        showConfirmPasswordPopup()
-        
-        // Take user to password reset screen after confirming current password
-        
-        
-    }
-    
-    @IBAction func onResetPasswordButtonPressed(_ sender: Any) {
-        guard let email = Auth.auth().currentUser?.email else { return }
-        
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-            if let error = error {
-                print("Failed to send password reset email with error:", error.localizedDescription)
-                let passwordResetErrorAlert = UIAlertController(title: "Password Reset Error", message: error.localizedDescription, preferredStyle: .alert)
-                passwordResetErrorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(passwordResetErrorAlert, animated: true)
-                return
-            }
-            print("Password reset email sent to:", email)
-            let passwordResetEmailSentAlert = UIAlertController(title: "Password Reset Email Sent", message: "An password reset email has been sent to the email address associated with this account.", preferredStyle: .alert)
-            passwordResetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(passwordResetEmailSentAlert, animated: true)
-        }
-    }
-    
 
     @IBAction func onDeleteAccountButtonPressed(_ sender: Any) {
-        reauthenticateUserAndGetAccountType(userID!) {
-            if self.accountType == "Email" { // Account is an Email account; Send user to password confirmation screen and then begin account deletion process
-                self.showConfirmPasswordPopup()
-            } else { // Account is a Google account; Begin account deletion process
-                print("Checking credentials...\n")
-                self.checkCredentials {
-                    print("Credentials checked!\n")
-                    print("Presenting confirmation to delete account...\n")
-                    self.presentConfirmAccountDeletionAlert {
-                        print("Account deletion confirmed..\n")
-                        self.presentAccountDeletedMessageAlert {
-                            print("The account has been completely deleted...\n")
-                        }
+        if self.accountType == "Email" { // Account is an Email account; Send user to password confirmation screen and then begin account deletion process
+            showConfirmPasswordPopup()
+        } else { // Account is a Google account; Begin account deletion process
+            print("Checking credentials...\n")
+            checkCredentials {
+                print("Credentials checked!\n")
+                print("Presenting confirmation to delete account...\n")
+                self.presentConfirmAccountDeletionAlert {
+                    print("Account deletion confirmed..\n")
+                    self.presentAccountDeletedMessageAlert {
+                        print("The account has been completely deleted...\n")
                     }
                 }
             }
@@ -93,6 +69,7 @@ class AccountSettingsViewController: UIViewController {
         self.view.addSubview(confirmPasswordVC.view)
         confirmPasswordVC.didMove(toParent: self)
     }
+    
     
     // See whether the account type is either email or Google; This will be used to help re-authenticate the user
     func reauthenticateUserAndGetAccountType(_ userID: String, completion: @escaping () -> ()) {
@@ -172,7 +149,7 @@ class AccountSettingsViewController: UIViewController {
     }
     
     func presentAccountDeletedMessageAlert(completion: () -> ()) {
-        let accountDeletedAlert = UIAlertController(title: "Account Deleted", message: "Your account has been deleted. You will now be returned to the welcome screen", preferredStyle: .alert)
+        let accountDeletedAlert = UIAlertController(title: "Account Deleted", message: "Your account has been deleted. You will now be returned to the welcome screen.", preferredStyle: .alert)
         accountDeletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
             print("Taking user to welcome screen...\n")
             self.takeUserToWelcomeScreen()
@@ -187,10 +164,5 @@ class AccountSettingsViewController: UIViewController {
         let welcomeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeViewController")
         UIApplication.topViewController()?.present(welcomeVC, animated: true, completion: nil)
     }
-    
-    
-    
-
-    
     
 }

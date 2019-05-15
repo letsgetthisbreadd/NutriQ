@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nty-j8-V8n">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,13 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-Nr-9MX" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="51" y="177" width="312" height="55"/>
-                                <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="77" y="128" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="FK3-ZY-pnW"/>
-                                    <constraint firstAttribute="width" constant="312" id="hry-9G-LvI"/>
+                                    <constraint firstAttribute="height" constant="40" id="FK3-ZY-pnW"/>
+                                    <constraint firstAttribute="width" constant="260" id="hry-9G-LvI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
                                 <state key="normal" title="Goal Settings">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -41,29 +41,14 @@
                                     <segue destination="xbP-ya-8me" kind="show" id="dIT-IH-SjP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-MX-PIh" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="51" y="658" width="312" height="55"/>
-                                <color key="backgroundColor" red="0.16463811015980842" green="0.23313343299270725" blue="0.91376262900000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="312" id="LgZ-XJ-R1g"/>
-                                    <constraint firstAttribute="height" constant="55" id="XpZ-ij-Vtx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLogoutButtonPressed:" destination="glJ-hU-cJC" eventType="touchUpInside" id="KgB-HL-hbT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-OJ-1WO" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="51" y="299" width="312" height="55"/>
-                                <color key="backgroundColor" red="0.30992774210000001" green="0.86203091369999996" blue="0.91376262900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="77" y="198" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.22250664234161377" green="0.71784073114395142" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="312" id="6iP-pP-nHq"/>
-                                    <constraint firstAttribute="height" constant="55" id="qFJ-Tz-kCp"/>
+                                    <constraint firstAttribute="width" constant="260" id="6iP-pP-nHq"/>
+                                    <constraint firstAttribute="height" constant="40" id="qFJ-Tz-kCp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
                                 <state key="normal" title="Account Settings">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -71,27 +56,39 @@
                                     <segue destination="c1o-DA-Jp8" kind="show" id="eZP-nK-1IA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-MX-PIh" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="528" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.11323424428701401" green="0.62806874513626099" blue="0.94760888814926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="LgZ-XJ-R1g"/>
+                                    <constraint firstAttribute="height" constant="40" id="XpZ-ij-Vtx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLogoutButtonPressed:" destination="glJ-hU-cJC" eventType="touchUpInside" id="KgB-HL-hbT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="TTS-Nr-9MX" secondAttribute="trailing" constant="51" id="6oI-Gn-vWv"/>
-                            <constraint firstItem="tU5-f4-787" firstAttribute="bottom" secondItem="7Va-MX-PIh" secondAttribute="bottom" constant="149" id="AaT-bG-EFU"/>
-                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="dVx-OJ-1WO" secondAttribute="trailing" constant="51" id="H9t-7O-z1j"/>
-                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="PtC-3b-2Fa"/>
-                            <constraint firstItem="7Va-MX-PIh" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="kLV-VR-aQ7"/>
-                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="top" secondItem="tU5-f4-787" secondAttribute="top" constant="89" id="ohe-qt-bo2"/>
-                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="leading" secondItem="tU5-f4-787" secondAttribute="leading" constant="51" id="qe9-Xb-8Ja"/>
-                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="top" secondItem="TTS-Nr-9MX" secondAttribute="bottom" constant="67" id="sDP-GT-Uuc"/>
-                            <constraint firstItem="tU5-f4-787" firstAttribute="trailing" secondItem="7Va-MX-PIh" secondAttribute="trailing" constant="51" id="tte-y1-lTT"/>
+                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="centerX" secondItem="DF4-Il-aKR" secondAttribute="centerX" id="MOd-8i-qfu"/>
+                            <constraint firstItem="TTS-Nr-9MX" firstAttribute="top" secondItem="tU5-f4-787" secondAttribute="top" constant="40" id="glR-sx-tZQ"/>
+                            <constraint firstItem="7Va-MX-PIh" firstAttribute="centerX" secondItem="DF4-Il-aKR" secondAttribute="centerX" id="ibx-qI-FC8"/>
+                            <constraint firstItem="7Va-MX-PIh" firstAttribute="top" secondItem="dVx-OJ-1WO" secondAttribute="bottom" constant="290" id="lhW-AV-Itg"/>
+                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="centerX" secondItem="DF4-Il-aKR" secondAttribute="centerX" id="nu3-LX-bVO"/>
+                            <constraint firstItem="dVx-OJ-1WO" firstAttribute="top" secondItem="TTS-Nr-9MX" secondAttribute="bottom" constant="30" id="u7u-e9-8A4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tU5-f4-787"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="0.62952831006173882" green="0.97368152015229059" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.2161719346" green="0.64611809080000004" blue="0.85045209389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" red="0.91418537919999998" green="1" blue="0.98755480600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.42463260419999999" green="0.85045209389999998" blue="0.37184996609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -129,43 +126,36 @@
         <!--Account Settings View Controller-->
         <scene sceneID="Ee8-Ck-c8b">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="c1o-DA-Jp8" customClass="AccountSettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountSettingsViewController" hidesBottomBarWhenPushed="YES" id="c1o-DA-Jp8" customClass="AccountSettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BL3-DF-YXj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-xh-27f">
-                                <rect key="frame" x="144.5" y="163" width="125" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-xh-27f" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="148" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="KxO-ny-sDh"/>
-                                    <constraint firstAttribute="height" constant="30" id="hBS-EO-G5d"/>
+                                    <constraint firstAttribute="width" constant="260" id="KxO-ny-sDh"/>
+                                    <constraint firstAttribute="height" constant="40" id="hBS-EO-G5d"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Change Password"/>
                                 <connections>
-                                    <action selector="onChangePasswordButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="jK0-zm-gyC"/>
+                                    <segue destination="iec-Ba-mNs" kind="show" id="BFM-GN-uSl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-db-qfp">
-                                <rect key="frame" x="152" y="293" width="110" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mih-pM-iYd" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="428" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.91606956720352173" green="0.32205891609191895" blue="0.2725866436958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="MAx-mc-85r"/>
-                                    <constraint firstAttribute="width" constant="110" id="yo0-Ac-kYT"/>
+                                    <constraint firstAttribute="width" constant="260" id="Ohf-Y2-VYU"/>
+                                    <constraint firstAttribute="height" constant="40" id="YqA-fB-yn5"/>
                                 </constraints>
-                                <state key="normal" title="Reset Password">
-                                    <color key="titleColor" red="1" green="0.23025548458099365" blue="0.17956149578094482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onResetPasswordButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="jPq-SV-c3S"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mih-pM-iYd">
-                                <rect key="frame" x="154.5" y="423" width="105" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="105" id="Ohf-Y2-VYU"/>
-                                    <constraint firstAttribute="height" constant="30" id="YqA-fB-yn5"/>
-                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="0.2302554846" blue="0.1795614958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="onDeleteAccountButtonPressed:" destination="c1o-DA-Jp8" eventType="touchUpInside" id="2lz-Ie-JOm"/>
@@ -174,26 +164,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Va-xh-27f" firstAttribute="top" secondItem="vYq-j1-dcs" secondAttribute="top" constant="75" id="09C-G9-xI4"/>
+                            <constraint firstItem="6Va-xh-27f" firstAttribute="top" secondItem="vYq-j1-dcs" secondAttribute="top" constant="60" id="09C-G9-xI4"/>
                             <constraint firstItem="6Va-xh-27f" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="1Az-xO-Er4"/>
-                            <constraint firstItem="Mih-pM-iYd" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="1DQ-99-c08"/>
-                            <constraint firstItem="PjW-db-qfp" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="VCi-dH-vl1"/>
-                            <constraint firstItem="Mih-pM-iYd" firstAttribute="top" secondItem="PjW-db-qfp" secondAttribute="bottom" constant="100" id="blN-8J-UCb"/>
-                            <constraint firstItem="PjW-db-qfp" firstAttribute="top" secondItem="6Va-xh-27f" secondAttribute="bottom" constant="100" id="gFY-MV-OOL"/>
+                            <constraint firstItem="Mih-pM-iYd" firstAttribute="centerX" secondItem="BL3-DF-YXj" secondAttribute="centerX" id="64W-8M-tKm"/>
+                            <constraint firstItem="Mih-pM-iYd" firstAttribute="centerY" secondItem="BL3-DF-YXj" secondAttribute="centerY" id="gkR-5s-kYw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vYq-j1-dcs"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.42463260419482707" green="0.85045209390862941" blue="0.37184996612616333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.21617193464445356" green="0.64611809077846449" blue="0.85045209390862941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="changePasswordButton" destination="6Va-xh-27f" id="OA9-Aq-m4w"/>
                         <outlet property="deleteAccountButton" destination="Mih-pM-iYd" id="xZq-eh-ZjP"/>
-                        <outlet property="resetPasswordButton" destination="PjW-db-qfp" id="Rud-1G-BiV"/>
-                        <segue destination="iec-Ba-mNs" kind="show" identifier="changePasswordSegue" id="WtU-eh-eXn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDK-Ag-ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="733"/>
+            <point key="canvasLocation" x="1958" y="733"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="faR-zL-mNo">
@@ -202,13 +197,62 @@
                     <view key="view" contentMode="scaleToFill" id="x1J-pu-AWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-YL-Jff">
+                                <rect key="frame" x="20" y="242" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDS-xb-Xml">
+                                <rect key="frame" x="20" y="306" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24H-1q-JXC">
+                                <rect key="frame" x="20" y="178" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alg-75-v6B" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="420" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.22250664234161377" green="0.71784073114395142" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Nbq-R8-rGg"/>
+                                    <constraint firstAttribute="width" constant="260" id="Zf6-d7-Sc1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="onConfirmButtonPressed:" destination="iec-Ba-mNs" eventType="touchUpInside" id="gVX-sB-AQw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OP8-a6-iBI" firstAttribute="trailing" secondItem="wDS-xb-Xml" secondAttribute="trailing" constant="20" id="2rX-OJ-RFV"/>
+                            <constraint firstItem="h9A-YL-Jff" firstAttribute="leading" secondItem="OP8-a6-iBI" secondAttribute="leading" constant="20" id="Fvq-DQ-nu7"/>
+                            <constraint firstItem="OP8-a6-iBI" firstAttribute="trailing" secondItem="h9A-YL-Jff" secondAttribute="trailing" constant="20" id="MAk-qj-sie"/>
+                            <constraint firstItem="alg-75-v6B" firstAttribute="centerX" secondItem="x1J-pu-AWy" secondAttribute="centerX" id="TzD-sd-ADq"/>
+                            <constraint firstItem="alg-75-v6B" firstAttribute="top" secondItem="wDS-xb-Xml" secondAttribute="bottom" constant="80" id="UVw-os-baU"/>
+                            <constraint firstItem="24H-1q-JXC" firstAttribute="leading" secondItem="OP8-a6-iBI" secondAttribute="leading" constant="20" id="WBY-If-wOL"/>
+                            <constraint firstItem="h9A-YL-Jff" firstAttribute="top" secondItem="24H-1q-JXC" secondAttribute="bottom" constant="30" id="d6X-SF-ZAv"/>
+                            <constraint firstItem="wDS-xb-Xml" firstAttribute="top" secondItem="h9A-YL-Jff" secondAttribute="bottom" constant="30" id="qDT-tZ-f9s"/>
+                            <constraint firstItem="24H-1q-JXC" firstAttribute="top" secondItem="OP8-a6-iBI" secondAttribute="top" constant="90" id="qKW-VA-4w1"/>
+                            <constraint firstItem="OP8-a6-iBI" firstAttribute="trailing" secondItem="24H-1q-JXC" secondAttribute="trailing" constant="20" id="rNV-cK-aiv"/>
+                            <constraint firstItem="wDS-xb-Xml" firstAttribute="leading" secondItem="OP8-a6-iBI" secondAttribute="leading" constant="20" id="z0t-wH-2no"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OP8-a6-iBI"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmNewPasswordField" destination="wDS-xb-Xml" id="bYy-9N-xTw"/>
+                        <outlet property="currentPasswordField" destination="24H-1q-JXC" id="c70-Z8-V6I"/>
+                        <outlet property="newPasswordField" destination="h9A-YL-Jff" id="6JP-Xm-1VQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RA-hU-MA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1822" y="1481"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="1488.6160714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Fd-p9-s2u">
@@ -241,7 +285,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKi-Sz-JAE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
-                                        <color key="backgroundColor" red="0.054546527560000002" green="0.73212450740000001" blue="0.63167697190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.22250664234161377" green="0.71784073114395142" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="TBv-Tw-4rv"/>
                                         </constraints>
@@ -274,7 +318,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3l-U5-HY2">
                                         <rect key="frame" x="160" y="185" width="160" height="45"/>
-                                        <color key="backgroundColor" red="0.054546527560000002" green="0.73212450740000001" blue="0.63167697190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.22250664234161377" green="0.71784073114395142" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="G2R-7q-XKc"/>
                                             <constraint firstAttribute="height" constant="45" id="xPU-ME-15d"/>
@@ -326,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBl-Kz-8VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541" y="733"/>
+            <point key="canvasLocation" x="2743" y="733"/>
         </scene>
     </scenes>
 </document>
