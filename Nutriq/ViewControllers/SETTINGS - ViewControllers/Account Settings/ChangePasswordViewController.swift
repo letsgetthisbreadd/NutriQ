@@ -79,7 +79,7 @@ class ChangePasswordViewController: UIViewController {
                     let passwordUpdateAlert = UIAlertController(title: "Password Updated", message: "Your password has been updated successfully", preferredStyle: .alert)
                     passwordUpdateAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
                         print("Taking user to 'Account Settings' screen...\n")
-                        self.takeUserToAccountSettingsScreen()
+                        _ = self.navigationController?.popViewController(animated: true)
                     }))
                     self.present(passwordUpdateAlert, animated: true, completion: nil)
                     return
@@ -116,14 +116,5 @@ class ChangePasswordViewController: UIViewController {
             completion()
         })
     }
-    
-    func takeUserToAccountSettingsScreen() {
-        let accountSettingsVC = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "AccountSettingsViewController")
-        UIApplication.topViewController()?.present(accountSettingsVC, animated: true, completion: nil)
-    }
-    
-    
-    
-
 
 }
