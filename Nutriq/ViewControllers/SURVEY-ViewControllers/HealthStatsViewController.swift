@@ -1,4 +1,12 @@
 //
+//  HealthStatsViewController.swift
+//  Nutriq
+//
+//  Created by Albert Gertskis on 5/16/19.
+//  Copyright © 2019 NutriQ. All rights reserved.
+//
+
+//
 //  SurveyViewController.swift
 //  Nutriq
 //
@@ -9,11 +17,12 @@
 import UIKit
 import Firebase
 
-class SurveyViewController: UIViewController {
-
+class HealthStatsViewController: UIViewController {
+    
     
     // MARK: - Properties
-    
+    var overallGoal = ""
+    let weeklyGoal: Double = 0
     private var datePicker: UIDatePicker?
     @IBOutlet weak var genderPicker: UISegmentedControl!
     @IBOutlet weak var dobTextField: UITextField!
@@ -28,7 +37,6 @@ class SurveyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // FIXME: - Date picker is bugging out
         // Configures the Date Picker to have a 'done' button
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
@@ -41,7 +49,7 @@ class SurveyViewController: UIViewController {
     
     
     // MARK: - Date Picker Helper Functions
-
+    
     @objc func dismissPicker() {
         view.endEditing(true)
         
@@ -109,7 +117,6 @@ class SurveyViewController: UIViewController {
         let currentWeight = beginningWeight
         guard let goalWeight = Double(goalWeightTextField.text!) else { return }
         let weightLeftUntilGoal: Double
-        var overallGoal: String
         
         // Finish user input validation
         if heightInInches > 11 { // Height in inches value too large
@@ -124,11 +131,17 @@ class SurveyViewController: UIViewController {
             beginningWeightTooLowAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(beginningWeightTooLowAlert, animated: true)
             return
-        } else if goalWeight <= 80 { // Weight too low
+        } else if goalWeight <= 80 { // Goal weight too low
             print("The goal weight entered is too small. Please input a larger goal weight and try again!")
             let goalWeightTooLowAlert = UIAlertController(title: "Goal weight too low", message: "The goal weight entered is too small. Please input a larger goal weight and try again.", preferredStyle: .alert)
             goalWeightTooLowAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(goalWeightTooLowAlert, animated: true)
+            return
+        } else if goalWeight > 450 { // Goal weight too high
+            print("The goal weight entered is too large. Please input a smaller goal weight and try again!")
+            let goalWeightTooHighAlert = UIAlertController(title: "Goal weight too high", message: "The goal weight entered is too large. Please input a smaller goal weight and try again.", preferredStyle: .alert)
+            goalWeightTooHighAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(goalWeightTooHighAlert, animated: true)
             return
         }
         
@@ -147,26 +160,38 @@ class SurveyViewController: UIViewController {
         // TODO: - Add date validation (format and age over 18 years old)
         
         // User input validation passed; Send the inputs for storage in the Firebase database
-        storeSurveyInfo(gender: gender, dateOfBirth: dateOfBirth, totalHeight: totalHeight, beginningWeight: beginningWeight, goalWeight: goalWeight, currentWeight: currentWeight, weightLeftUntilGoal: weightLeftUntilGoal, overallGoal: overallGoal)
+        storeSurveyInfo(gender: gender, dateOfBirth: dateOfBirth, totalHeight: totalHeight, beginningWeight: beginningWeight, goalWeight: goalWeight, currentWeight: currentWeight, weightLeftUntilGoal: weightLeftUntilGoal, overallGoal: overallGoal, weeklyGoal: weeklyGoal)
         
         
     }
     
-    func storeSurveyInfo(gender: String, dateOfBirth: String, totalHeight: Int, beginningWeight: Double, goalWeight: Double, currentWeight: Double, weightLeftUntilGoal: Double, overallGoal: String) {
+    func storeSurveyInfo(gender: String, dateOfBirth: String, totalHeight: Int, beginningWeight: Double, goalWeight: Double, currentWeight: Double, weightLeftUntilGoal: Double, overallGoal: String, weeklyGoal: Double) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
+        
         // Create the health-stats object which will be added to the current user's data
-            let userHealthStats = ["health-stats": ["gender": gender, "date-of-birth": dateOfBirth, "height-inches": totalHeight, "current-weight-pounds": beginningWeight, "goal-weight-pounds": goalWeight]]
+        let userHealthStats = ["health-stats": ["gender": gender, "date-of-birth": dateOfBirth, "height-inches": totalHeight, "beginning-weight-pounds": beginningWeight, "goal-weight-pounds": goalWeight, "current-weight-pounds": currentWeight, "weight-left-until-goal": weightLeftUntilGoal, "overall-goal": overallGoal, "weekly-goal": weeklyGoal]]
         
         Database.database().reference().child("users").child(userID).updateChildValues(userHealthStats) { (error, ref) in
             if let error = error {
                 print("Failed to udpate database with error: ", error.localizedDescription)
                 return
             }
-            print("Successfully added user's health stats and goals to Firebase database!")
+            print("Successfully added user's health stats and goals to the Firebase database!")
         }
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Prepare for segue only if "Lose weight" or "Gain weight" buttons tapped
+        if segue.identifier == "healthStatsToActivityLevelSegue" {
+            print("Passing data to ActivityLevelViewController...")
+            
+            let activityLevelViewController = segue.destination as! ActivityLevelViewController
+            activityLevelViewController.overallGoal = overallGoal
+        }
+    }
+    
+    
 }
+

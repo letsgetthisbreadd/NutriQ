@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		27392D3A22812CB8005275C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27392D3922812CB8005275C0 /* SettingsViewController.swift */; };
 		275799DE2272A818008C2859 /* SurveyResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275799DD2272A818008C2859 /* SurveyResultsViewController.swift */; };
-		277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */; };
-		277BB7DC22726B1300CA8FBA /* SurveyPt3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */; };
-		277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */; };
 		2787BBEC2279960200AFE68A /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787BBEB2279960200AFE68A /* FoodCell.swift */; };
 		2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792EEA02261B72C00F0AFB1 /* WelcomeViewController.swift */; };
 		27995FB622778BFE004A8CB7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27995FB522778BFE004A8CB7 /* GradientView.swift */; };
@@ -36,6 +33,9 @@
 		6B0A6CFF2270246100571380 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6CFE2270246100571380 /* GoogleService-Info.plist */; };
 		6B0A6D01227044C100571380 /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B0A6D00227044C100571380 /* Survey.storyboard */; };
 		6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */; };
+		6B0FB35C228DE5D800866CD3 /* WeeklyGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35B228DE5D800866CD3 /* WeeklyGoalViewController.swift */; };
+		6B0FB35E228DF28500866CD3 /* ActivityLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35D228DF28500866CD3 /* ActivityLevelViewController.swift */; };
+		6B0FB360228DF43D00866CD3 /* HealthStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35F228DF43D00866CD3 /* HealthStatsViewController.swift */; };
 		6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */; };
 		6B3CBD63227D873F00D0BD30 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */; };
 		6B876B8D2267D853007A48AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B876B8C2267D853007A48AF /* Profile.storyboard */; };
@@ -52,9 +52,6 @@
 /* Begin PBXFileReference section */
 		27392D3922812CB8005275C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		275799DD2272A818008C2859 /* SurveyResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyResultsViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyResultsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt2ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt2ViewController.swift"; sourceTree = SOURCE_ROOT; };
-		277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt3ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt3ViewController.swift"; sourceTree = SOURCE_ROOT; };
-		277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SurveyPt4ViewController.swift; path = "Nutriq/ViewControllers/SURVEY-ViewControllers/SurveyPt4ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		277EC51A22725D31006BB6AB /* Test.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Test.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2787BBEA227991EF00AFE68A /* Proxima-Nova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-Semibold.otf"; sourceTree = "<group>"; };
 		2787BBEB2279960200AFE68A /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
@@ -83,6 +80,9 @@
 		6B0A6CFE2270246100571380 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B0A6D00227044C100571380 /* Survey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
 		6B0D488C2273CBFC00AF9254 /* GetUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsernameViewController.swift; sourceTree = "<group>"; };
+		6B0FB35B228DE5D800866CD3 /* WeeklyGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGoalViewController.swift; sourceTree = "<group>"; };
+		6B0FB35D228DF28500866CD3 /* ActivityLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelViewController.swift; sourceTree = "<group>"; };
+		6B0FB35F228DF43D00866CD3 /* HealthStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatsViewController.swift; sourceTree = "<group>"; };
 		6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		6B876B8C2267D853007A48AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -132,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				27EDE5C8226146E8001C8A08 /* SurveyViewController.swift */,
-				277BB7D9227269F700CA8FBA /* SurveyPt2ViewController.swift */,
-				277BB7DB22726B1300CA8FBA /* SurveyPt3ViewController.swift */,
-				277BB7DD22726D6200CA8FBA /* SurveyPt4ViewController.swift */,
+				6B0FB35F228DF43D00866CD3 /* HealthStatsViewController.swift */,
+				6B0FB35D228DF28500866CD3 /* ActivityLevelViewController.swift */,
+				6B0FB35B228DE5D800866CD3 /* WeeklyGoalViewController.swift */,
 				275799DD2272A818008C2859 /* SurveyResultsViewController.swift */,
 			);
 			path = "SURVEY-ViewControllers";
@@ -530,10 +530,10 @@
 				27EDE5C722614579001C8A08 /* SignUpViewController.swift in Sources */,
 				27B90BE32279A18000BE7938 /* MealDetailViewController.swift in Sources */,
 				2787BBEC2279960200AFE68A /* FoodCell.swift in Sources */,
-				277BB7DA227269F700CA8FBA /* SurveyPt2ViewController.swift in Sources */,
+				6B0FB360228DF43D00866CD3 /* HealthStatsViewController.swift in Sources */,
+				6B0FB35C228DE5D800866CD3 /* WeeklyGoalViewController.swift in Sources */,
 				2792EEA12261B72C00F0AFB1 /* WelcomeViewController.swift in Sources */,
 				27392D3A22812CB8005275C0 /* SettingsViewController.swift in Sources */,
-				277BB7DE22726D6200CA8FBA /* SurveyPt4ViewController.swift in Sources */,
 				6B02467F22865BD200F8815C /* AccountSettingsViewController.swift in Sources */,
 				6B07F87D228BD91E007F250B /* ForgotPasswordViewController.swift in Sources */,
 				27B90BE52279A76A00BE7938 /* ProfileViewController.swift in Sources */,
@@ -546,8 +546,8 @@
 				27995FBA22778C13004A8CB7 /* ToolbarPiker.swift in Sources */,
 				6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */,
 				27EDE5C9226146E8001C8A08 /* SurveyViewController.swift in Sources */,
-				277BB7DC22726B1300CA8FBA /* SurveyPt3ViewController.swift in Sources */,
 				27995FB622778BFE004A8CB7 /* GradientView.swift in Sources */,
+				6B0FB35E228DF28500866CD3 /* ActivityLevelViewController.swift in Sources */,
 				6B0D488D2273CBFC00AF9254 /* GetUsernameViewController.swift in Sources */,
 				6BAB136E2260676200C5C5E3 /* AppDelegate.swift in Sources */,
 				6B04033E228A4FF900F98CFB /* ChangePasswordViewController.swift in Sources */,

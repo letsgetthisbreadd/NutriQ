@@ -1,18 +1,18 @@
 //
-//  SurveyPt2ViewController.swift
+//  ActivityLevelViewController.swift
 //  Nutriq
 //
-//  Created by Michael Mcmanus on 4/25/19.
+//  Created by Albert Gertskis on 5/16/19.
 //  Copyright © 2019 NutriQ. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class SurveyPt2ViewController: UIViewController {
+class ActivityLevelViewController: UIViewController {
 
-    
     // MARK: - Properties
+    var overallGoal = ""
     var activityMultiplier: Double = 0
     @IBOutlet weak var notActiveButton: ShadowButton!
     @IBOutlet weak var lightlyActiveButton: ShadowButton!
@@ -24,17 +24,17 @@ class SurveyPt2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     
     // MARK: - Helper Functions & Actions
-
+    
     @IBAction func notVeryActiveButtonPressed(_ sender: Any) {
         activityMultiplier = 1.2
         storeSurveyInfo(activityLevel: "Not very active", activityMultiplier: activityMultiplier)
     }
-
+    
     @IBAction func lightlyActiveButtonPressed(_ sender: Any) {
         activityMultiplier = 1.375
         storeSurveyInfo(activityLevel: "Lightly active", activityMultiplier: activityMultiplier)
@@ -61,14 +61,27 @@ class SurveyPt2ViewController: UIViewController {
                 print("Failed to udpate database with error: ", error.localizedDescription)
                 return
             }
-            print("Successfully added user's health-stats(2) to Firebase database!")
+            print("Successfully added user's activity level to the Firebase database!")
         }
-        performSegue1()
+        segueToNextScreen()
     }
     
-    func performSegue1() {
-        self.performSegue(withIdentifier: "surveySegue1", sender: self)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Prepare for segue only if "Lose weight" or "Gain weight" buttons tapped
+        if segue.identifier == "activityLevelToWeeklyGoalSegue" {
+            print("Passing data to WeeklyGoalViewController...")
+            
+            let weeklyGoalViewController = segue.destination as! WeeklyGoalViewController
+            weeklyGoalViewController.overallGoal = overallGoal
+        }
     }
     
+    func segueToNextScreen() {
+        if overallGoal == "Maintain" { // If overall goal is to maintain weight, skip weekly goal screen and go straight to survey results screen
+            self.performSegue(withIdentifier: "activityLevelToSurveyResultsSegue", sender: self)
+        } else { // If overall goal is to lose or gain weight, go to weekly goal screen
+            self.performSegue(withIdentifier: "activityLevelToWeeklyGoalSegue", sender: self)
+        }
+    }
 
 }

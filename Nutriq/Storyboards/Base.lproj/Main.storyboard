@@ -299,7 +299,7 @@
                     <connections>
                         <outlet property="continueButton" destination="6Hz-gm-GvO" id="3xh-bE-Oe7"/>
                         <outlet property="usernameField" destination="vVU-L1-tJ6" id="dtt-vJ-iSn"/>
-                        <segue destination="rAc-ga-sHm" kind="presentation" identifier="usernameToSurveySegue" id="0Id-ZG-72O"/>
+                        <segue destination="v1P-qe-vab" kind="presentation" identifier="usernameToSurveySegue" id="Ze1-yH-9jD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-dF-p6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,7 +309,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1209" y="76"/>
+            <point key="canvasLocation" x="1362" y="76"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Bxd-vc-ZZg">
@@ -501,7 +501,7 @@
                         <outlet property="googleSignupLabel" destination="GrR-mb-1II" id="7Kv-V2-9Wm"/>
                         <outlet property="passwordField" destination="AQW-US-sQf" id="Pov-mu-8k5"/>
                         <outlet property="usernameField" destination="Cox-Pr-mqT" id="NJ3-AI-fMh"/>
-                        <segue destination="rAc-ga-sHm" kind="presentation" identifier="signupSegue" id="i0u-uG-y5q"/>
+                        <segue destination="v1P-qe-vab" kind="presentation" identifier="signupSegue" id="Jlk-9u-9Oc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6r-b4-J1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -511,17 +511,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2343.4782608695655" y="-687.05357142857144"/>
-        </scene>
-        <!--SurveyViewController-->
-        <scene sceneID="C1j-s0-e0j">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SurveyViewController" storyboardName="Survey" referencedIdentifier="SurveyViewController" id="LIp-Li-HYc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="e9g-UM-O36"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-ee-aSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3091" y="76"/>
+            <point key="canvasLocation" x="2370" y="-687"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="s7h-yu-2r5">
@@ -611,23 +601,15 @@
             </objects>
             <point key="canvasLocation" x="382" y="-1426"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="puA-7p-G37">
+        <!--HealthStatsViewController-->
+        <scene sceneID="7Mm-2v-nBE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rAc-ga-sHm" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIO-hk-Hfb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LIp-Li-HYc" kind="relationship" relationship="rootViewController" id="p7P-oS-dUK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NAB-i2-yDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="HealthStatsViewController" storyboardName="Survey" referencedIdentifier="HealthStatsViewController" id="a4h-y8-UFV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e12-Mc-u3f"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Vf-x3-wbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2343" y="76"/>
+            <point key="canvasLocation" x="3303" y="76"/>
         </scene>
         <!--ForgotPasswordViewController-->
         <scene sceneID="vUL-AY-FC6">
@@ -727,7 +709,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ln3-fG-2RD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-475" y="-687"/>
+            <point key="canvasLocation" x="-368" y="-687"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="osd-44-9LW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v1P-qe-vab" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A4D-mm-CIc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a4h-y8-UFV" kind="relationship" relationship="rootViewController" id="6xk-dP-6cB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2H-Hs-Ndi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371" y="76"/>
         </scene>
     </scenes>
     <resources>
@@ -737,6 +737,6 @@
         <image name="backArrow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i0u-uG-y5q"/>
+        <segue reference="Ze1-yH-9jD"/>
     </inferredMetricsTieBreakers>
 </document>

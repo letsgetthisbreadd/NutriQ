@@ -1,17 +1,16 @@
 //
-//  SurveyPt4ViewController.swift
+//  WeeklyGoalViewController.swift
 //  Nutriq
 //
-//  Created by Michael Mcmanus on 4/25/19.
+//  Created by Albert Gertskis on 5/16/19.
 //  Copyright © 2019 NutriQ. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class SurveyPt4ViewController: UIViewController {
-    
-    
+class WeeklyGoalViewController: UIViewController {
+
     // MARK: - Properties
     var overallGoal = ""
     var weeklyGoal: Double = 0
@@ -33,11 +32,11 @@ class SurveyPt4ViewController: UIViewController {
         } else if overallGoal == "Gain" { // Set weekly goal to positive for gaining weight
             weeklyGoal = 1
         }
-            
+        
     }
     
     // MARK: - Helper Functions & Actions
-
+    
     @IBAction func halfPoundButtonPressed(_ sender: Any) {
         storeSurveyInfo(weeklyGoalOf: weeklyGoal * 0.5)
     }
@@ -73,14 +72,15 @@ class SurveyPt4ViewController: UIViewController {
                 print("Failed to update database with error: ", error.localizedDescription)
                 return
             }
-            print("Successfully added user's health-stats(4) to Firebase database!")
+            print("Successfully added user's weekly goal to the Firebase database!")
         }
-        performSegue3()
+        segueToSurveyResults()
     }
     
     
-    func performSegue3() {
-        self.performSegue(withIdentifier: "surveySegue3", sender: self)
+    func segueToSurveyResults() {
+        print("Segueing to SurveyResultsViewController...")
+        self.performSegue(withIdentifier: "weeklyGoalToSurveyResultsSegue", sender: self)
     }
-
+    
 }
