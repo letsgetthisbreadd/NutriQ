@@ -10,30 +10,25 @@ import UIKit
 
 class MealDetailViewController: UIViewController {
     
-   
+    
+    // MARK: - Properties
+    
+    var mealTitle: String = ""
     @IBOutlet weak var mealNameLabel: UILabel!
     
     
-    
-    var mealTitle: String = ""
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mealNameLabel.text = mealTitle
 
-        // Do any additional setup after loading the view.
     }
     
+    
+    // MARK: - Helper Functions & Actions
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

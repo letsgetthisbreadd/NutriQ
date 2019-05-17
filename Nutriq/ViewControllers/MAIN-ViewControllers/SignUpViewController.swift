@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
             // Get the unique userID of the current user signing up
             guard let userID = result?.user.uid else { return }
         
-            let userInfo = ["username": username, "email": email]
+            let userInfo = ["username": username, "email": email, "account-type": "Email"]
             
             // Update the database for the userID above with the email address & username entered
             Database.database().reference().child("users").child(userID).updateChildValues(userInfo, withCompletionBlock: { (error, ref) in
@@ -168,6 +168,8 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
             self.present(googleSignupAlert, animated: true)
             return
         } else {
+            self.customActivityIndicator(self.view, startAnimate: true) // Start the loading indicator animation
+            
             guard let authentication = user.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
             // Asynchronously signs in to Firebase with the given 3rd-party credentials (e.g. Google, Facebook) and returns additional identity provider data
@@ -190,16 +192,18 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
     }
     
     @objc func handleGoogleSignup(forUserEmail email: String) {
+    
         guard let userID = Auth.auth().currentUser?.uid else { return }
     
         // If user that is signing up with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
         Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
+            self.customActivityIndicator(self.view, startAnimate: false) // Stop the loading indicator animation
             
             if (!snapshot.exists()) {
                 print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
                 
-                let userInfo = [userID: ["email": email]]
+                let userInfo = [userID: ["email": email, "account-type": "Google"]]
                 
                 Database.database().reference().child("users").updateChildValues(userInfo, withCompletionBlock: { (error, ref) in
                     if let error = error {
@@ -218,21 +222,32 @@ class SignUpViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDele
                 // Transfer user to username retrieval screen
                 print("Username has not been created yet for:", userID, "Segueing to username creation screen...")
                 self.takeUserToUsernameScreen()
-            } else { // Current user has an email and username --> Send user to home screen
-                let usernameInfo = ["username": self.username]
-                
-                // If the username is deleted from the database for any reason, add it back using the UserDefaults value
-                Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
-                    if let error = error {
-                        print("Failed to update database with error: ", error.localizedDescription)
-                        return
-                    }
-                    print("Succesfully added Google user's username to Firebase database!")
-                })
-                print("Email and username for:", userID, "are stored in the database. Segueing home...")
-                
-                // Transfer user to username retrieval screen
-                self.takeUserToHomeScreen()
+            } else {
+                print(NSStringFromClass(UIApplication.topViewController()!.classForCoder).components(separatedBy: ".").last!, type(of: NSStringFromClass(UIApplication.topViewController()!.classForCoder).components(separatedBy: ".").last!), "\n")
+                // If user is on AccountSettingsViewController, check if user has an account (re-authenticate)
+                if NSStringFromClass(UIApplication.topViewController()!.classForCoder).components(separatedBy: ".").last! == "AccountSettingsViewController" {
+                    print("User has been signed in silently from SignUpViewControlller...\n")
+                    return
+                } else { // If user is on LoginViewController (or any other VC)
+                    // TODO: - Remove the commented code below after testing if username for a user is not changing to something it shouldn't and all segues are performed correctly + no bugs
+                    
+//                    // Current user has an email and username --> Send user to home screen
+//                    let usernameInfo = ["username": self.username]
+//                    
+//                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
+//                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
+//                        if let error = error {
+//                            print("Failed to update database with error: ", error.localizedDescription)
+//                            return
+//                        }
+//                        print("Succesfully added Google user's username to Firebase database!")
+//                    })
+//                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
+                    
+                     print("Segueing home...\n")
+                    // Transfer user to home screen
+                    self.takeUserToHomeScreen()
+                }
             }
         }
     }

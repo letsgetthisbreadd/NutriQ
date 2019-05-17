@@ -84,7 +84,7 @@ class SurveyResultsViewController: UIViewController {
                 print("Failed to udpate database with error: ", error.localizedDescription)
                 return
             }
-            print("Successfully added user's health-stats(4) to Firebase database!")
+            print("Successfully added user's health-stats(5) to Firebase database!")
         }
         displayGoalCalories()
     }
