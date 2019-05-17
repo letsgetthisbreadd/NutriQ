@@ -13,6 +13,7 @@ class SurveyResultsViewController: UIViewController {
 
     
     // MARK: - Properties
+    
     var maintenanceCalories: Int = 0
     var goalCalories: Int = 0
     var age: Int = 0

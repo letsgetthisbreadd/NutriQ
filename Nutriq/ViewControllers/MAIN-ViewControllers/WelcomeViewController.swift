@@ -20,8 +20,6 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     
-
-    
     // MARK: - Init
     
     override func viewDidLoad() {

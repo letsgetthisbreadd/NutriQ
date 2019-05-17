@@ -15,7 +15,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
 
 
     // MARK: - Properties
-    let username = UserDefaults.standard.string(forKey: "username") ?? "Username does not exist"
+    
+    var username = ""
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var emailSigninButtonView: UIView!
@@ -23,6 +24,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     @IBOutlet weak var googleSigninButton: GIDSignInButton!
     @IBOutlet weak var googleSigninButtonView: UIView!
     @IBOutlet weak var googleSigninLabel: UILabel!
+    
     
     // MARK: - Init
 
@@ -107,14 +109,15 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
 
-    @objc func handleGoogleLogin(forUserEmail email: String) {
+    @objc func handleGoogleLogin(forUserEmail email: String, username: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
         Database.database().reference().child("users").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) { (snapshot) in
             print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
             self.customActivityIndicator(self.view, startAnimate: false) // Stop the loading indicator animation
-
+            print("Handling Google login with username:", username)
+            
             if (!snapshot.exists()) {
                 print("User ID:", userID, "and email:", email, "does not exist in the Firebase database. Updating the database...")
 
@@ -131,7 +134,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     self.takeUserToUsernameScreen()
 
                 })
-            } else if (snapshot.exists() && self.username == "Username does not exist") {
+            } else if (snapshot.exists() && self.username == "") {
                 // If snapshot returns user with associated email AND that email doesn't have a username associated with it, send the user to the username creation screen.
                 // If user signs in with Google and exists in the Firebase database but doesn't have a username, take them to the username creation screen. This scenario would happen if the user signed in with a Google account but didn't have an account to begin with. If that user exits and closes the app and then tries to sign in again, instead of being taking to the home page (which would result in an error since no stats are stored for that user), a check is performed to see if they created a username before exiting. If not, that means they didn't complete the survey either so the app takes them to the proper screen (to get the user's information)
                 // Transfer user to username retrieval screen
@@ -144,21 +147,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     print("User has been signed in silently from LoginViewController...\n")
                     return
                 } else { // If user is on LoginViewController (or any other VC)
-                    // TODO: - Remove the commented code below after testing if username for a user is not changing to something it shouldn't and all segues are performed correctly + no bugs
-                    
-                    // Current user has an email and username --> Send user to home screen
-//                    let usernameInfo = ["username": self.username]
-//
-//                    // If the username is deleted from the database for any reason, add it back using the UserDefaults value
-//                    Database.database().reference().child("users").child(userID).updateChildValues(usernameInfo, withCompletionBlock: { (error, ref) in
-//                        if let error = error {
-//                            print("Failed to update database with error: ", error.localizedDescription)
-//                            return
-//                        }
-//                        print("Succesfully added Google user's username to Firebase database!")
-//                    })
-//                    print("Email and username for:", userID, "are stored in the database. Segueing home...")
-                    
                     print("Segueing home...\n")
                     // Transfer user to username retrieval screen
                     self.takeUserToHomeScreen()
@@ -166,6 +154,25 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             }
         }
     }
+    
+    func checkForUsername(completion: @escaping () -> ()) {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        // If user that is signing in with a Google account is not in the database, store their userID and email in the DB and segue them to the username creation screen
+        Database.database().reference().child("users/\(userID)/username").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot.value!) // Snapshot of the keys/values in DB that have matching userID
+            if (!snapshot.exists()) {
+                print("A username does not exist for user with userID:", userID)
+                completion()
+            } else {
+                print("A username exists for user with userID:", userID)
+                print("That username is:", snapshot.value!)
+                self.username = snapshot.value! as! String
+                completion()
+            }
+        }
+    }
+    
 
     // Google login button pressed
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -184,7 +191,10 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             Auth.auth().signInAndRetrieveData(with: credential) { (result, error) in
                 if error == nil {
                     guard let email = user.profile.email else { return }
-                    self.handleGoogleLogin(forUserEmail: email)
+                    self.checkForUsername {
+                        print("Username has been checked for. Now handling Google login with username:", self.username)
+                        self.handleGoogleLogin(forUserEmail: email, username: self.username)
+                    }
                 } else {
                     print(error as Any)
                     // TODO: - Remove firebaseAsyncSigninErrorAlert before release

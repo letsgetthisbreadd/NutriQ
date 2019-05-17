@@ -12,6 +12,7 @@ import Firebase
 class ActivityLevelViewController: UIViewController {
 
     // MARK: - Properties
+    
     var overallGoal = ""
     var activityMultiplier: Double = 0
     @IBOutlet weak var notActiveButton: ShadowButton!
@@ -65,6 +66,9 @@ class ActivityLevelViewController: UIViewController {
         }
         segueToNextScreen()
     }
+    
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Prepare for segue only if "Lose weight" or "Gain weight" buttons tapped

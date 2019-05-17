@@ -21,6 +21,7 @@ class HealthStatsViewController: UIViewController {
     
     
     // MARK: - Properties
+    
     var overallGoal = ""
     let weeklyGoal: Double = 0
     private var datePicker: UIDatePicker?
@@ -40,9 +41,9 @@ class HealthStatsViewController: UIViewController {
         // Configures the Date Picker to have a 'done' button
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(SurveyViewController.dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(HealthStatsViewController.dateChanged(datePicker:)), for: .valueChanged)
         dobTextField.inputView = datePicker
-        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(SurveyViewController.dismissPicker))
+        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(HealthStatsViewController.dismissPicker))
         dobTextField.inputAccessoryView = toolBar
         
     }
@@ -181,6 +182,9 @@ class HealthStatsViewController: UIViewController {
         }
         
     }
+    
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Prepare for segue only if "Lose weight" or "Gain weight" buttons tapped

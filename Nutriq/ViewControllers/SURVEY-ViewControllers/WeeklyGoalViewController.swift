@@ -12,6 +12,7 @@ import Firebase
 class WeeklyGoalViewController: UIViewController {
 
     // MARK: - Properties
+    
     var overallGoal = ""
     var weeklyGoal: Double = 0
     @IBOutlet weak var halfPoundButton: ShadowButton!
@@ -77,6 +78,8 @@ class WeeklyGoalViewController: UIViewController {
         segueToSurveyResults()
     }
     
+    
+    // MARK: - Navigation
     
     func segueToSurveyResults() {
         print("Segueing to SurveyResultsViewController...")
