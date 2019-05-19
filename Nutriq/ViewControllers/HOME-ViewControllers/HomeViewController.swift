@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Alamofire
+
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -28,10 +30,32 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        doRequestWithHeaders1()
+    
         
     }
     
-    
+    func doRequestWithHeaders1() {
+        let MY_API_KEY = ""
+        let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        
+        let headers: HTTPHeaders = [
+            "X-RapidAPI-Host": Host,
+            "X-RapidAPI-Key": MY_API_KEY,
+            "Accept": "application/json"
+        ]
+        
+        
+        // MARK: - To make sure the headers are sent, use debugPrint on the request
+        let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?targetCalories=2700&timeFrame=day", headers: headers)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+        debugPrint(request)
+    }
+
+        
+
     // MARK: Cell Functions
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
