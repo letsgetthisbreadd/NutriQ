@@ -26,6 +26,10 @@ class ChangePasswordViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.title = "Change Password"
+    }
+    
     
     // MARK: - Helper Functions & Actions
     @IBAction func onConfirmButtonPressed(_ sender: Any) {

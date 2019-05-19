@@ -17,7 +17,6 @@ class AccountSettingsViewController: UIViewController {
     let userID = Auth.auth().currentUser?.uid
     var accountType = ""
     @IBOutlet weak var changePasswordButton: UIButton!
-    @IBOutlet weak var resetPasswordButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
     
     
@@ -27,22 +26,28 @@ class AccountSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If account type is a Google account, hide the "Change Password" button
-        reauthenticateUserAndGetAccountType(userID!) {
-            if self.accountType == "Google" {
-                self.changePasswordButton.isHidden = true
+        // Sign the Google user in again (silently) to allow user to change password or delete account
+        GIDSignIn.sharedInstance()?.signInSilently()
+        
+        displayTitle {
+            // If account type is a Google account, hide the "Change Password" button
+            reauthenticateUserAndGetAccountType(userID!) {
+                if self.accountType == "Google" {
+                    self.changePasswordButton.isHidden = true
+                }
             }
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Sign the Google user in again (silently) to allow user to change password or delete account
-        GIDSignIn.sharedInstance()?.signInSilently()
-    }
-    
+
 
     // MARK: - Helper Functions & Actions
-
+    
+    func displayTitle(completion: () -> ()) {
+        self.title = "Account Settings"
+        completion()
+    }
+    
+    
     @IBAction func onDeleteAccountButtonPressed(_ sender: Any) {
         if self.accountType == "Email" { // Account is an Email account; Send user to password confirmation screen and then begin account deletion process
             showConfirmPasswordPopup()

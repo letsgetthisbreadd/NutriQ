@@ -11,7 +11,9 @@ import Firebase
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    
     // MARK: - Properties
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     

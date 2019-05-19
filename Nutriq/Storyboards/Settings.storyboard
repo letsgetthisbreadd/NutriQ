@@ -53,7 +53,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c1o-DA-Jp8" kind="show" id="eZP-nK-1IA"/>
+                                    <segue destination="c1o-DA-Jp8" kind="show" id="fi7-pK-zfL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-MX-PIh" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
@@ -99,29 +99,60 @@
             </objects>
             <point key="canvasLocation" x="1084.0579710144928" y="-12.053571428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Goal Settings View Controller-->
         <scene sceneID="FBP-vo-zNV">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="xbP-ya-8me" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wta-wH-jzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="GoalSettingsViewController" hidesBottomBarWhenPushed="YES" id="xbP-ya-8me" customClass="GoalSettingsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2aV-Rt-1p1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change goals, update weight, etc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-Rv-I9Q">
-                                <rect key="frame" x="79" y="235" width="256" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ0-Gz-HYd" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="148" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OGK-uS-Pmr"/>
+                                    <constraint firstAttribute="width" constant="260" id="tdS-WY-r14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Update Weight"/>
+                                <connections>
+                                    <action selector="onUpdateWeightButtonPressed:" destination="xbP-ya-8me" eventType="touchUpInside" id="6oy-Rg-rP4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcw-Cu-UTS" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="428" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="NKF-Za-bUb"/>
+                                    <constraint firstAttribute="height" constant="40" id="rWS-OZ-uzx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Update Goals"/>
+                                <connections>
+                                    <segue destination="ni2-Zy-2CS" kind="show" identifier="editGoalsSegue" id="Fss-34-eHC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EJ0-Gz-HYd" firstAttribute="top" secondItem="fe9-dA-lVk" secondAttribute="top" constant="60" id="GbC-tS-6hF"/>
+                            <constraint firstItem="EJ0-Gz-HYd" firstAttribute="centerX" secondItem="2aV-Rt-1p1" secondAttribute="centerX" id="ZPf-UB-zsb"/>
+                            <constraint firstItem="qcw-Cu-UTS" firstAttribute="centerX" secondItem="2aV-Rt-1p1" secondAttribute="centerX" id="fo7-s5-8jY"/>
+                            <constraint firstItem="qcw-Cu-UTS" firstAttribute="centerY" secondItem="2aV-Rt-1p1" secondAttribute="centerY" id="tdo-Ps-cTS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fe9-dA-lVk"/>
                     </view>
+                    <connections>
+                        <outlet property="updateGoalsButton" destination="qcw-Cu-UTS" id="eVg-km-RrT"/>
+                        <outlet property="updateWeightButton" destination="EJ0-Gz-HYd" id="TmC-R3-AS3"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wta-wH-jzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="721"/>
+            <point key="canvasLocation" x="571" y="723"/>
         </scene>
         <!--Account Settings View Controller-->
         <scene sceneID="Ee8-Ck-c8b">
@@ -188,7 +219,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDK-Ag-ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="733"/>
+            <point key="canvasLocation" x="1628" y="723"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="goC-N3-Fhl">
+            <objects>
+                <viewController id="ni2-Zy-2CS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VxA-Js-gHD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dns-Wv-Ipa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5M-8y-lAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="1488"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="faR-zL-mNo">
@@ -199,22 +245,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-YL-Jff">
-                                <rect key="frame" x="20" y="242" width="374" height="34"/>
+                                <rect key="frame" x="20" y="243" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDS-xb-Xml">
-                                <rect key="frame" x="20" y="306" width="374" height="34"/>
+                                <rect key="frame" x="20" y="308" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="24H-1q-JXC">
-                                <rect key="frame" x="20" y="178" width="374" height="34"/>
+                                <rect key="frame" x="20" y="178" width="374" height="35"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alg-75-v6B" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="77" y="420" width="260" height="40"/>
+                                <rect key="frame" x="77" y="423" width="260" height="40"/>
                                 <color key="backgroundColor" red="0.22250664234161377" green="0.71784073114395142" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Nbq-R8-rGg"/>
@@ -252,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RA-hU-MA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="1488.6160714285713"/>
+            <point key="canvasLocation" x="1628" y="1488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Fd-p9-s2u">
@@ -370,7 +416,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBl-Kz-8VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="733"/>
+            <point key="canvasLocation" x="2378" y="723"/>
+        </scene>
+        <!--UpdateWeightViewController-->
+        <scene sceneID="40l-p4-UE8">
+            <objects>
+                <viewController storyboardIdentifier="UpdateWeightViewController" title="UpdateWeightViewController" hidesBottomBarWhenPushed="YES" id="i0N-MT-M2V" customClass="UpdateWeightViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eRa-Ko-uUa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJo-lN-YBa">
+                                <rect key="frame" x="47" y="333" width="320" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mki-Bp-OhG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                        <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="mQs-EY-XlH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OVW-Zt-85B">
+                                        <rect key="frame" x="10" y="100" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8cW-9s-Yio"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5e-Tn-7ik">
+                                        <rect key="frame" x="0.0" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.87315261570000002" green="0.8840582521" blue="0.89272310129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3ml-U4-yjc"/>
+                                            <constraint firstAttribute="width" constant="160" id="Dag-BH-8OI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="onCancelButtonPressed:" destination="i0N-MT-M2V" eventType="touchUpInside" id="7JW-88-haq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utW-l9-v7s">
+                                        <rect key="frame" x="160" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2pC-RL-1G2"/>
+                                            <constraint firstAttribute="width" constant="160" id="jbz-qQ-L7n"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="onConfirmButtonPressed:" destination="i0N-MT-M2V" eventType="touchUpInside" id="rOf-cm-Oec"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mki-Bp-OhG" secondAttribute="trailing" id="0qa-KT-fIK"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="top" secondItem="OJo-lN-YBa" secondAttribute="top" id="1aM-0j-vbh"/>
+                                    <constraint firstItem="utW-l9-v7s" firstAttribute="leading" secondItem="B5e-Tn-7ik" secondAttribute="trailing" id="3x7-m6-sIA"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="top" secondItem="OJo-lN-YBa" secondAttribute="top" id="AWL-0d-ijJ"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="leading" secondItem="OJo-lN-YBa" secondAttribute="leading" id="GLn-FY-fEs"/>
+                                    <constraint firstItem="OVW-Zt-85B" firstAttribute="top" secondItem="Mki-Bp-OhG" secondAttribute="bottom" constant="55" id="Gx8-n0-5px"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="leading" secondItem="OJo-lN-YBa" secondAttribute="leading" id="Imq-N9-asx"/>
+                                    <constraint firstAttribute="bottom" secondItem="utW-l9-v7s" secondAttribute="bottom" id="KRP-G5-EKD"/>
+                                    <constraint firstItem="B5e-Tn-7ik" firstAttribute="leading" secondItem="OJo-lN-YBa" secondAttribute="leading" id="NyZ-Y9-Yed"/>
+                                    <constraint firstAttribute="bottom" secondItem="B5e-Tn-7ik" secondAttribute="bottom" id="PsF-24-bHb"/>
+                                    <constraint firstAttribute="trailing" secondItem="utW-l9-v7s" secondAttribute="trailing" id="STS-jz-Teb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mki-Bp-OhG" secondAttribute="trailing" id="Xg6-yc-NJN"/>
+                                    <constraint firstItem="OVW-Zt-85B" firstAttribute="leading" secondItem="OJo-lN-YBa" secondAttribute="leading" constant="10" id="Xu8-8n-QdU"/>
+                                    <constraint firstAttribute="width" constant="320" id="bEj-CT-kUg"/>
+                                    <constraint firstItem="utW-l9-v7s" firstAttribute="leading" secondItem="B5e-Tn-7ik" secondAttribute="trailing" id="bmT-mz-Tle"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="top" secondItem="OJo-lN-YBa" secondAttribute="top" id="fxu-tu-J9z"/>
+                                    <constraint firstAttribute="trailing" secondItem="OVW-Zt-85B" secondAttribute="trailing" constant="10" id="hi7-GV-UkB"/>
+                                    <constraint firstItem="Mki-Bp-OhG" firstAttribute="centerX" secondItem="OJo-lN-YBa" secondAttribute="centerX" id="tHY-Zw-Ers"/>
+                                    <constraint firstAttribute="height" constant="230" id="ygb-ZB-Yu3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39113394610000002" green="0.39113394610000002" blue="0.39113394610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OJo-lN-YBa" firstAttribute="centerY" secondItem="eRa-Ko-uUa" secondAttribute="centerY" id="CNV-I3-sVO"/>
+                            <constraint firstItem="OJo-lN-YBa" firstAttribute="centerX" secondItem="eRa-Ko-uUa" secondAttribute="centerX" id="GQt-wF-9vS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="73t-LL-q1x"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentWeightField" destination="OVW-Zt-85B" id="Lwi-pR-Zlu"/>
+                        <outlet property="popupView" destination="OJo-lN-YBa" id="rh9-au-065"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wX-V0-de4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194" y="723"/>
         </scene>
     </scenes>
 </document>

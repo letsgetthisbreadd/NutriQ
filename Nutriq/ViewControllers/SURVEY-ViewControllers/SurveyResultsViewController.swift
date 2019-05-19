@@ -13,6 +13,7 @@ class SurveyResultsViewController: UIViewController {
 
     
     // MARK: - Properties
+    
     var maintenanceCalories: Int = 0
     var goalCalories: Int = 0
     var age: Int = 0
@@ -46,7 +47,7 @@ class SurveyResultsViewController: UIViewController {
             // Get all user inputs necessary to calculate daily caloric needs from the Firebase database
             let snapshotValue = snapshot.value! as? NSDictionary
             let gender = snapshotValue?["gender"] as! String
-            let weight = snapshotValue?["weight-pounds"] as! Double
+            let beginningWeight = snapshotValue?["beginning-weight-pounds"] as! Double
             let height = snapshotValue?["height-inches"] as! Int
             let dateOfBirth = snapshotValue?["date-of-birth"] as! String
             let activityMultiplier = snapshotValue?["activity-multiplier"] as! Double
@@ -57,9 +58,9 @@ class SurveyResultsViewController: UIViewController {
             
             // Calculate the user's daily caloric maintenance needs based on gender
             if gender == "Male" {
-                self.maintenanceCalories = Int(round(((9.99 * (weight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) + 5) * activityMultiplier))
+                self.maintenanceCalories = Int(round(((9.99 * (beginningWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) + 5) * activityMultiplier))
             } else {
-                self.maintenanceCalories = Int(round(((9.99 * (weight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) - 161) * activityMultiplier))
+                self.maintenanceCalories = Int(round(((9.99 * (beginningWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(self.age)) - 161) * activityMultiplier))
             }
             print("Your daily caloric needs to maintain weight are:", self.maintenanceCalories)
             
@@ -84,7 +85,7 @@ class SurveyResultsViewController: UIViewController {
                 print("Failed to udpate database with error: ", error.localizedDescription)
                 return
             }
-            print("Successfully added user's health-stats(5) to Firebase database!")
+            print("Successfully added all of the user's health stats to the Firebase database!")
         }
         displayGoalCalories()
     }
