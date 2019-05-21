@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 
+// Instantiate the ProfileViewController to allow for its functions to be called outside of itself; More specifically, the 'loadUserData' function which will update the profile screen with the most current stats after the user updates their weight
+var profileVCInstance = ProfileViewController()
+
 class ProfileViewController: UIViewController {
     
     
@@ -41,6 +44,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileVCInstance = self
         
         self.title = "Profile"
         
@@ -61,6 +65,7 @@ class ProfileViewController: UIViewController {
         goalsView.layer.cornerRadius = 5.0
         maintenanceCaloriesView.layer.cornerRadius = 5.0
         goalCaloriesView.layer.cornerRadius = 5.0
+        
         
         
     }
@@ -149,6 +154,5 @@ class ProfileViewController: UIViewController {
         updateWeightVC.didMove(toParent: self)
         
     }
-
-
 }
+

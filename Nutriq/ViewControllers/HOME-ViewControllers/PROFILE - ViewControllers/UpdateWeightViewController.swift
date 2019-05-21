@@ -65,7 +65,7 @@ class UpdateWeightViewController: UIViewController {
         // User input validation passed; Send the current weight for storage in the Firebase Database
         recalculateGoalStats(currentWeight)
         print("Completed recalculating goal stats. Closing update weight popup view...\n")
-        self.closePopupView()
+        self.closePopupViewAnimated()
 
     }
     
@@ -113,6 +113,8 @@ class UpdateWeightViewController: UIViewController {
             let goalCalories = self.maintenanceCalories + Int(round(weeklyGoal * 500))
             print("Your daily caloric GOAL needs are:", goalCalories)
             
+            
+            
             self.storeUserHealthStats(age, self.maintenanceCalories, goalCalories, currentWeight, weightLeftUntilGoal)
         }
     }
@@ -154,7 +156,6 @@ class UpdateWeightViewController: UIViewController {
         }
     }
     
-    // Close animation for "Update Weight" popup
     func closePopupView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
@@ -166,4 +167,22 @@ class UpdateWeightViewController: UIViewController {
         }
     }
     
+    // Close animation for "Update Weight" popup
+    func closePopupViewAnimated() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self.view.alpha = 0.0
+        }) { (finished: Bool) in
+            if finished {
+                self.view.removeFromSuperview()
+                
+                // Update the changed values on the profile screen
+                profileVCInstance.currentWeightLabel.alpha = 0
+//                profileVCInstance.motivationalMessageLabel.alpha = 0
+                profileVCInstance.maintenanceCaloriesLabel.alpha = 0
+                profileVCInstance.goalCaloriesLabel.alpha = 0
+                profileVCInstance.getAndLoadUserData()
+            }
+        }
+    }
 }
