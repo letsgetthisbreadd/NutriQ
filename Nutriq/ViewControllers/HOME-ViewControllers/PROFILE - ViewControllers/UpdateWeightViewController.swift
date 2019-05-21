@@ -88,7 +88,7 @@ class UpdateWeightViewController: UIViewController {
             let weeklyGoal = snapshotValue?["weekly-goal"] as! Double
             let oldCurrentWeight = snapshotValue?["current-weight-pounds"] as! Double
             let goalWeight = snapshotValue?["goal-weight-pounds"] as! Double
-            let weightLeftUntilGoal: Double = abs(currentWeight - goalWeight)
+            let weightLeftUntilGoal: Double = abs(((currentWeight - goalWeight) * 10).rounded(.toNearestOrEven) / 10)
             let age = self.calculateAge(birthday: dateOfBirth)
             
             // If user's newly input current weight is the same as their old current weight, exit, not recalculating anything
@@ -161,11 +161,6 @@ class UpdateWeightViewController: UIViewController {
             self.view.alpha = 0.0
         }) { (finished: Bool) in
             if finished {
-//                && NSStringFromClass(UIApplication.topViewController()!.classForCoder).components(separatedBy: ".").last! == "ProfileViewController" {
-//                self.removeFromParent()
-                self.view.removeFromSuperview()
-            } else {
-//                self.removeFromParent()
                 self.view.removeFromSuperview()
             }
         }

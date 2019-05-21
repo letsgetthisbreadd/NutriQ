@@ -68,26 +68,60 @@ class ForgotPasswordViewController: UIViewController {
             
             print("Email address:", email, "exists in the database!")
             
-            // Send password reset email
-            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-                if let error = error {
-                    print("Failed to send password reset email with error:", error.localizedDescription)
-                    let passwordResetErrorAlert = UIAlertController(title: "Password Reset Error", message: error.localizedDescription, preferredStyle: .alert)
-                    passwordResetErrorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(passwordResetErrorAlert, animated: true)
-                    return
+            // Check account type
+            let snapshotValue = snapshot.value! as? NSDictionary
+            let snapshotValueKeys = Array(snapshotValue!.allKeys)
+            let userID = snapshotValueKeys[0] as! String
+            
+            self.checkIfGoogleAccount(userID, completion: { (isGoogleAccount) in
+                print("Account type checked.")
+                if isGoogleAccount {
+                    print("The account is a Google account!")
+                    completion()
+                } else {
+                    print("The account is an Email account!")
+                    // Send password reset email
+                    Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                        if let error = error {
+                            print(error)
+                            print("Failed to send password reset email with error:", error.localizedDescription)
+                            let passwordResetErrorAlert = UIAlertController(title: "Password Reset Error", message: error.localizedDescription, preferredStyle: .alert)
+                            passwordResetErrorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                            self.present(passwordResetErrorAlert, animated: true)
+                            return
+                        }
+                        print("Password reset email sent to:", email)
+                        let passwordResetEmailSentAlert = UIAlertController(title: "Password Reset Email Sent", message: "An password reset email has been sent to the email address associated with this account.", preferredStyle: .alert)
+                        passwordResetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                            self.closePopupView()
+                            //                    self.takeUserToLoginScreen()
+                        }))
+                        self.present(passwordResetEmailSentAlert, animated: true)
+                        
+                        // Completed checking if email entered exists in the database
+                        completion()
+                    }
                 }
-                print("Password reset email sent to:", email)
-                let passwordResetEmailSentAlert = UIAlertController(title: "Password Reset Email Sent", message: "An password reset email has been sent to the email address associated with this account.", preferredStyle: .alert)
-                passwordResetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                    self.takeUserToLoginScreen()
-                }))
-                self.present(passwordResetEmailSentAlert, animated: true)
-                
-                // Completed checking if email entered exists in the database
-                completion()
-            }
+            })
         }
+    }
+    
+    func checkIfGoogleAccount(_ userID: String, completion: @escaping (Bool) -> ()) {
+        // Check if email address is associated with an email or a Google account; If email, allow sending of password reset email
+        
+        Database.database().reference().child("users/\(userID)/account-type").observeSingleEvent(of: .value, with: { (snapshot) in
+            print("The account type is:", snapshot.value!)
+            
+            if snapshot.value! as! String == "Google" {
+                let googleAccountAlert = UIAlertController(title: "Error", message: "The password for this email address cannot be reset because the acocunt associated with it was created without a password. The password for this account can only be changed through Google's password reset page.", preferredStyle: .alert)
+                googleAccountAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(googleAccountAlert, animated: true)
+                completion(true)
+            } else {
+                completion(false)
+            }
+        })
+        
     }
     
     func takeUserToLoginScreen() {

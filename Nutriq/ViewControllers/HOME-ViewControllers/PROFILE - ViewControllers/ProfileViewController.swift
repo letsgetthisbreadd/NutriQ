@@ -142,7 +142,7 @@ class ProfileViewController: UIViewController {
     }
     
     func showUpdateWeightPopup() {
-        let updateWeightVC = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "UpdateWeightViewController") as! UpdateWeightViewController
+        let updateWeightVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "UpdateWeightViewController") as! UpdateWeightViewController
         updateWeightVC.view.frame = self.view.frame
         self.view.addSubview(updateWeightVC.view)
         self.addChild(updateWeightVC)

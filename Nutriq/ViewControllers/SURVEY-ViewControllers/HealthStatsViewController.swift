@@ -148,10 +148,10 @@ class HealthStatsViewController: UIViewController {
         
         // Get weight left until goal as well as user's overall goal
         if beginningWeight < goalWeight { // User wants to gain weight
-            weightLeftUntilGoal = goalWeight - beginningWeight
+            weightLeftUntilGoal = ((goalWeight - beginningWeight) * 10).rounded(.toNearestOrEven) / 10
             overallGoal = "Gain"
         } else if beginningWeight > goalWeight { // User wants to lose weight
-            weightLeftUntilGoal = beginningWeight - goalWeight
+            weightLeftUntilGoal = ((beginningWeight - goalWeight) * 10).rounded(.toNearestOrEven) / 10
             overallGoal = "Lose"
         } else { // User wants to maintain weight
             weightLeftUntilGoal = 0
