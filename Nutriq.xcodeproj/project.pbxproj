@@ -35,7 +35,6 @@
 		6B0FB35C228DE5D800866CD3 /* WeeklyGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35B228DE5D800866CD3 /* WeeklyGoalViewController.swift */; };
 		6B0FB35E228DF28500866CD3 /* ActivityLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35D228DF28500866CD3 /* ActivityLevelViewController.swift */; };
 		6B0FB360228DF43D00866CD3 /* HealthStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB35F228DF43D00866CD3 /* HealthStatsViewController.swift */; };
-		6B0FB362228E0EFA00866CD3 /* GoalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB361228E0EFA00866CD3 /* GoalSettingsViewController.swift */; };
 		6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */; };
 		6B3CBD63227D873F00D0BD30 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */; };
 		6B426254228ECF2D002BFD99 /* UpdateGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B426253228ECF2D002BFD99 /* UpdateGoalsViewController.swift */; };
@@ -67,7 +66,7 @@
 		27995FE02277A1F2004A8CB7 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		27995FE12277A1F2004A8CB7 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		27B90BE22279A18000BE7938 /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealDetailViewController.swift; path = "Nutriq/ViewControllers/HOME-ViewControllers/MealDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
-		27B90BE42279A76A00BE7938 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Nutriq/ViewControllers/HOME-ViewControllers/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
+		27B90BE42279A76A00BE7938 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Nutriq/ViewControllers/HOME-ViewControllers/PROFILE - ViewControllers/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		27EDE5C022614192001C8A08 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		27EDE5C2226141C1001C8A08 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		27EDE5C4226141FB001C8A08 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Nutriq/ViewControllers/MAIN-ViewControllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -84,7 +83,6 @@
 		6B0FB35B228DE5D800866CD3 /* WeeklyGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGoalViewController.swift; sourceTree = "<group>"; };
 		6B0FB35D228DF28500866CD3 /* ActivityLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevelViewController.swift; sourceTree = "<group>"; };
 		6B0FB35F228DF43D00866CD3 /* HealthStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatsViewController.swift; sourceTree = "<group>"; };
-		6B0FB361228E0EFA00866CD3 /* GoalSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSettingsViewController.swift; sourceTree = "<group>"; };
 		6B15FFB422743CA2003F13E6 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		6B3CBD62227D873F00D0BD30 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		6B426253228ECF2D002BFD99 /* UpdateGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoalsViewController.swift; sourceTree = "<group>"; };
@@ -146,11 +144,10 @@
 		2706DC6C2272B27600F8B9A1 /* HOME-ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6BD1CFB22293DE810018BDE4 /* PROFILE - ViewControllers */,
 				27995FBB22778CB7004A8CB7 /* HomeViewController.swift */,
 				27B90BE22279A18000BE7938 /* MealDetailViewController.swift */,
-				27B90BE42279A76A00BE7938 /* ProfileViewController.swift */,
 				2787BBEB2279960200AFE68A /* FoodCell.swift */,
-				6B426253228ECF2D002BFD99 /* UpdateGoalsViewController.swift */,
 			);
 			path = "HOME-ViewControllers";
 			sourceTree = "<group>";
@@ -169,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				27392D3922812CB8005275C0 /* SettingsViewController.swift */,
-				6B0FB363228E0F0900866CD3 /* Goal Settings */,
 				6B04033C228A4FBD00F98CFB /* Account Settings */,
 			);
 			path = "SETTINGS - ViewControllers";
@@ -204,15 +200,6 @@
 				6B04033D228A4FF900F98CFB /* ChangePasswordViewController.swift */,
 			);
 			path = "Account Settings";
-			sourceTree = "<group>";
-		};
-		6B0FB363228E0F0900866CD3 /* Goal Settings */ = {
-			isa = PBXGroup;
-			children = (
-				6B0FB361228E0EFA00866CD3 /* GoalSettingsViewController.swift */,
-				6B5DA4E9228E45990005FA4C /* UpdateWeightViewController.swift */,
-			);
-			path = "Goal Settings";
 			sourceTree = "<group>";
 		};
 		6B15FFB322743C4E003F13E6 /* Extensions */ = {
@@ -282,6 +269,16 @@
 				6B0A6CFE2270246100571380 /* GoogleService-Info.plist */,
 			);
 			path = Nutriq;
+			sourceTree = "<group>";
+		};
+		6BD1CFB22293DE810018BDE4 /* PROFILE - ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				27B90BE42279A76A00BE7938 /* ProfileViewController.swift */,
+				6B5DA4E9228E45990005FA4C /* UpdateWeightViewController.swift */,
+				6B426253228ECF2D002BFD99 /* UpdateGoalsViewController.swift */,
+			);
+			path = "PROFILE - ViewControllers";
 			sourceTree = "<group>";
 		};
 		7B5C41196CD82C33C22690EB /* Frameworks */ = {
@@ -559,7 +556,6 @@
 				275799DE2272A818008C2859 /* SurveyResultsViewController.swift in Sources */,
 				27995FBA22778C13004A8CB7 /* ToolbarPiker.swift in Sources */,
 				6B5DA4EA228E45990005FA4C /* UpdateWeightViewController.swift in Sources */,
-				6B0FB362228E0EFA00866CD3 /* GoalSettingsViewController.swift in Sources */,
 				6B426254228ECF2D002BFD99 /* UpdateGoalsViewController.swift in Sources */,
 				6B15FFB522743CA2003F13E6 /* UIApplication+TopViewController.swift in Sources */,
 				27995FB622778BFE004A8CB7 /* GradientView.swift in Sources */,

@@ -212,7 +212,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-rO-GaJ" userLabel="GoalsView" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-rO-GaJ" userLabel="Goals View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
                                 <rect key="frame" x="10" y="482" width="394" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Goal Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-ok-a6c">
@@ -225,16 +225,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXO-c9-n1A" userLabel="Maintenance Calories View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="8" width="130" height="110"/>
+                                        <rect key="frame" x="65" y="8" width="115" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kso-SV-quM">
-                                                <rect key="frame" x="43.5" y="60" width="43" height="20"/>
+                                                <rect key="frame" x="36" y="60" width="43" height="20"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance Calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLd-RX-SVj">
-                                                <rect key="frame" x="10" y="5" width="110" height="40"/>
+                                                <rect key="frame" x="2.5" y="5" width="110" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="EQB-8l-K2G"/>
                                                     <constraint firstAttribute="width" constant="110" id="s88-dz-cYF"/>
@@ -245,7 +245,7 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="SbX-Mx-EVZ"/>
+                                            <constraint firstAttribute="width" constant="115" id="SbX-Mx-EVZ"/>
                                             <constraint firstItem="Kso-SV-quM" firstAttribute="top" secondItem="WLd-RX-SVj" secondAttribute="bottom" constant="15" id="ba9-lV-D3Z"/>
                                             <constraint firstAttribute="height" constant="110" id="jwq-RR-edx"/>
                                             <constraint firstItem="WLd-RX-SVj" firstAttribute="top" secondItem="LXO-c9-n1A" secondAttribute="top" constant="5" id="qC1-qg-xjc"/>
@@ -263,16 +263,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-AJ-cqc" userLabel="Goal Calories View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="234" y="8" width="130" height="110"/>
+                                        <rect key="frame" x="214" y="8" width="115" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDf-LT-zWg">
-                                                <rect key="frame" x="43.5" y="60" width="43" height="20"/>
+                                                <rect key="frame" x="36" y="60" width="43" height="20"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKb-3c-cY5">
-                                                <rect key="frame" x="22.5" y="5" width="85" height="40"/>
+                                                <rect key="frame" x="15" y="5" width="85" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="85" id="0zs-2w-fL8"/>
                                                     <constraint firstAttribute="height" constant="40" id="7uc-yl-Cg6"/>
@@ -286,7 +286,7 @@
                                             <constraint firstItem="CKb-3c-cY5" firstAttribute="centerX" secondItem="QoT-AJ-cqc" secondAttribute="centerX" id="2hY-Ub-WBq"/>
                                             <constraint firstItem="CDf-LT-zWg" firstAttribute="top" secondItem="CKb-3c-cY5" secondAttribute="bottom" constant="15" id="9ea-R8-iKe"/>
                                             <constraint firstItem="CDf-LT-zWg" firstAttribute="centerX" secondItem="QoT-AJ-cqc" secondAttribute="centerX" id="BFB-g5-SMg"/>
-                                            <constraint firstAttribute="width" constant="130" id="Y2d-WJ-0tx"/>
+                                            <constraint firstAttribute="width" constant="115" id="Y2d-WJ-0tx"/>
                                             <constraint firstAttribute="height" constant="110" id="lNh-7z-uVt"/>
                                             <constraint firstItem="CKb-3c-cY5" firstAttribute="top" secondItem="QoT-AJ-cqc" secondAttribute="top" constant="5" id="x2L-WT-R7r"/>
                                         </constraints>
@@ -317,11 +317,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QoT-AJ-cqc" secondAttribute="trailing" constant="30" id="3M2-9h-2La"/>
+                                    <constraint firstAttribute="trailing" secondItem="QoT-AJ-cqc" secondAttribute="trailing" constant="65" id="3M2-9h-2La"/>
+                                    <constraint firstItem="QoT-AJ-cqc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="LXO-c9-n1A" secondAttribute="trailing" constant="64" id="D40-2o-UDD"/>
                                     <constraint firstItem="LXO-c9-n1A" firstAttribute="top" secondItem="TzG-rO-GaJ" secondAttribute="top" constant="8" id="Dnr-Zx-0oY"/>
                                     <constraint firstAttribute="height" constant="250" id="G6z-Jm-ndA"/>
                                     <constraint firstItem="ulo-ok-a6c" firstAttribute="top" secondItem="LXO-c9-n1A" secondAttribute="bottom" constant="20" id="LqH-RX-Qoc"/>
-                                    <constraint firstItem="LXO-c9-n1A" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="30" id="Mtj-8Q-e93"/>
+                                    <constraint firstItem="LXO-c9-n1A" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="65" id="Mtj-8Q-e93"/>
                                     <constraint firstAttribute="trailing" secondItem="ulo-ok-a6c" secondAttribute="trailing" constant="10" id="N06-gA-9YS"/>
                                     <constraint firstItem="ulo-ok-a6c" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="10" id="YSF-u8-nT4"/>
                                     <constraint firstAttribute="bottom" secondItem="390-5j-tiR" secondAttribute="bottom" constant="8" id="f6c-SL-pYg"/>
@@ -390,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="3002.898550724638" y="636.83035714285711"/>
         </scene>
-        <!--settingsViewController-->
+        <!--AccountSettingsViewController-->
         <scene sceneID="abR-Id-1pn">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settingsViewController" id="Cew-dE-tOt" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="AccountSettingsViewController" id="Cew-dE-tOt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6P-I8-Whm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3691.3043478260875" y="636.83035714285711"/>
@@ -430,6 +431,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7I-ct-650" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092.753623188406" y="636.83035714285711"/>
+        </scene>
+        <!--UpdateWeightViewController-->
+        <scene sceneID="fTf-lI-L7b">
+            <objects>
+                <viewController storyboardIdentifier="UpdateWeightViewController" title="UpdateWeightViewController" hidesBottomBarWhenPushed="YES" id="xWx-ls-SMx" customClass="UpdateWeightViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w7w-ZN-oXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-8Z-Z0U">
+                                <rect key="frame" x="47" y="333" width="320" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDp-rg-Epg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                        <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="hRn-RY-6c6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current Weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-Cr-8dy">
+                                        <rect key="frame" x="10" y="100" width="300" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WIT-QA-oAZ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsF-FU-R7Y">
+                                        <rect key="frame" x="0.0" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.87315261570000002" green="0.8840582521" blue="0.89272310129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="TB7-BL-NTF"/>
+                                            <constraint firstAttribute="width" constant="160" id="cc8-Ib-mCq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="onCancelButtonPressed:" destination="xWx-ls-SMx" eventType="touchUpInside" id="Bo7-eV-CHL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP9-Ja-qQh">
+                                        <rect key="frame" x="160" y="185" width="160" height="45"/>
+                                        <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="0zS-cM-LkX"/>
+                                            <constraint firstAttribute="height" constant="45" id="hcf-8z-bcI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="onConfirmButtonPressed:" destination="xWx-ls-SMx" eventType="touchUpInside" id="XqP-qs-GwQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="leading" secondItem="ymi-8Z-Z0U" secondAttribute="leading" id="14Q-Ai-kcG"/>
+                                    <constraint firstItem="XkZ-Cr-8dy" firstAttribute="top" secondItem="lDp-rg-Epg" secondAttribute="bottom" constant="55" id="5pa-lq-ot7"/>
+                                    <constraint firstAttribute="trailing" secondItem="lDp-rg-Epg" secondAttribute="trailing" id="6ey-QD-SPj"/>
+                                    <constraint firstAttribute="trailing" secondItem="eP9-Ja-qQh" secondAttribute="trailing" id="F8e-1I-Otd"/>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="leading" secondItem="ymi-8Z-Z0U" secondAttribute="leading" id="GmL-Ri-F27"/>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="top" secondItem="ymi-8Z-Z0U" secondAttribute="top" id="LPr-KF-wbt"/>
+                                    <constraint firstAttribute="height" constant="230" id="PnK-A7-TgR"/>
+                                    <constraint firstAttribute="trailing" secondItem="lDp-rg-Epg" secondAttribute="trailing" id="RhC-Ar-kgM"/>
+                                    <constraint firstAttribute="width" constant="320" id="Sf3-MC-tl6"/>
+                                    <constraint firstItem="eP9-Ja-qQh" firstAttribute="leading" secondItem="UsF-FU-R7Y" secondAttribute="trailing" id="Yvc-2k-lMT"/>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="centerX" secondItem="ymi-8Z-Z0U" secondAttribute="centerX" id="dMy-JT-6Af"/>
+                                    <constraint firstItem="XkZ-Cr-8dy" firstAttribute="leading" secondItem="ymi-8Z-Z0U" secondAttribute="leading" constant="10" id="fkC-yF-6jV"/>
+                                    <constraint firstItem="eP9-Ja-qQh" firstAttribute="leading" secondItem="UsF-FU-R7Y" secondAttribute="trailing" id="h3P-su-Tz3"/>
+                                    <constraint firstAttribute="trailing" secondItem="XkZ-Cr-8dy" secondAttribute="trailing" constant="10" id="kw8-uh-nfH"/>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="top" secondItem="ymi-8Z-Z0U" secondAttribute="top" id="lBa-HG-mXV"/>
+                                    <constraint firstAttribute="bottom" secondItem="UsF-FU-R7Y" secondAttribute="bottom" id="p5n-vv-r96"/>
+                                    <constraint firstItem="lDp-rg-Epg" firstAttribute="top" secondItem="ymi-8Z-Z0U" secondAttribute="top" id="qS2-hi-iJE"/>
+                                    <constraint firstItem="UsF-FU-R7Y" firstAttribute="leading" secondItem="ymi-8Z-Z0U" secondAttribute="leading" id="wUX-hR-zxe"/>
+                                    <constraint firstAttribute="bottom" secondItem="eP9-Ja-qQh" secondAttribute="bottom" id="znY-iT-8PG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39113394610000002" green="0.39113394610000002" blue="0.39113394610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ymi-8Z-Z0U" firstAttribute="centerX" secondItem="w7w-ZN-oXZ" secondAttribute="centerX" id="JUE-QG-fBq"/>
+                            <constraint firstItem="ymi-8Z-Z0U" firstAttribute="centerY" secondItem="w7w-ZN-oXZ" secondAttribute="centerY" id="xOX-tZ-4e5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gcc-tq-ItL"/>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentWeightField" destination="XkZ-Cr-8dy" id="nsx-Ra-Bd5"/>
+                        <outlet property="popupView" destination="ymi-8Z-Z0U" id="Xw9-uO-f1O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4h-qE-ccD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="1367"/>
         </scene>
     </scenes>
 </document>
