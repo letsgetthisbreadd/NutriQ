@@ -13,7 +13,7 @@ import Alamofire
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
+    var meals = [[String: Any]]()
     // MARK: - Properties
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func doRequestWithHeaders1() {
-        let MY_API_KEY = ""
+        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
         let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         
         let headers: HTTPHeaders = [
@@ -45,11 +45,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             "Accept": "application/json"
         ]
         
-        
         // MARK: - To make sure the headers are sent, use debugPrint on the request
         let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?targetCalories=2700&timeFrame=day", headers: headers)
             .responseJSON { response in
-                debugPrint(response)
+            //debugPrint(response)
+                if let result = response.result.value {
+                    let JSON = result as! NSDictionary
+                    self.meals = JSON
+                    
+                }
+                
+                
         }
         debugPrint(request)
     }
