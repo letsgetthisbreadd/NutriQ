@@ -13,7 +13,7 @@ import Alamofire
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var meals = [[String: Any]]()
+    var meals: NSDictionary = [:]
     // MARK: - Properties
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,7 +36,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func doRequestWithHeaders1() {
-        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
+     
+        
+        let MY_API_KEY = ""
         let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         
         let headers: HTTPHeaders = [
@@ -52,6 +54,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 if let result = response.result.value {
                     let JSON = result as! NSDictionary
                     self.meals = JSON
+                    print(self.meals)
+                    self.collectionView.reloadData()
                     
                 }
                 
@@ -71,8 +75,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodCell
+        let meal = meals[indexPath.row]
+        let title = meal["title"] as! String
         
-        cell.mealName.text = mealName[indexPath.row]
+        cell.mealName.text = title
         cell.mealImage.image = mealImage[indexPath.row]
         cell.mealDescription.text = mealDescription[indexPath.row]
         
