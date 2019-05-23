@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Alamofire
+import AlamofireImage
 
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -31,6 +32,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         doRequestWithHeaders()
+        imageRequest()
     
     }
     
@@ -56,14 +58,37 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     let JSON = result as! [String : Any]
                     self.meals = JSON["items"] as! [[String : Any]]
                     print(self.meals)
-                    self.collectionView.reloadData()
                     
+                    
+                    
+                    self.collectionView.reloadData()
                 }
-                
         }
         debugPrint(request)
     }
 
+    func imageRequest() {
+        
+        let MY_API_KEY = ""
+        let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        var ID_LIST = [Int]()
+        
+        do {
+        for index in 0..<(meals.count) {
+            let meal = meals[index]
+            
+                let dd =  meal["value"] as! String
+                let con = try JSONSerialization.jsonObject(with: dd.data(using: .utf8)!, options: []) as! [String:Any]
+                let title = con["id"] as! String
+                print("Priting ID in IMGrequest function...")
+                print(title)
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
         
 
     // MARK: Cell Functions
@@ -87,16 +112,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // This do statement unpacks the JSON string "value" and retrives the desired key:value pair
         // Refer to the API documentation to find what the "value" string is
         do {
-            let dd =  meal["value"] as! String
+            let mealValueJSONstring =  meal["value"] as! String
             
             // Unpacks the JSON string, assigns it to an array of strings
-            let con = try JSONSerialization.jsonObject(with: dd.data(using: .utf8)!, options: []) as! [String:Any]
+            let mealValueDictionary = try JSONSerialization.jsonObject(with: mealValueJSONstring.data(using: .utf8)!, options: []) as! [String:Any]
             
             print("Printing meal: \(indexPath.row)")
-            print(con["title"]!, "\n")
+            print(mealValueDictionary["title"]!)
+            print(mealValueDictionary["id"]!, "\n")
             
             // Finds the title of the selected meal and assigns it to the label mealName
-            let title = con["title"] as! String
+            let title = mealValueDictionary["title"] as! String
             cell.mealName.text = title
         }
         catch {
@@ -135,11 +161,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // This do statement unpacks the JSON string "value" and retrives the desired key:value pair
         do {
-            let dd =  meal["value"] as! String
-            let con = try JSONSerialization.jsonObject(with: dd.data(using: .utf8)!, options: []) as! [String:Any]
+            let mealValueJSONstring =  meal["value"] as! String
+            let mealValueDictionary = try JSONSerialization.jsonObject(with: mealValueJSONstring.data(using: .utf8)!, options: []) as! [String:Any]
             
             // Finds the title of the selected meal and assigns it to mealTitle as a string
-            let mealTitle = con["title"] as! String
+            let mealTitle = mealValueDictionary["title"] as! String
             
             // That mealTitle string is then passed to MealDetailsViewController via this segue
             let detailsViewController = segue.destination as! MealDetailViewController

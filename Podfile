@@ -13,6 +13,7 @@ target 'Nutriq' do
   pod 'Cards'
   pod 'SwiftVideoBackground'
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
 
 end
