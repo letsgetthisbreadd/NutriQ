@@ -18,16 +18,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home View Controller-->
+        <!--NutriQ-->
         <scene sceneID="Xsl-n7-sW1">
             <objects>
                 <viewController id="0M1-3d-DUv" customClass="HomeViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3Q-1l-61B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sIC-9M-bIt">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="15" id="J9A-pM-rRf">
                                     <size key="itemSize" width="345" height="300"/>
@@ -37,20 +37,20 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="T5T-t7-8pi" customClass="FoodCell" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="10" width="345" height="300"/>
+                                        <rect key="frame" x="34.5" y="10" width="345" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="f5d-mp-YJC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="163.66666666666666"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="163.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="163.5" id="VPo-br-VbG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Meal #1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-cs-rat">
-                                                    <rect key="frame" x="20" y="179.66666666666666" width="305" height="74.333333333333343"/>
+                                                    <rect key="frame" x="20" y="179.5" width="305" height="74.5"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b8t-g7-Fs0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hgc-W9-1go"/>
+                    <navigationItem key="navigationItem" title="NutriQ" id="hgc-W9-1go"/>
                     <connections>
                         <outlet property="collectionView" destination="sIC-9M-bIt" id="0ri-2h-0Gn"/>
                     </connections>
@@ -263,7 +263,7 @@
         <scene sceneID="T1A-0I-HSV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5s-Wl-YHm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="XoP-I7-KV0"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homie30" id="XoP-I7-KV0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Pv-e7-vhc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -282,7 +282,7 @@
         <scene sceneID="0cr-tR-Nre">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMv-2E-1nE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="8Ax-ds-A8M"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="8Ax-ds-A8M"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yCd-YD-1PF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -300,5 +300,7 @@
     </scenes>
     <resources>
         <image name="food1" width="1920" height="1440"/>
+        <image name="homie30" width="30" height="30"/>
+        <image name="profile" width="30" height="30"/>
     </resources>
 </document>

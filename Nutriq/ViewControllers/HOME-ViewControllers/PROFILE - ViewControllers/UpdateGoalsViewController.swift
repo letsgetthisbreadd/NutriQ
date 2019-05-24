@@ -23,7 +23,8 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
 //    var newGoalWeight: Double = 0.0
     var activityLevel = ""
     
-//    var weeklyGoalSelectedRow = 0
+    var weeklyGoalSelectedRow = 0
+    
     var loseGainWeeklyGoalSelectedRow = 0
     var maintainWeeklyGoalSelectedRow = 0
     
@@ -330,189 +331,191 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // ******** ACTIVITY LEVEL TEXT FIELD ******** // --> DONE
-        // activityLevelPicker doesn't depend on anything so it can exist on its own
-        if pickerView == activityLevelPicker {
-            // Set up activityLevelPicker; It can either be empty or not. If it's empty, change the activityLevel variable but don't send the updated value to Firebase
-            // TODO: - Make sure to check if activityLevel is empty or not when sending to Firebase. If it's empty, don't send it
-            activityLevelTextField.text = activityLevelsPickerValues[row]
-            self.activityLevel = activityLevelTextField.text!
-        }
-
-        
-        
-        if overallGoalTextField.text == ""
-        { // ******** OVERALLGOAL TEXT FIELD EMPTY ******** //
-            
-            // if pickverView == overallGoalPicker
-                // if weeklyGoalField.text is empty
-                // else if weeklyGoalField.text is NOT empty
-            // else if pickerView == weeklyGoalPicker
-        }
-        else
-        { // ******** OVERALLGOAL TEXT FIELD NOT EMPTY ******** //
-            if pickerView == overallGoalPicker { // current picker is overallGoalPicker
-                // NEW OVERALL GOAL = Lose/Gain/Maintain
-                if newOverallGoal == "Lose" {
-                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
-                    if currentOverallGoal == "Lose" { // newOverallGoal: "Lose" AND currentOverallGoal: "Lose"
-                        loseGainWeeklyGoalSelectedRow = row
-                        print("New overall goal:", newOverallGoal)
-                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Lose" AND currentOverallGoal: "Gain"
-                        
-                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Lose" AND currentOverallGoal: "Maintain"
-                        
-                    }
-                } else if newOverallGoal == "Gain" {
-                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
-                    if currentOverallGoal == "Lose" { // newOverallGoal: "Gain" AND currentOverallGoal: "Lose"
-                        
-                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Gain" AND currentOverallGoal: "Gain"
-                        
-                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Gain" AND currentOverallGoal: "Maintain"
-                        
-                    }
-                } else if newOverallGoal == "Maintain" { // TODO: -  MIGHT BE ABLE TO REMOVE ALL THESE IF/ELSE STATEMENTS FOR THIS NEWOVERALLGOAL
-                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
-                    if currentOverallGoal == "Lose" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Lose"
-                        
-                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Gain"
-                        
-                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Maintain"
-                        
-                    }
-                }
-            }
-            else if pickerView == weeklyGoalPicker {
-                // NEW OVERALL GOAL exists (overall goal field is NOT EMPTY) --> depending on what the NEW OVERALL GOAL is, perform actions
-                if newOverallGoal == "Lose" {
-                    
-                } else if newOverallGoal == "Gain" {
-                    
-                } else if newOverallGoal == "Maintain" {
-                    
-                }
-            }
-        }
-    }
-//        if pickerView == overallGoalPicker {
-//            if row == 0 {
-//                overallGoalTextField.text = overallGoalsPickerValues[row]
-//                self.newOverallGoal = overallGoalsPickerValues[row]
-//            } else {
-//                overallGoalTextField.text = "\(overallGoalsPickerValues[row]) Weight"
-//                self.newOverallGoal = overallGoalsPickerValues[row]
-//            }
-//            // Once a new overall goal is picked, if necessary, update the weekly goal text field to display the properly prepended overall goal
-//            if weeklyGoalTextField.text != "" && weeklyGoalSelectedRow != 0 {
-//                if newOverallGoal != "" {
-//                    if newOverallGoal != currentOverallGoal || newOverallGoal == currentOverallGoal {
-//                        if newOverallGoal != "Maintain" {
-//                            weeklyGoalTextField.text = "\(newOverallGoal) \(weeklyGoalsPickerValues[weeklyGoalSelectedRow])"
-//                            if newOverallGoal == "Lose" {
-//                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
-//                                print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                            } else if newOverallGoal == "Gain" {
-//                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
-//                                print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                            }
-//
-//                        } else {
-//                            weeklyGoalTextField.text = "Maintain Weight"
-////                            goalWeightTextField.isUserInteractionEnabled = false
-//                            self.newWeeklyGoal = 0
-//                            goalWeightTextField.text = String(currentWeight)
-//                            self.currentGoalWeight = currentWeight
-//                        }
-//                    }
-//                } else {
-//                    if currentOverallGoal != "Maintain" {
-//                        weeklyGoalTextField.text = "\(currentOverallGoal) \(weeklyGoalsPickerValues[weeklyGoalSelectedRow])"
-//                        if newOverallGoal == "Lose" {
-//                            self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
-//                            print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                        } else if newOverallGoal == "Gain" {
-//                            self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
-//                            print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                        }
-//                    } else {
-//                        weeklyGoalTextField.text = "Maintain Weight"
-////                        goalWeightTextField.isUserInteractionEnabled = false
-//                        self.newWeeklyGoal = 0
-//                        goalWeightTextField.text = String(currentWeight)
-//                        self.currentGoalWeight = currentWeight
-//                    }
-//                }
-//            } else { // weeklyGoalTextField is blank
-//                if (newOverallGoal != "" && newOverallGoal != currentOverallGoal) || (newOverallGoal == currentOverallGoal && weeklyGoalTextField.text != "") {
-//                    if newOverallGoal == "Maintain" {
-//                        weeklyGoalTextField.text = "Maintain Weight"
-////                        goalWeightTextField.isUserInteractionEnabled = false
-//                        self.newWeeklyGoal = 0
-//                        goalWeightTextField.text = String(currentWeight)
-//                        self.currentGoalWeight = currentWeight
-//                    } else {
-//                        if currentOverallGoal == "Maintain" {
-//                            if newOverallGoal == "Lose" {
-//                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow] * -1
-//                            } else if newOverallGoal == "Gain" {
-//                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow]
-//                            }
-//                            weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lbs per week"
-//                        } else {
-//                            if self.newWeeklyGoal == 0 {
-//                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.currentWeeklyGoal)) lbs per week"
-//                                self.newWeeklyGoal = self.currentWeeklyGoal
-//                            } else if abs(self.newWeeklyGoal) == 1 {
-//                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lb per week"
-//                            } else {
-//                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lbs per week"
-//                            }
-//                        }
-//                    }
-//                } else if (newOverallGoal == "" && weeklyGoalTextField.text == "") || (newOverallGoal == "" && weeklyGoalSelectedRow == 0) {
-//                    weeklyGoalTextField.text = ""
-//                }
-//            }
-//        } else if pickerView == weeklyGoalPicker && currentOverallGoal != "Maintain" && newOverallGoal != "Maintain" {
-//            if row == 0 {
-//                 weeklyGoalTextField.text = weeklyGoalsPickerValues[row]
-//            } else {
-//                weeklyGoalSelectedRow = row
-//                if newOverallGoal == "" {
-//                    weeklyGoalTextField.text = "\(currentOverallGoal) \(weeklyGoalsPickerValues[row])"
-//                    if currentOverallGoal == "Lose" {
-//                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
-//                        print("Current overall goal is: '\(self.currentOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                    } else if currentOverallGoal == "Gain" {
-//                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
-//                        print("Current overall goal is: '\(self.currentOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                    }
-//                } else {
-//                    weeklyGoalTextField.text = "\(newOverallGoal) \(weeklyGoalsPickerValues[row])"
-//                    if newOverallGoal == "Lose" {
-//                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
-//                        print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                    } else if newOverallGoal == "Gain" {
-//                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
-//                        print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
-//                    }
-//                }
-//            }
-//        } else if pickerView == weeklyGoalPicker && (currentOverallGoal == "Maintain" && overallGoalTextField.text == "" || newOverallGoal == "Maintain") {
-//            weeklyGoalTextField.text = maintainWeightGoalsPickerValues[row]
-//            weeklyGoalSelectedRow = 1
-//            self.newWeeklyGoal = weeklyGoalValues [weeklyGoalSelectedRow - 1]
-//        } else if pickerView == activityLevelPicker {
+//        // ******** ACTIVITY LEVEL TEXT FIELD ******** // --> DONE
+//        // activityLevelPicker doesn't depend on anything so it can exist on its own
+//        if pickerView == activityLevelPicker {
+//            // Set up activityLevelPicker; It can either be empty or not. If it's empty, change the activityLevel variable but don't send the updated value to Firebase
+//            // TODO: - Make sure to check if activityLevel is empty or not when sending to Firebase. If it's empty, don't send it
 //            activityLevelTextField.text = activityLevelsPickerValues[row]
+//            self.activityLevel = activityLevelTextField.text!
 //        }
 //
 //
-//        if (currentOverallGoal == "Maintain" && overallGoalTextField.text == "") || newOverallGoal == "Maintain" {
-//            goalWeightTextField.isUserInteractionEnabled = false
-//        } else {
-//            goalWeightTextField.isUserInteractionEnabled = true
+//
+//        if overallGoalTextField.text == ""
+//        { // ******** OVERALLGOAL TEXT FIELD EMPTY ******** //
+//
+//            // if pickverView == overallGoalPicker
+//                // if weeklyGoalField.text is empty
+//                // else if weeklyGoalField.text is NOT empty
+//            // else if pickerView == weeklyGoalPicker
+//        }
+//        else
+//        { // ******** OVERALLGOAL TEXT FIELD NOT EMPTY ******** //
+//            if pickerView == overallGoalPicker { // current picker is overallGoalPicker
+//                // NEW OVERALL GOAL = Lose/Gain/Maintain
+//                if newOverallGoal == "Lose" {
+//                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
+//                    if currentOverallGoal == "Lose" { // newOverallGoal: "Lose" AND currentOverallGoal: "Lose"
+//                        loseGainWeeklyGoalSelectedRow = row
+//                        print("New overall goal:", newOverallGoal)
+//                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Lose" AND currentOverallGoal: "Gain"
+//
+//                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Lose" AND currentOverallGoal: "Maintain"
+//
+//                    }
+//                } else if newOverallGoal == "Gain" {
+//                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
+//                    if currentOverallGoal == "Lose" { // newOverallGoal: "Gain" AND currentOverallGoal: "Lose"
+//
+//                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Gain" AND currentOverallGoal: "Gain"
+//
+//                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Gain" AND currentOverallGoal: "Maintain"
+//
+//                    }
+//                } else if newOverallGoal == "Maintain" { // TODO: -  MIGHT BE ABLE TO REMOVE ALL THESE IF/ELSE STATEMENTS FOR THIS NEWOVERALLGOAL
+//                    // CURRENT OVERALL GOAL = Lose/Gain/Maintain
+//                    if currentOverallGoal == "Lose" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Lose"
+//
+//                    } else if currentOverallGoal == "Gain" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Gain"
+//
+//                    } else if currentOverallGoal == "Maintain" { // newOverallGoal: "Maintain" AND currentOverallGoal: "Maintain"
+//
+//                    }
+//                }
+//            }
+//            else if pickerView == weeklyGoalPicker {
+//                // NEW OVERALL GOAL exists (overall goal field is NOT EMPTY) --> depending on what the NEW OVERALL GOAL is, perform actions
+//                if newOverallGoal == "Lose" {
+//
+//                } else if newOverallGoal == "Gain" {
+//
+//                } else if newOverallGoal == "Maintain" {
+//
+//                }
+//            }
 //        }
 //    }
+        
+        if pickerView == overallGoalPicker {
+            if row == 0 {
+                overallGoalTextField.text = overallGoalsPickerValues[row]
+                self.newOverallGoal = overallGoalsPickerValues[row]
+            } else {
+                overallGoalTextField.text = "\(overallGoalsPickerValues[row]) Weight"
+                self.newOverallGoal = overallGoalsPickerValues[row]
+            }
+            // Once a new overall goal is picked, if necessary, update the weekly goal text field to display the properly prepended overall goal
+            if weeklyGoalTextField.text != "" && weeklyGoalSelectedRow != 0 {
+                if newOverallGoal != "" {
+                    if newOverallGoal != currentOverallGoal || newOverallGoal == currentOverallGoal {
+                        if newOverallGoal != "Maintain" {
+                            weeklyGoalTextField.text = "\(newOverallGoal) \(weeklyGoalsPickerValues[weeklyGoalSelectedRow])"
+                            if newOverallGoal == "Lose" {
+                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
+                                print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                            } else if newOverallGoal == "Gain" {
+                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
+                                print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                            }
+
+                        } else {
+                            weeklyGoalTextField.text = "Maintain Weight"
+//                            goalWeightTextField.isUserInteractionEnabled = false
+                            self.newWeeklyGoal = 0
+                            goalWeightTextField.text = String(currentWeight)
+                            self.currentGoalWeight = currentWeight
+                        }
+                    }
+                } else {
+                    if currentOverallGoal != "Maintain" {
+                        weeklyGoalTextField.text = "\(currentOverallGoal) \(weeklyGoalsPickerValues[weeklyGoalSelectedRow])"
+                        if newOverallGoal == "Lose" {
+                            self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
+                            print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                        } else if newOverallGoal == "Gain" {
+                            self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
+                            print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                        }
+                    } else {
+                        weeklyGoalTextField.text = "Maintain Weight"
+//                        goalWeightTextField.isUserInteractionEnabled = false
+                        self.newWeeklyGoal = 0
+                        goalWeightTextField.text = String(currentWeight)
+                        self.currentGoalWeight = currentWeight
+                    }
+                }
+            } else { // weeklyGoalTextField is blank
+                if (newOverallGoal != "" && newOverallGoal != currentOverallGoal) || (newOverallGoal == currentOverallGoal && weeklyGoalTextField.text != "") {
+                    if newOverallGoal == "Maintain" {
+                        weeklyGoalTextField.text = "Maintain Weight"
+//                        goalWeightTextField.isUserInteractionEnabled = false
+                        self.newWeeklyGoal = 0
+                        goalWeightTextField.text = String(currentWeight)
+                        self.currentGoalWeight = currentWeight
+                    } else {
+                        if currentOverallGoal == "Maintain" {
+                            if newOverallGoal == "Lose" {
+                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow] * -1
+                            } else if newOverallGoal == "Gain" {
+                                self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow]
+                            }
+                            weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lbs per week"
+                        } else {
+                            if self.newWeeklyGoal == 0 {
+                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.currentWeeklyGoal)) lbs per week"
+                                self.newWeeklyGoal = self.currentWeeklyGoal
+                            } else if abs(self.newWeeklyGoal) == 1 {
+                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lb per week"
+                            } else {
+                                weeklyGoalTextField.text = "\(newOverallGoal) \(abs(self.newWeeklyGoal)) lbs per week"
+                            }
+                        }
+                    }
+                } else if (newOverallGoal == "" && weeklyGoalTextField.text == "") || (newOverallGoal == "" && weeklyGoalSelectedRow == 0) {
+                    weeklyGoalTextField.text = ""
+                }
+            }
+        } else if pickerView == weeklyGoalPicker && currentOverallGoal != "Maintain" && newOverallGoal != "Maintain" {
+            if row == 0 {
+                 weeklyGoalTextField.text = weeklyGoalsPickerValues[row]
+            } else {
+                weeklyGoalSelectedRow = row
+                if newOverallGoal == "" {
+                    weeklyGoalTextField.text = "\(currentOverallGoal) \(weeklyGoalsPickerValues[row])"
+                    if currentOverallGoal == "Lose" {
+                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
+                        print("Current overall goal is: '\(self.currentOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                    } else if currentOverallGoal == "Gain" {
+                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
+                        print("Current overall goal is: '\(self.currentOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                    }
+                } else {
+                    weeklyGoalTextField.text = "\(newOverallGoal) \(weeklyGoalsPickerValues[row])"
+                    if newOverallGoal == "Lose" {
+                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1] * -1
+                        print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                    } else if newOverallGoal == "Gain" {
+                        self.newWeeklyGoal = weeklyGoalValues[weeklyGoalSelectedRow - 1]
+                        print("New overall goal is: '\(newOverallGoal)' and new weekly goal is:", self.newWeeklyGoal)
+                    }
+                }
+            }
+        } else if pickerView == weeklyGoalPicker && (currentOverallGoal == "Maintain" && overallGoalTextField.text == "" || newOverallGoal == "Maintain") {
+            weeklyGoalTextField.text = maintainWeightGoalsPickerValues[row]
+            weeklyGoalSelectedRow = 1
+            self.newWeeklyGoal = weeklyGoalValues [weeklyGoalSelectedRow - 1]
+        } else if pickerView == activityLevelPicker {
+            activityLevelTextField.text = activityLevelsPickerValues[row]
+        }
+
+
+        if (currentOverallGoal == "Maintain" && overallGoalTextField.text == "") || newOverallGoal == "Maintain" {
+            goalWeightTextField.isUserInteractionEnabled = false
+        } else {
+            goalWeightTextField.isUserInteractionEnabled = true
+        }
+    }
+
     
 }
