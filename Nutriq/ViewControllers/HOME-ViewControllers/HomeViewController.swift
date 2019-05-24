@@ -16,13 +16,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
   
     // MARK: - Properties
+    @IBOutlet weak var collectionView: UICollectionView!
     var meals = [[String:Any]]()
     var mealsData = [[String:Any]]()
-    var targetCal = "2700"
+    var targetCal = "2000"
     var diet = "high+protein"
-    var count: Int = 0
-    @IBOutlet weak var collectionView: UICollectionView!
-    
 
     
     // MARK: - Init
@@ -35,48 +33,46 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-    // MARK: - API Request
+    // MARK: - First API Request
+    
     func mealidRequest() {
      
-        
         let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
         let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        
         let headers: HTTPHeaders = [
             "X-RapidAPI-Host": Host,
             "X-RapidAPI-Key": MY_API_KEY,
             "Accept": "application/json"
         ]
-        
-        // MARK: - To make sure the headers are sent, use debugPrint on the request
-        let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=\(targetCal)&diet=\(diet)&exclude=shellfish%2C+olives", headers: headers)
+        let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=\(targetCal)&diet=\(diet)", headers: headers)
             .responseJSON { response in
             //debugPrint(response)
                 if let result = response.result.value {
                     let JSON = result as! [String : Any]
                     self.meals = JSON["items"] as! [[String : Any]]
-                    //print(self.meals)
-                    
-                    
-    
                     self.mealDataRequest()
                 }
         }
         debugPrint(request)
     }
+    
+    // MARK: - Second API Request
 
     func mealDataRequest() {
         
-        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
-        let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         var ID_LIST = [String]()
         var ID_String = ""
-        
-        
+        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
+        let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        let headers: HTTPHeaders = [
+            "X-RapidAPI-Host": Host,
+            "X-RapidAPI-Key": MY_API_KEY,
+            "Accept": "application/json"
+        ]
+    
         do {
             for index in 0..<(meals.count) {
                 let meal = meals[index]
-                
                 let mealValueJSONstring =  meal["value"] as! String
                 let mealValueDictionary = try JSONSerialization.jsonObject(with: mealValueJSONstring.data(using: .utf8)!, options: []) as! [String:Any]
                 let ID = mealValueDictionary["id"] as! Int
@@ -84,37 +80,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 ID_LIST.insert("\(ID)", at: index)
                 ID_String = ID_LIST.joined(separator: "%2C")
                 
+                print(ID_LIST)
                 }
-            print(ID_LIST)
-            print(ID_String)
             }
         catch {
             print(error)
         }
         
-        let headers: HTTPHeaders = [
-            "X-RapidAPI-Host": Host,
-            "X-RapidAPI-Key": MY_API_KEY,
-            "Accept": "application/json"
-        ]
-        
         let requestURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk?includeNutrition=true&ids=\(ID_String)"
         let request = Alamofire.request(requestURL, headers: headers)
             .responseJSON { response in
-                //debugPrint(response)
                 if let result = response.result.value {
                     self.mealsData = result as! [[String : Any]]
-                    print(self.mealsData)
-                    
                     self.collectionView.reloadData()
-                    
+                    print("-------Request Finished--------")
                 }
         }
         debugPrint(request)
-       
-       
-        
-        
     }
     
         
@@ -129,43 +111,29 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodCell
         
-        // Allows the variable needed to be the one for the correct number meal, based on the num of the selected cell
         let mealHandler = meals[indexPath.row]
         let mealDataHandler = mealsData[indexPath.row]
         
-        // meal["day"] is based on the Int indexPath.row defined above
         let day = mealHandler["day"] as! Int
+        
+        let fallbackURL = "https://spoonacular.com/recipeImages/640190-556x370.jpg"
+        let baseURL = mealDataHandler["image"] as? String ?? fallbackURL
+        let posterURL = URL(string: baseURL)!
+        
+        cell.mealImage.af_setImage(withURL: posterURL)
         cell.dayNum.text = "\(day)"
         cell.dayButton.layer.cornerRadius = 10
         
         
-        
-        
-        let fallbackURL = "https://spoonacular.com/recipeImages/640190-556x370.jpg"
-        
-        // MEAL URL
-        let baseURL = mealDataHandler["image"] as? String ?? fallbackURL
-        
-        print(type(of: baseURL))
-        print(baseURL)
-        let posterURL = URL(string: baseURL)!
-        cell.mealImage.af_setImage(withURL: posterURL)
-        
-        
-        
         do {
             let mealValueJSONstring =  mealHandler["value"] as! String
-            
-            // Unpacks the JSON string, assigns it to an array of strings
             let mealValueDictionary = try JSONSerialization.jsonObject(with: mealValueJSONstring.data(using: .utf8)!, options: []) as! [String:Any]
-            
-//            print("Printing meal: \(indexPath.row)")
-//            print(mealValueDictionary["title"]!)
-//            print(mealValueDictionary["id"]!, "\n")
-            
-            // Finds the title of the selected meal and assigns it to the label mealName
             let title = mealValueDictionary["title"] as! String
+            
             cell.mealName.text = title
+            // print("Printing meal: \(indexPath.row)")
+            // print(mealValueDictionary["title"]!)
+            // print(mealValueDictionary["id"]!, "\n")
         }
         catch {
                 print(error)
@@ -185,6 +153,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
     
+        // Modifies the colors of the DAY button based on Int: day
         if day == 2 {
             cell.dayButton.firstColor = .init(red: 255/255.0, green: 121/255.0, blue: 247/255.0, alpha: 1.0)
             cell.dayButton.secondColor = .init(red: 255/255.0, green: 61/255.0, blue: 221/255.0, alpha: 1.0)
@@ -215,7 +184,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Passing data to MealDetails VC...")
         
         // Find the selected meal name
         let cell = sender as! UICollectionViewCell
@@ -237,16 +205,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let detailsViewController = segue.destination as! MealDetailViewController
             detailsViewController.mealTitle = mealTitle
             detailsViewController.mealData = mealDataDictionary
-            
+            print("Passing data to MealDetailsViewController...")
+        
         }
         catch {
             print(error)
         }
-        
-        
     }
-    
-
 }
 
 
