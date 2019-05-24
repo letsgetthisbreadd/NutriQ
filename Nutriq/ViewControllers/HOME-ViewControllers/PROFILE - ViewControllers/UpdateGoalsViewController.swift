@@ -23,7 +23,8 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
     var currentWeight: Double = 0.0
     var activityLevel = ""
     
-//    var weeklyGoalSelectedRow = 0
+    var weeklyGoalSelectedRow = 0
+    
     var loseGainWeeklyGoalSelectedRow = 0
     var maintainWeeklyGoalSelectedRow = 0
     
@@ -379,7 +380,6 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         if pickerView == activityLevelPicker { // Activity Level Picker can exist on its own without needing to be changed depending on the other pickers or text field values
             // TODO: - Make sure to check if activityLevel is empty or not when sending to Firebase. If it's empty, don't send it
             activityLevelTextField.text = activityLevelsPickerValues[row]
@@ -577,5 +577,4 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
         }
     }
-    
 }
