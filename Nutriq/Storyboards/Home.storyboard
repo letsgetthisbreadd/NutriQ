@@ -111,6 +111,7 @@
                                         </constraints>
                                         <size key="customSize" width="345" height="300"/>
                                         <connections>
+                                            <outlet property="dayButton" destination="r6l-gB-PNp" id="8ox-M1-48D"/>
                                             <outlet property="dayNum" destination="UQb-ME-YLw" id="xqX-uL-kIs"/>
                                             <outlet property="mealImage" destination="f5d-mp-YJC" id="YUx-kv-J5F"/>
                                             <outlet property="mealName" destination="QAd-cs-rat" id="1v4-5Z-oWr"/>
@@ -177,6 +178,14 @@
                             <constraint firstItem="8PH-fd-dg2" firstAttribute="leading" secondItem="PIz-gG-xYa" secondAttribute="leading" constant="38" id="rpS-09-xVE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PIz-gG-xYa"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.11897969187136342" green="0.75854616116751272" blue="0.31508302646634262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.0" green="0.65224460659898476" blue="0.26238877612728639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="8PH-fd-dg2" id="rGo-Os-HvO"/>
