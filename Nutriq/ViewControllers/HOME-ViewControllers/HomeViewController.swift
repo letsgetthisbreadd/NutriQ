@@ -19,17 +19,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     var meals = [[String:Any]]()
     var mealsData = [[String:Any]]()
-    var targetCal = "2000"
-    var diet = "high+protein"
+    var targetCal = ""
+    var diet = ""
 
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mealidRequest()
-        
+        getAndLoadUserData()
+    }
     
+    func getAndLoadUserData() {
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        let userReference = Database.database().reference().child("users/\(userID)")
+        
+        userReference.observeSingleEvent(of: .value) { (snapshot) in
+            print("Snapshot of the user's information:\n", snapshot.value!) // Returns snapshot of all user's information (everything under userID)
+            let snapshotValue = snapshot.value! as? NSDictionary
+            let username = snapshotValue?["username"] as! String
+            
+            // Health stats object
+            let healthStatsSnapshotValue = snapshotValue?["health-stats"] as? NSDictionary
+            let goalCalories = healthStatsSnapshotValue?["goal-calories"] as! Int
+            let overallGoal = healthStatsSnapshotValue?["overall-goal"] as! String
+            
+            self.targetCal = "\(goalCalories)"
+            
+            if overallGoal == "Gain" { self.diet = "&diet=high+protein"}
+            else if overallGoal == "Maintain" { self.diet = ""}
+            else if overallGoal == "Lose" { self.diet = ""}
+            
+            self.mealidRequest()
+        }
     }
     
     
@@ -44,7 +67,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             "X-RapidAPI-Key": MY_API_KEY,
             "Accept": "application/json"
         ]
-        let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=\(targetCal)&diet=\(diet)", headers: headers)
+        let request = Alamofire.request("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=week&targetCalories=\(targetCal)\(diet)", headers: headers)
             .responseJSON { response in
             //debugPrint(response)
                 if let result = response.result.value {
@@ -79,9 +102,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 ID_LIST.insert("\(ID)", at: index)
                 ID_String = ID_LIST.joined(separator: "%2C")
-                
-                print(ID_LIST)
                 }
+            print(ID_LIST)
             }
         catch {
             print(error)
