@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
   
     // MARK: - Properties
     var meals = [[String:Any]]()
-    var mealData = [[String:Any]]()
+    var mealsData = [[String:Any]]()
     var targetCal = "2700"
     var diet = "high+protein"
     var count: Int = 0
@@ -29,17 +29,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doRequestWithHeaders()
+        mealidRequest()
         
     
     }
     
     
     // MARK: - API Request
-    func doRequestWithHeaders() {
+    func mealidRequest() {
      
         
-        let MY_API_KEY = ""
+        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
         let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         
         let headers: HTTPHeaders = [
@@ -55,7 +55,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 if let result = response.result.value {
                     let JSON = result as! [String : Any]
                     self.meals = JSON["items"] as! [[String : Any]]
-                    print(self.meals)
+                    //print(self.meals)
                     
                     
     
@@ -67,7 +67,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func mealDataRequest() {
         
-        let MY_API_KEY = ""
+        let MY_API_KEY = "472b7cc975msh060aefd68adf082p1bb2bejsn5903ef69b2cd"
         let Host = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         var ID_LIST = [String]()
         var ID_String = ""
@@ -103,8 +103,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             .responseJSON { response in
                 //debugPrint(response)
                 if let result = response.result.value {
-                    self.mealData = result as! [[String : Any]]
-                    print(self.mealData)
+                    self.mealsData = result as! [[String : Any]]
+                    print(self.mealsData)
                     
                     self.collectionView.reloadData()
                     
@@ -130,53 +130,38 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodCell
         
         // Allows the variable needed to be the one for the correct number meal, based on the num of the selected cell
-        let meal = meals[indexPath.row]
-        let mealDataHandler = mealData[indexPath.row]
+        let mealHandler = meals[indexPath.row]
+        let mealDataHandler = mealsData[indexPath.row]
         
         // meal["day"] is based on the Int indexPath.row defined above
-        let day = meal["day"] as! Int
+        let day = mealHandler["day"] as! Int
         cell.dayNum.text = "\(day)"
         cell.dayButton.layer.cornerRadius = 10
         
-        if day == 2 {
-            cell.dayButton.firstColor = .init(red: 255/255.0, green: 121/255.0, blue: 247/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 255/255.0, green: 61/255.0, blue: 221/255.0, alpha: 1.0)
-        } else if day == 3 {
-            cell.dayButton.firstColor = .init(red: 255/255.0, green: 92/255.0, blue: 74/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 255/255.0, green: 37/255.0, blue: 19/255.0, alpha: 1.0)
-        } else if day == 4 {
-            cell.dayButton.firstColor = .init(red: 29/255.0, green: 46/255.0, blue: 255/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 0/255.0, green: 19/255.0, blue: 193/255.0, alpha: 1.0)
-        } else if day == 5 {
-            cell.dayButton.firstColor = .init(red: 169/255.0, green: 255/255.0, blue: 103/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 124/255.0, green: 243/255.0, blue: 0/255.0, alpha: 1.0)
-        } else if day == 6 {
-            cell.dayButton.firstColor = .init(red: 13/255.0, green: 255/255.0, blue: 196/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 4/255.0, green: 206/255.0, blue: 176/255.0, alpha: 1.0)
-        } else if day == 7 {
-            cell.dayButton.firstColor = .init(red: 30/255.0, green: 193/255.0, blue: 80/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 0/255.0, green: 166/255.0, blue: 67/255.0, alpha: 1.0)
-        } else if day == 1 {
-            cell.dayButton.firstColor = .init(red: 95/255.0, green: 213/255.0, blue: 255/255.0, alpha: 1.0)
-            cell.dayButton.secondColor = .init(red: 62/255.0, green: 166/255.0, blue: 231/255.0, alpha: 1.0)
-        }
+        
+        
         
         let fallbackURL = "https://spoonacular.com/recipeImages/640190-556x370.jpg"
+        
+        // MEAL URL
         let baseURL = mealDataHandler["image"] as? String ?? fallbackURL
+        
+        print(type(of: baseURL))
+        print(baseURL)
         let posterURL = URL(string: baseURL)!
         cell.mealImage.af_setImage(withURL: posterURL)
         
         
         
         do {
-            let mealValueJSONstring =  meal["value"] as! String
+            let mealValueJSONstring =  mealHandler["value"] as! String
             
             // Unpacks the JSON string, assigns it to an array of strings
             let mealValueDictionary = try JSONSerialization.jsonObject(with: mealValueJSONstring.data(using: .utf8)!, options: []) as! [String:Any]
             
-            print("Printing meal: \(indexPath.row)")
-            print(mealValueDictionary["title"]!)
-            print(mealValueDictionary["id"]!, "\n")
+//            print("Printing meal: \(indexPath.row)")
+//            print(mealValueDictionary["title"]!)
+//            print(mealValueDictionary["id"]!, "\n")
             
             // Finds the title of the selected meal and assigns it to the label mealName
             let title = mealValueDictionary["title"] as! String
@@ -200,6 +185,29 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
     
+        if day == 2 {
+            cell.dayButton.firstColor = .init(red: 255/255.0, green: 121/255.0, blue: 247/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 255/255.0, green: 61/255.0, blue: 221/255.0, alpha: 1.0)
+        } else if day == 3 {
+            cell.dayButton.firstColor = .init(red: 255/255.0, green: 92/255.0, blue: 74/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 255/255.0, green: 37/255.0, blue: 19/255.0, alpha: 1.0)
+        } else if day == 4 {
+            cell.dayButton.firstColor = .init(red: 29/255.0, green: 46/255.0, blue: 255/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 0/255.0, green: 19/255.0, blue: 193/255.0, alpha: 1.0)
+        } else if day == 5 {
+            cell.dayButton.firstColor = .init(red: 169/255.0, green: 255/255.0, blue: 103/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 124/255.0, green: 243/255.0, blue: 0/255.0, alpha: 1.0)
+        } else if day == 6 {
+            cell.dayButton.firstColor = .init(red: 13/255.0, green: 255/255.0, blue: 196/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 4/255.0, green: 206/255.0, blue: 176/255.0, alpha: 1.0)
+        } else if day == 7 {
+            cell.dayButton.firstColor = .init(red: 30/255.0, green: 193/255.0, blue: 80/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 0/255.0, green: 166/255.0, blue: 67/255.0, alpha: 1.0)
+        } else if day == 1 {
+            cell.dayButton.firstColor = .init(red: 95/255.0, green: 213/255.0, blue: 255/255.0, alpha: 1.0)
+            cell.dayButton.secondColor = .init(red: 62/255.0, green: 166/255.0, blue: 231/255.0, alpha: 1.0)
+        }
+        
         return cell
     }
     
@@ -215,6 +223,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         // Allows the variable needed to be the one for the correct number meal, based on the num of the selected cell
         let meal = meals[indexPath.row]
+        let mealDataDictionary = mealsData[indexPath.row]
         
         // This do statement unpacks the JSON string "value" and retrives the desired key:value pair
         do {
@@ -227,6 +236,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             // That mealTitle string is then passed to MealDetailsViewController via this segue
             let detailsViewController = segue.destination as! MealDetailViewController
             detailsViewController.mealTitle = mealTitle
+            detailsViewController.mealData = mealDataDictionary
             
         }
         catch {
@@ -238,3 +248,5 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
 
 }
+
+

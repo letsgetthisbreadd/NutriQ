@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EY4-eV-dDo">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Proxima-Nova-Reg.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
         <array key="Proxima-Nova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
         </array>
@@ -158,24 +161,57 @@
             <objects>
                 <viewController id="gmV-Ug-fQx" customClass="MealDetailViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T5f-fn-R5r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-fd-dg2">
-                                <rect key="frame" x="38" y="116" width="300" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-Ao-cp6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="cUz-EG-KZB"/>
+                                    <constraint firstAttribute="height" constant="300" id="bBj-bl-We4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utO-Sh-3OM">
+                                <rect key="frame" x="0.0" y="384" width="414" height="989"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PH-fd-dg2">
+                                        <rect key="frame" x="19" y="8" width="376" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="376" id="tK1-0L-6lq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rB-uX-kmF">
+                                        <rect key="frame" x="19" y="69" width="376" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="1Gs-zp-yZM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8PH-fd-dg2" firstAttribute="leading" secondItem="utO-Sh-3OM" secondAttribute="leading" constant="19" id="BWK-cH-Lpj"/>
+                                    <constraint firstItem="8PH-fd-dg2" firstAttribute="top" secondItem="utO-Sh-3OM" secondAttribute="top" constant="8" id="I9L-f4-NeR"/>
+                                    <constraint firstAttribute="trailing" secondItem="8PH-fd-dg2" secondAttribute="trailing" constant="19" id="LIx-f3-G3Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="5rB-uX-kmF" secondAttribute="trailing" constant="19" id="S3P-hg-etv"/>
+                                    <constraint firstItem="5rB-uX-kmF" firstAttribute="top" secondItem="8PH-fd-dg2" secondAttribute="bottom" constant="31" id="ibn-5D-HwT"/>
+                                    <constraint firstItem="5rB-uX-kmF" firstAttribute="leading" secondItem="utO-Sh-3OM" secondAttribute="leading" constant="19" id="nVB-Ef-sbJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5rB-uX-kmF" secondAttribute="bottom" constant="578" id="t5j-ys-xdU"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PIz-gG-xYa" firstAttribute="trailing" secondItem="8PH-fd-dg2" secondAttribute="trailing" constant="37" id="5TR-uv-mEm"/>
-                            <constraint firstItem="8PH-fd-dg2" firstAttribute="top" secondItem="PIz-gG-xYa" secondAttribute="top" constant="28" id="HJo-qp-SXH"/>
-                            <constraint firstItem="8PH-fd-dg2" firstAttribute="leading" secondItem="PIz-gG-xYa" secondAttribute="leading" constant="38" id="rpS-09-xVE"/>
+                            <constraint firstItem="utO-Sh-3OM" firstAttribute="trailing" secondItem="PIz-gG-xYa" secondAttribute="trailing" id="AeO-3j-zSf"/>
+                            <constraint firstAttribute="bottom" secondItem="utO-Sh-3OM" secondAttribute="bottom" constant="-477" id="BSf-mr-gAr"/>
+                            <constraint firstItem="PoN-Ao-cp6" firstAttribute="top" secondItem="PIz-gG-xYa" secondAttribute="top" id="Iwa-5h-9Hv"/>
+                            <constraint firstItem="PoN-Ao-cp6" firstAttribute="trailing" secondItem="PIz-gG-xYa" secondAttribute="trailing" id="L0T-eO-vVO"/>
+                            <constraint firstItem="utO-Sh-3OM" firstAttribute="top" secondItem="PIz-gG-xYa" secondAttribute="top" constant="296" id="TSg-mt-c87"/>
+                            <constraint firstItem="PoN-Ao-cp6" firstAttribute="leading" secondItem="PIz-gG-xYa" secondAttribute="leading" id="ZBP-l3-xuc"/>
+                            <constraint firstItem="utO-Sh-3OM" firstAttribute="leading" secondItem="PIz-gG-xYa" secondAttribute="leading" id="ePt-fE-kU3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PIz-gG-xYa"/>
                         <userDefinedRuntimeAttributes>
@@ -188,12 +224,14 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="mealImage" destination="PoN-Ao-cp6" id="u6y-Ha-mds"/>
                         <outlet property="mealNameLabel" destination="8PH-fd-dg2" id="rGo-Os-HvO"/>
+                        <outlet property="recipeLabel" destination="5rB-uX-kmF" id="vAl-qv-G0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUH-RM-HYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735.20000000000005" y="1480.7881773399015"/>
+            <point key="canvasLocation" x="-736.23188405797111" y="1480.5803571428571"/>
         </scene>
         <!--WelcomeViewController-->
         <scene sceneID="EXe-u3-pMQ">
@@ -228,7 +266,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="XoP-I7-KV0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Pv-e7-vhc">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -247,7 +285,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="8Ax-ds-A8M"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yCd-YD-1PF">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
