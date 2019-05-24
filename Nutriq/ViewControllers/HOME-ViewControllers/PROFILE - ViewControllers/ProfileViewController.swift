@@ -72,7 +72,6 @@ class ProfileViewController: UIViewController {
         goalsView.layer.cornerRadius = 5.0
         maintenanceCaloriesView.layer.cornerRadius = 5.0
         goalCaloriesView.layer.cornerRadius = 5.0
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,7 +114,7 @@ class ProfileViewController: UIViewController {
             if overallGoal == "Lose" && currentWeight < beginningWeight {
                 self.progressMessageLabel.text = "Weight Loss Progress - \((((beginningWeight - currentWeight) * 10).rounded(.toNearestOrEven) / 10)) pounds lost"
             } else if overallGoal == "Gain" && currentWeight > beginningWeight {
-                self.progressMessageLabel.text = "Weight Gain Progress - \((((beginningWeight - currentWeight) * 10).rounded(.toNearestOrEven) / 10)) pounds gained"
+                self.progressMessageLabel.text = "Weight Gain Progress - \((((currentWeight - beginningWeight) * 10).rounded(.toNearestOrEven) / 10)) pounds gained"
             } else {
                 self.progressMessageLabel.text = ""
             }

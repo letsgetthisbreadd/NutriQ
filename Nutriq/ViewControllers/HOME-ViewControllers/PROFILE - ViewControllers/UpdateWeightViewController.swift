@@ -116,8 +116,6 @@ class UpdateWeightViewController: UIViewController {
                 completion()
                 self.storeUserHealthStats(age, self.maintenanceCalories, goalCalories, currentWeight, weightLeftUntilGoal)
             }
-            
-            
         }
     }
     
