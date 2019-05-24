@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var currentWeightLabel: UILabel!
     @IBOutlet weak var beginningWeightLabel: UILabel!
     @IBOutlet weak var goalWeightLabel: UILabel!
+    @IBOutlet weak var progressMessageLabel: UILabel!
     @IBOutlet weak var motivationalMessageLabel: UILabel!
     @IBOutlet weak var updateWeightButton: ShadowButton!
     
@@ -38,12 +39,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var maintenanceCaloriesLabel: UILabel!
     @IBOutlet weak var goalCaloriesLabel: UILabel!
     @IBOutlet weak var weeklyGoalMessageLabel: UILabel!
+    @IBOutlet weak var activityLevelMessageLabel: UILabel!
     @IBOutlet weak var updateGoalsButton: ShadowButton!
+    
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         profileVCInstance = self
         
         self.title = "Profile"
@@ -53,9 +57,12 @@ class ProfileViewController: UIViewController {
         currentWeightLabel.alpha = 0.0
         beginningWeightLabel.alpha = 0.0
         goalWeightLabel.alpha = 0.0
+        progressMessageLabel.alpha = 0.0
         motivationalMessageLabel.alpha = 0.0
         maintenanceCaloriesLabel.alpha = 0.0
         goalCaloriesLabel.alpha = 0.0
+        weeklyGoalMessageLabel.alpha = 0.0
+        activityLevelMessageLabel.alpha = 0.0
         
         // Customize the views
         progressView.layer.cornerRadius = 5.0
@@ -65,18 +72,10 @@ class ProfileViewController: UIViewController {
         goalsView.layer.cornerRadius = 5.0
         maintenanceCaloriesView.layer.cornerRadius = 5.0
         goalCaloriesView.layer.cornerRadius = 5.0
-        
-        
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        currentWeightLabel.alpha = 0.0
-        motivationalMessageLabel.alpha = 0.0
-        maintenanceCaloriesLabel.alpha = 0.0
-        goalCaloriesLabel.alpha = 0.0
-        
         getAndLoadUserData()
     }
     
@@ -95,6 +94,7 @@ class ProfileViewController: UIViewController {
             
             // Health stats object
             let healthStatsSnapshotValue = snapshotValue?["health-stats"] as? NSDictionary
+            let activityLevel = healthStatsSnapshotValue?["activity-level"] as! String
             let currentWeight = healthStatsSnapshotValue?["current-weight-pounds"] as! Double
             let beginningWeight = healthStatsSnapshotValue?["beginning-weight-pounds"] as! Double
             let goalWeight = healthStatsSnapshotValue?["goal-weight-pounds"] as! Double
@@ -111,21 +111,34 @@ class ProfileViewController: UIViewController {
             self.beginningWeightLabel.text = "\(beginningWeight) pounds"
             self.goalWeightLabel.text = "\(goalWeight) pounds"
             
-            if weightLeftUntilGoal > 0 {
-                self.motivationalMessageLabel.text = "You are only \(weightLeftUntilGoal) pounds away from your goal! Keep going!"
+            // Progress message label
+            if overallGoal == "Lose" && currentWeight < beginningWeight {
+                self.progressMessageLabel.text = "Weight Loss Progress - \((((beginningWeight - currentWeight) * 10).rounded(.toNearestOrEven) / 10)) pounds lost"
+            } else if overallGoal == "Gain" && currentWeight > beginningWeight {
+                self.progressMessageLabel.text = "Weight Gain Progress - \((((beginningWeight - currentWeight) * 10).rounded(.toNearestOrEven) / 10)) pounds gained"
             } else {
-                self.motivationalMessageLabel.text = "Congratulations, \(username)! You reached your goal! We're so proud of you!"
+                self.progressMessageLabel.text = ""
             }
             
-            // Customize the weekly goal message
-            if overallGoal != "Maintain" {
-                self.weeklyGoalMessageLabel.text = "\(overallGoal) \(abs(weeklyGoal)) pounds per week"
+            // Motivational message label
+            if weightLeftUntilGoal > 0 && (overallGoal == "Lose" && currentWeight > goalWeight) || (overallGoal == "Gain" && currentWeight < goalWeight) {
+                self.motivationalMessageLabel.text = "You are only \(weightLeftUntilGoal) pounds away from your goal! Keep going!"
             } else {
-                self.weeklyGoalMessageLabel.text = "Maintain weight"
+                self.motivationalMessageLabel.text = "Congratulations, \(username)! You reached your goal and we're so proud of you for it! Try setting a new goal if you're up for it!"
             }
             
             self.maintenanceCaloriesLabel.text = "\(maintenanceCalories)"
             self.goalCaloriesLabel.text = "\(goalCalories)"
+            
+            // Customize the weekly goal message
+            if overallGoal != "Maintain" {
+                self.weeklyGoalMessageLabel.text = "Weekly Goal - \(overallGoal) \(abs(weeklyGoal)) pounds per week"
+            } else {
+                self.weeklyGoalMessageLabel.text = "Maintain weight"
+            }
+            
+            self.activityLevelMessageLabel.text = "Activity Level - \(activityLevel)"
+            
             
             // Animate the labels
             UIView.animate(withDuration: 0.5, animations: {
@@ -133,10 +146,12 @@ class ProfileViewController: UIViewController {
                 self.currentWeightLabel.alpha = 1
                 self.beginningWeightLabel.alpha = 1
                 self.goalWeightLabel.alpha = 1
+                self.progressMessageLabel.alpha = 1
                 self.motivationalMessageLabel.alpha = 1
                 self.maintenanceCaloriesLabel.alpha = 1
                 self.goalCaloriesLabel.alpha = 1
                 self.weeklyGoalMessageLabel.alpha = 1
+                self.activityLevelMessageLabel.alpha = 1
             })
             
         }
