@@ -12,7 +12,8 @@ class FoodCell: UICollectionViewCell {
 
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealName: UILabel!
-    @IBOutlet weak var mealDescription: UILabel!
+    @IBOutlet weak var dayNum: UILabel!
+    @IBOutlet weak var dayButton: GradientView!
     
     
 }

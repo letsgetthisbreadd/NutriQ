@@ -12,6 +12,8 @@ target 'Nutriq' do
   pod 'GoogleSignIn'
   pod 'Cards'
   pod 'SwiftVideoBackground'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
 
 
 end
