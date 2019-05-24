@@ -44,12 +44,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let healthStatsSnapshotValue = snapshotValue?["health-stats"] as? NSDictionary
             let goalCalories = healthStatsSnapshotValue?["goal-calories"] as! Int
             let overallGoal = healthStatsSnapshotValue?["overall-goal"] as! String
+            let dietPreference = healthStatsSnapshotValue?["diet-preference"] as? String
             
             self.targetCal = "\(goalCalories)"
             
-            if overallGoal == "Gain" { self.diet = "&diet=high+protein"}
-            else if overallGoal == "Maintain" { self.diet = ""}
-            else if overallGoal == "Lose" { self.diet = ""}
+            if dietPreference != nil {
+                self.diet = "&diet=" + dietPreference!
+                
+            }
+            
             
             self.mealidRequest()
         }
@@ -57,6 +60,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     // MARK: - First API Request
+    // First API request gets the weekly meal plan IDs and saves to global variable
     
     func mealidRequest() {
      
@@ -80,6 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     // MARK: - Second API Request
+    // Second API request takes meal IDs and retrives information for each meal
 
     func mealDataRequest() {
         
@@ -92,7 +97,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             "X-RapidAPI-Key": MY_API_KEY,
             "Accept": "application/json"
         ]
-    
+        
+        // Combines the IDs gathered in the first request to prepare for second request
         do {
             for index in 0..<(meals.count) {
                 let meal = meals[index]

@@ -17,12 +17,13 @@
 import UIKit
 import Firebase
 
-class HealthStatsViewController: UIViewController {
+class HealthStatsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
+
     // MARK: - Properties
     
     var overallGoal = ""
+    var dietPref = ""
     let weeklyGoal: Double = 0
     private var datePicker: UIDatePicker?
     @IBOutlet weak var genderPicker: UISegmentedControl!
@@ -31,12 +32,20 @@ class HealthStatsViewController: UIViewController {
     @IBOutlet weak var heightInchesTextField: UITextField!
     @IBOutlet weak var beginningWeightTextField: UITextField!
     @IBOutlet weak var goalWeightTextField: UITextField!
+    @IBOutlet weak var dietPrefTextField: UITextField!
     
     
+    var dietPicker = UIPickerView()
+    let dietPickerValues = ["", "Vegetarian", "Paleo", "Keto", "Vegan", "Low Carb" ]
+    let dietValues = ["", "vegetarian", "paleo", "keto", "vegan", "low+carb" ]
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dietPicker.dataSource = self
+        dietPicker.delegate  = self
+        dietPrefTextField.inputView = dietPicker
         
         // Configures the Date Picker to have a 'done' button
         datePicker = UIDatePicker()
@@ -45,7 +54,7 @@ class HealthStatsViewController: UIViewController {
         dobTextField.inputView = datePicker
         let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(HealthStatsViewController.dismissPicker))
         dobTextField.inputAccessoryView = toolBar
-        
+        dietPrefTextField.inputAccessoryView = toolBar
     }
     
     
@@ -161,17 +170,17 @@ class HealthStatsViewController: UIViewController {
         // TODO: - Add date validation (format and age over 18 years old)
         
         // User input validation passed; Send the inputs for storage in the Firebase database
-        storeSurveyInfo(gender: gender, dateOfBirth: dateOfBirth, totalHeight: totalHeight, beginningWeight: beginningWeight, goalWeight: goalWeight, currentWeight: currentWeight, weightLeftUntilGoal: weightLeftUntilGoal, overallGoal: overallGoal, weeklyGoal: weeklyGoal)
+        storeSurveyInfo(gender: gender, dateOfBirth: dateOfBirth, totalHeight: totalHeight, beginningWeight: beginningWeight, goalWeight: goalWeight, currentWeight: currentWeight, weightLeftUntilGoal: weightLeftUntilGoal, overallGoal: overallGoal, weeklyGoal: weeklyGoal, dietPref: dietPref)
         
         
     }
     
-    func storeSurveyInfo(gender: String, dateOfBirth: String, totalHeight: Int, beginningWeight: Double, goalWeight: Double, currentWeight: Double, weightLeftUntilGoal: Double, overallGoal: String, weeklyGoal: Double) {
+    func storeSurveyInfo(gender: String, dateOfBirth: String, totalHeight: Int, beginningWeight: Double, goalWeight: Double, currentWeight: Double, weightLeftUntilGoal: Double, overallGoal: String, weeklyGoal: Double, dietPref: String) {
         guard let userID = Auth.auth().currentUser?.uid else { return }
         
         
         // Create the health-stats object which will be added to the current user's data
-        let userHealthStats = ["health-stats": ["gender": gender, "date-of-birth": dateOfBirth, "height-inches": totalHeight, "beginning-weight-pounds": beginningWeight, "goal-weight-pounds": goalWeight, "current-weight-pounds": currentWeight, "weight-left-until-goal": weightLeftUntilGoal, "overall-goal": overallGoal, "weekly-goal": weeklyGoal]]
+        let userHealthStats = ["health-stats": ["gender": gender, "date-of-birth": dateOfBirth, "height-inches": totalHeight, "beginning-weight-pounds": beginningWeight, "goal-weight-pounds": goalWeight, "current-weight-pounds": currentWeight, "weight-left-until-goal": weightLeftUntilGoal, "overall-goal": overallGoal, "weekly-goal": weeklyGoal, "diet-preference": dietPref]]
         
         Database.database().reference().child("users").child(userID).updateChildValues(userHealthStats) { (error, ref) in
             if let error = error {
@@ -181,6 +190,42 @@ class HealthStatsViewController: UIViewController {
             print("Successfully added user's health stats and goals to the Firebase database!")
         }
         
+    }
+    
+    // MARK: - UIPickerView Protocol Stubs & Helper Functions
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == dietPicker {
+            print(dietPickerValues.count)
+            return dietPickerValues.count
+        }
+        return 0
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == dietPicker {
+            if row == 0 {
+                return ""
+            } else {
+                return "\(dietPickerValues[row])"
+            }
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == dietPicker {
+            if row == 0 {
+                dietPrefTextField.text = dietPickerValues[row]
+                self.dietPref = dietValues[row]
+            } else {
+                dietPrefTextField.text = "\(dietPickerValues[row])"
+                self.dietPref = dietValues[row]
+            }
+        }
     }
     
     
