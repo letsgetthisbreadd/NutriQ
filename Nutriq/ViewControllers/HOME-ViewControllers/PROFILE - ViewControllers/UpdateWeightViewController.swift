@@ -63,14 +63,15 @@ class UpdateWeightViewController: UIViewController {
         }
         
         // User input validation passed; Send the current weight for storage in the Firebase Database
-        recalculateGoalStats(currentWeight)
-        print("Completed recalculating goal stats. Closing update weight popup view...\n")
-        self.closePopupViewAnimated()
+        recalculateGoalStats(currentWeight) {
+            print("Completed recalculating goal stats. Closing update weight popup view...\n")
+            self.closePopupViewAnimated()
+        }
 
     }
     
     // Recalculate user's age, maintenance calories, goal calories, and weight left until goal; The age is recalculated because if the user constantly updates their weight, that's the best time to recalculate their age --> only other time would be when the app is loading
-    func recalculateGoalStats(_ currentWeight: Double) {
+    func recalculateGoalStats(_ currentWeight: Double, completion: @escaping () -> ()) {
         // Male --> CaloricResults = ((9.99 * (weight * 0.45359237)) + (6.25 * (height * 2.54)) - (4.92 * age) + 5) * multiplier
         // Female -->  CaloricResults = ((9.99 * (weight * 0.45359237)) + (6.25 * (height * 2.54)) - (4.92 * age) - 161) * multiplier
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -94,28 +95,29 @@ class UpdateWeightViewController: UIViewController {
             // If user's newly input current weight is the same as their old current weight, exit, not recalculating anything
             if currentWeight == oldCurrentWeight {
                 print("Current weight is the same as old current weight. Not updating anything and exiting the function...\n")
-                return
-            }
-            
-            print("Your age is:", age)
-            
-            // Calculate the user's daily caloric maintenance needs based on gender
-            if gender == "Male" {
-                self.maintenanceCalories = Int(round(((9.99 * (currentWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(age)) + 5) * activityMultiplier))
+                self.closePopupView()
             } else {
-                self.maintenanceCalories = Int(round(((9.99 * (currentWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(age)) - 161) * activityMultiplier))
+                print("Your age is:", age)
+                
+                // Calculate the user's daily caloric maintenance needs based on gender
+                if gender == "Male" {
+                    self.maintenanceCalories = Int(round(((9.99 * (currentWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(age)) + 5) * activityMultiplier))
+                } else {
+                    self.maintenanceCalories = Int(round(((9.99 * (currentWeight * 0.45359237)) + (6.25 * (Double(height) * 2.54)) - (4.92 * Double(age)) - 161) * activityMultiplier))
+                }
+                
+                print("Your daily caloric needs to maintain weight are:", self.maintenanceCalories)
+                
+                // Calculate the user's goal caloric maintenance based on how much weight they want to lose weekly
+                print("Weekly goal is:", weeklyGoal, "and weekly goal * 500 is:", Int(round(weeklyGoal * 500)))
+                let goalCalories = self.maintenanceCalories + Int(round(weeklyGoal * 500))
+                print("Your daily caloric GOAL needs are:", goalCalories)
+                
+                completion()
+                self.storeUserHealthStats(age, self.maintenanceCalories, goalCalories, currentWeight, weightLeftUntilGoal)
             }
             
-            print("Your daily caloric needs to maintain weight are:", self.maintenanceCalories)
             
-            // Calculate the user's goal caloric maintenance based on how much weight they want to lose weekly
-            print("Weekly goal is:", weeklyGoal, "and weekly goal * 500 is:", Int(round(weeklyGoal * 500)))
-            let goalCalories = self.maintenanceCalories + Int(round(weeklyGoal * 500))
-            print("Your daily caloric GOAL needs are:", goalCalories)
-            
-            
-            
-            self.storeUserHealthStats(age, self.maintenanceCalories, goalCalories, currentWeight, weightLeftUntilGoal)
         }
     }
     
@@ -127,7 +129,7 @@ class UpdateWeightViewController: UIViewController {
         
         Database.database().reference().child("users/\(userID)/health-stats").updateChildValues(userHealthStats) { (error, ref) in
             if let error = error {
-                print("Failed to udpate database with error: ", error.localizedDescription)
+                print("Failed to udpate database with error:", error.localizedDescription)
                 return
             }
             print("Successfully added user's updated health stats to the Firebase database!")
@@ -178,7 +180,11 @@ class UpdateWeightViewController: UIViewController {
                 
                 // Update the changed values on the profile screen
                 profileVCInstance.currentWeightLabel.alpha = 0
-//                profileVCInstance.motivationalMessageLabel.alpha = 0
+
+                if profileVCInstance.progressMessageLabel.text == "" {
+                    profileVCInstance.progressMessageLabel.alpha = 0
+                }
+                
                 profileVCInstance.maintenanceCaloriesLabel.alpha = 0
                 profileVCInstance.goalCaloriesLabel.alpha = 0
                 profileVCInstance.getAndLoadUserData()

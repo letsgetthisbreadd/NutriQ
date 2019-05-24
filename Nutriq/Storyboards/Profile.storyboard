@@ -33,109 +33,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZT-BZ-xn0" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="10" y="182" width="394" height="250"/>
+                                <rect key="frame" x="10" y="182" width="394" height="270"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-Wy-6n5" userLabel="Current Weight View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="139.5" y="8" width="115" height="110"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j9-nw-QZ5">
-                                                <rect key="frame" x="36" y="60" width="43" height="20"/>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="292-ix-uWa">
-                                                <rect key="frame" x="2.5" y="5" width="110" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="110" id="6ab-XA-MZx"/>
-                                                    <constraint firstAttribute="height" constant="40" id="yAO-ZN-Q2E"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="6j9-nw-QZ5" firstAttribute="centerX" secondItem="wmO-Wy-6n5" secondAttribute="centerX" id="Lf3-MA-Zjb"/>
-                                            <constraint firstItem="292-ix-uWa" firstAttribute="top" secondItem="wmO-Wy-6n5" secondAttribute="top" constant="5" id="OiF-nn-eRf"/>
-                                            <constraint firstItem="6j9-nw-QZ5" firstAttribute="top" secondItem="292-ix-uWa" secondAttribute="bottom" constant="15" id="Ri6-sA-iNs"/>
-                                            <constraint firstAttribute="width" constant="115" id="Xld-Mk-bSa"/>
-                                            <constraint firstItem="292-ix-uWa" firstAttribute="centerX" secondItem="wmO-Wy-6n5" secondAttribute="centerX" id="faT-HY-9KE"/>
-                                            <constraint firstAttribute="height" constant="110" id="iRz-m4-MFl"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.55303507750000003" green="0.49511713870000001" blue="0.93842820920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5R-PO-xgf" userLabel="Goal Weight View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="263.5" y="8" width="110" height="110"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Weight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-jp-IpB">
-                                                <rect key="frame" x="-2.5" y="5" width="115" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="115" id="7xI-rh-jQw"/>
-                                                    <constraint firstAttribute="height" constant="40" id="PyW-WI-JtI"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un5-sQ-Lkm">
-                                                <rect key="frame" x="33.5" y="60" width="43" height="20"/>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="un5-sQ-Lkm" firstAttribute="centerX" secondItem="s5R-PO-xgf" secondAttribute="centerX" id="3ei-Rc-KNi"/>
-                                            <constraint firstItem="IKj-jp-IpB" firstAttribute="centerX" secondItem="s5R-PO-xgf" secondAttribute="centerX" id="6iI-7Q-g6P"/>
-                                            <constraint firstAttribute="width" constant="110" id="Hp6-am-fIK"/>
-                                            <constraint firstAttribute="height" constant="110" id="WWj-ka-rs1"/>
-                                            <constraint firstItem="un5-sQ-Lkm" firstAttribute="top" secondItem="IKj-jp-IpB" secondAttribute="bottom" constant="15" id="hfJ-O3-bLx"/>
-                                            <constraint firstItem="IKj-jp-IpB" firstAttribute="top" secondItem="s5R-PO-xgf" secondAttribute="top" constant="5" id="sSJ-qz-f0P"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.5530350775398073" green="0.49511713873582952" blue="0.93842820921525127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivational message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT7-yp-HAh">
-                                        <rect key="frame" x="9" y="128" width="376" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="pZR-mL-yga"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-rB-s5v" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="202" width="260" height="40"/>
-                                        <color key="backgroundColor" red="0.11323424428701401" green="0.62806874513626099" blue="0.94760888814926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="O6S-Md-bKP"/>
-                                            <constraint firstAttribute="width" constant="260" id="Qii-S8-uPH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Update Weight"/>
-                                        <connections>
-                                            <action selector="onUpdateWeightButtonPressed:" destination="nuv-Nu-bRX" eventType="touchUpInside" id="Aae-Be-Qhl"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vj-jd-LyN" userLabel="Beginning Weight View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="15.5" y="8" width="115" height="110"/>
+                                        <rect key="frame" x="15.5" y="8" width="115" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPY-lQ-FCS">
                                                 <rect key="frame" x="36" y="60" width="43" height="20"/>
@@ -160,29 +61,140 @@
                                             <constraint firstItem="cPY-lQ-FCS" firstAttribute="top" secondItem="e2Z-br-Z7O" secondAttribute="bottom" constant="15" id="bjO-Pa-CIN"/>
                                             <constraint firstItem="e2Z-br-Z7O" firstAttribute="top" secondItem="2Vj-jd-LyN" secondAttribute="top" constant="5" id="dQv-sF-g3q"/>
                                             <constraint firstItem="cPY-lQ-FCS" firstAttribute="centerX" secondItem="2Vj-jd-LyN" secondAttribute="centerX" id="lKS-QU-zXg"/>
-                                            <constraint firstAttribute="height" constant="110" id="zda-Kc-1R4"/>
+                                            <constraint firstAttribute="height" constant="85" id="zda-Kc-1R4"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.55303507750000003" green="0.49511713870000001" blue="0.93842820920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.11323424429999999" green="0.62806874509999999" blue="0.94760888809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.1142856106" green="0.62781572340000003" blue="0.94901937250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-Wy-6n5" userLabel="Current Weight View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
+                                        <rect key="frame" x="139.5" y="8" width="115" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j9-nw-QZ5">
+                                                <rect key="frame" x="36" y="60" width="43" height="20"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="292-ix-uWa">
+                                                <rect key="frame" x="2.5" y="5" width="110" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="6ab-XA-MZx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="yAO-ZN-Q2E"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6j9-nw-QZ5" firstAttribute="centerX" secondItem="wmO-Wy-6n5" secondAttribute="centerX" id="Lf3-MA-Zjb"/>
+                                            <constraint firstItem="292-ix-uWa" firstAttribute="top" secondItem="wmO-Wy-6n5" secondAttribute="top" constant="5" id="OiF-nn-eRf"/>
+                                            <constraint firstItem="6j9-nw-QZ5" firstAttribute="top" secondItem="292-ix-uWa" secondAttribute="bottom" constant="15" id="Ri6-sA-iNs"/>
+                                            <constraint firstAttribute="width" constant="115" id="Xld-Mk-bSa"/>
+                                            <constraint firstItem="292-ix-uWa" firstAttribute="centerX" secondItem="wmO-Wy-6n5" secondAttribute="centerX" id="faT-HY-9KE"/>
+                                            <constraint firstAttribute="height" constant="85" id="iRz-m4-MFl"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                <color key="value" red="0.11323424429999999" green="0.62806874509999999" blue="0.94760888809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5R-PO-xgf" userLabel="Goal Weight View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
+                                        <rect key="frame" x="263.5" y="8" width="110" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Weight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-jp-IpB">
+                                                <rect key="frame" x="-2.5" y="5" width="115" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="115" id="7xI-rh-jQw"/>
+                                                    <constraint firstAttribute="height" constant="40" id="PyW-WI-JtI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un5-sQ-Lkm">
+                                                <rect key="frame" x="33.5" y="60" width="43" height="20"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="un5-sQ-Lkm" firstAttribute="centerX" secondItem="s5R-PO-xgf" secondAttribute="centerX" id="3ei-Rc-KNi"/>
+                                            <constraint firstItem="IKj-jp-IpB" firstAttribute="centerX" secondItem="s5R-PO-xgf" secondAttribute="centerX" id="6iI-7Q-g6P"/>
+                                            <constraint firstAttribute="width" constant="110" id="Hp6-am-fIK"/>
+                                            <constraint firstAttribute="height" constant="85" id="WWj-ka-rs1"/>
+                                            <constraint firstItem="un5-sQ-Lkm" firstAttribute="top" secondItem="IKj-jp-IpB" secondAttribute="bottom" constant="15" id="hfJ-O3-bLx"/>
+                                            <constraint firstItem="IKj-jp-IpB" firstAttribute="top" secondItem="s5R-PO-xgf" secondAttribute="top" constant="5" id="sSJ-qz-f0P"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                <color key="value" red="0.11323424429999999" green="0.62806874509999999" blue="0.94760888809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivational Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT7-yp-HAh">
+                                        <rect key="frame" x="9" y="138" width="376" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pZR-mL-yga"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-rB-s5v" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                        <rect key="frame" x="67" y="222" width="260" height="40"/>
+                                        <color key="backgroundColor" red="0.022519206628203392" green="0.49340111017227173" blue="0.9860498309135437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="O6S-Md-bKP"/>
+                                            <constraint firstAttribute="width" constant="260" id="Qii-S8-uPH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Update Weight"/>
+                                        <connections>
+                                            <action selector="onUpdateWeightButtonPressed:" destination="nuv-Nu-bRX" eventType="touchUpInside" id="Aae-Be-Qhl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-ea-TXp">
+                                        <rect key="frame" x="10" y="103" width="374" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="sNE-RP-Nbo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="WT7-yp-HAh" firstAttribute="centerX" secondItem="cZT-BZ-xn0" secondAttribute="centerX" id="2x0-7t-QHT"/>
                                     <constraint firstItem="s5R-PO-xgf" firstAttribute="leading" secondItem="wmO-Wy-6n5" secondAttribute="trailing" constant="9" id="43K-2M-6A2"/>
-                                    <constraint firstItem="WT7-yp-HAh" firstAttribute="top" secondItem="wmO-Wy-6n5" secondAttribute="bottom" constant="10" id="6RY-1L-7hb"/>
                                     <constraint firstItem="wmO-Wy-6n5" firstAttribute="leading" secondItem="2Vj-jd-LyN" secondAttribute="trailing" constant="9" id="Bpb-nH-9Qg"/>
                                     <constraint firstItem="wmO-Wy-6n5" firstAttribute="centerX" secondItem="cZT-BZ-xn0" secondAttribute="centerX" id="FL6-T9-TJS"/>
+                                    <constraint firstAttribute="trailing" secondItem="AZb-ea-TXp" secondAttribute="trailing" constant="10" id="Gmh-gd-oEu"/>
                                     <constraint firstItem="wmO-Wy-6n5" firstAttribute="top" secondItem="cZT-BZ-xn0" secondAttribute="top" constant="8" id="IYN-1q-W7R"/>
+                                    <constraint firstItem="WT7-yp-HAh" firstAttribute="top" secondItem="AZb-ea-TXp" secondAttribute="bottom" constant="15" id="OLa-zm-DKM"/>
+                                    <constraint firstItem="AZb-ea-TXp" firstAttribute="leading" secondItem="cZT-BZ-xn0" secondAttribute="leading" constant="10" id="P2j-Dx-3Ua"/>
+                                    <constraint firstItem="AZb-ea-TXp" firstAttribute="top" secondItem="2Vj-jd-LyN" secondAttribute="bottom" constant="10" id="SGg-X6-RjF"/>
                                     <constraint firstItem="wmO-Wy-6n5" firstAttribute="centerX" secondItem="cZT-BZ-xn0" secondAttribute="centerX" id="VnL-Fh-D1X"/>
-                                    <constraint firstAttribute="height" constant="250" id="ZwC-au-wdx"/>
+                                    <constraint firstAttribute="height" constant="270" id="ZwC-au-wdx"/>
                                     <constraint firstAttribute="trailing" secondItem="WT7-yp-HAh" secondAttribute="trailing" constant="9" id="hTT-PT-Dzy"/>
                                     <constraint firstItem="s5R-PO-xgf" firstAttribute="top" secondItem="cZT-BZ-xn0" secondAttribute="top" constant="8" id="jga-ah-M0B"/>
                                     <constraint firstItem="A7s-rB-s5v" firstAttribute="centerX" secondItem="cZT-BZ-xn0" secondAttribute="centerX" id="nAo-fx-N7B"/>
@@ -192,10 +204,10 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" red="0.85045209389999998" green="0.61347556569750805" blue="0.62850863664139411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.55303507750000003" green="0.49511713870000001" blue="0.93842820920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.2161719346" green="0.64611809080000004" blue="0.85045209389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
@@ -206,26 +218,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-VB-4x1">
-                                <rect key="frame" x="154" y="452" width="106" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Goals &amp; Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-VB-4x1">
+                                <rect key="frame" x="116.5" y="472" width="181" height="22"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-rO-GaJ" userLabel="Goals View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                <rect key="frame" x="10" y="482" width="394" height="250"/>
+                                <rect key="frame" x="10" y="502" width="394" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Goal Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulo-ok-a6c">
-                                        <rect key="frame" x="10" y="138" width="374" height="50"/>
+                                        <rect key="frame" x="10" y="108" width="374" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Oem-fj-Xaw"/>
+                                            <constraint firstAttribute="height" constant="25" id="Oem-fj-Xaw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXO-c9-n1A" userLabel="Maintenance Calories View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="65" y="8" width="115" height="110"/>
+                                        <rect key="frame" x="65" y="8" width="115" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kso-SV-quM">
                                                 <rect key="frame" x="36" y="60" width="43" height="20"/>
@@ -247,14 +259,14 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="115" id="SbX-Mx-EVZ"/>
                                             <constraint firstItem="Kso-SV-quM" firstAttribute="top" secondItem="WLd-RX-SVj" secondAttribute="bottom" constant="15" id="ba9-lV-D3Z"/>
-                                            <constraint firstAttribute="height" constant="110" id="jwq-RR-edx"/>
+                                            <constraint firstAttribute="height" constant="85" id="jwq-RR-edx"/>
                                             <constraint firstItem="WLd-RX-SVj" firstAttribute="top" secondItem="LXO-c9-n1A" secondAttribute="top" constant="5" id="qC1-qg-xjc"/>
                                             <constraint firstItem="Kso-SV-quM" firstAttribute="centerX" secondItem="LXO-c9-n1A" secondAttribute="centerX" id="sDZ-oi-Gr6"/>
                                             <constraint firstItem="WLd-RX-SVj" firstAttribute="centerX" secondItem="LXO-c9-n1A" secondAttribute="centerX" id="vt6-BP-hqZ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.93842820920000003" green="0.84696782718198005" blue="0.33649023140978018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.87036675214767456" green="0.69637519121170044" blue="0.054546527564525604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
@@ -263,7 +275,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoT-AJ-cqc" userLabel="Goal Calories View" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
-                                        <rect key="frame" x="214" y="8" width="115" height="110"/>
+                                        <rect key="frame" x="214" y="8" width="115" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDf-LT-zWg">
                                                 <rect key="frame" x="36" y="60" width="43" height="20"/>
@@ -287,12 +299,12 @@
                                             <constraint firstItem="CDf-LT-zWg" firstAttribute="top" secondItem="CKb-3c-cY5" secondAttribute="bottom" constant="15" id="9ea-R8-iKe"/>
                                             <constraint firstItem="CDf-LT-zWg" firstAttribute="centerX" secondItem="QoT-AJ-cqc" secondAttribute="centerX" id="BFB-g5-SMg"/>
                                             <constraint firstAttribute="width" constant="115" id="Y2d-WJ-0tx"/>
-                                            <constraint firstAttribute="height" constant="110" id="lNh-7z-uVt"/>
+                                            <constraint firstAttribute="height" constant="85" id="lNh-7z-uVt"/>
                                             <constraint firstItem="CKb-3c-cY5" firstAttribute="top" secondItem="QoT-AJ-cqc" secondAttribute="top" constant="5" id="x2L-WT-R7r"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.93842820920000003" green="0.84696782719999997" blue="0.33649023140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.87036675214767456" green="0.70353585481643677" blue="0.033778809010982513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
@@ -309,11 +321,21 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Update Goals"/>
+                                        <state key="normal" title="Update Goals &amp; Stats"/>
                                         <connections>
                                             <segue destination="Hve-77-7wh" kind="show" identifier="updateGoalsSegue" id="SFX-xI-qhY"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Level Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-lG-6oF">
+                                        <rect key="frame" x="10" y="148" width="374" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Q0v-gP-905"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="bqg-AT-1CI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -321,11 +343,14 @@
                                     <constraint firstItem="QoT-AJ-cqc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="LXO-c9-n1A" secondAttribute="trailing" constant="64" id="D40-2o-UDD"/>
                                     <constraint firstItem="LXO-c9-n1A" firstAttribute="top" secondItem="TzG-rO-GaJ" secondAttribute="top" constant="8" id="Dnr-Zx-0oY"/>
                                     <constraint firstAttribute="height" constant="250" id="G6z-Jm-ndA"/>
-                                    <constraint firstItem="ulo-ok-a6c" firstAttribute="top" secondItem="LXO-c9-n1A" secondAttribute="bottom" constant="20" id="LqH-RX-Qoc"/>
+                                    <constraint firstItem="LHL-lG-6oF" firstAttribute="top" secondItem="ulo-ok-a6c" secondAttribute="bottom" constant="15" id="Kk3-Y3-kFH"/>
+                                    <constraint firstItem="ulo-ok-a6c" firstAttribute="top" secondItem="LXO-c9-n1A" secondAttribute="bottom" constant="15" id="LqH-RX-Qoc"/>
                                     <constraint firstItem="LXO-c9-n1A" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="65" id="Mtj-8Q-e93"/>
                                     <constraint firstAttribute="trailing" secondItem="ulo-ok-a6c" secondAttribute="trailing" constant="10" id="N06-gA-9YS"/>
+                                    <constraint firstAttribute="trailing" secondItem="LHL-lG-6oF" secondAttribute="trailing" constant="10" id="Ob1-TX-1kh"/>
                                     <constraint firstItem="ulo-ok-a6c" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="10" id="YSF-u8-nT4"/>
                                     <constraint firstAttribute="bottom" secondItem="390-5j-tiR" secondAttribute="bottom" constant="8" id="f6c-SL-pYg"/>
+                                    <constraint firstItem="LHL-lG-6oF" firstAttribute="leading" secondItem="TzG-rO-GaJ" secondAttribute="leading" constant="10" id="hbE-3W-8OV"/>
                                     <constraint firstItem="QoT-AJ-cqc" firstAttribute="top" secondItem="TzG-rO-GaJ" secondAttribute="top" constant="8" id="qFL-Mt-dLd"/>
                                     <constraint firstItem="390-5j-tiR" firstAttribute="centerX" secondItem="TzG-rO-GaJ" secondAttribute="centerX" id="vPJ-2G-Jul"/>
                                 </constraints>
@@ -335,7 +360,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.85045209389999998" green="0.69933053836944903" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.86861516496598989" green="0.71602131222531906" blue="0.0049818568629493567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -367,6 +392,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityLevelMessageLabel" destination="LHL-lG-6oF" id="6CM-vE-CzX"/>
                         <outlet property="beginningWeightLabel" destination="cPY-lQ-FCS" id="dIN-2l-Gse"/>
                         <outlet property="beginningWeightView" destination="2Vj-jd-LyN" id="CGz-GG-bMO"/>
                         <outlet property="currentWeightLabel" destination="6j9-nw-QZ5" id="glw-u0-VVK"/>
@@ -379,6 +405,7 @@
                         <outlet property="maintenanceCaloriesLabel" destination="Kso-SV-quM" id="Rve-Pn-WUc"/>
                         <outlet property="maintenanceCaloriesView" destination="LXO-c9-n1A" id="MBd-OV-WY8"/>
                         <outlet property="motivationalMessageLabel" destination="WT7-yp-HAh" id="43C-AZ-RgI"/>
+                        <outlet property="progressMessageLabel" destination="AZb-ea-TXp" id="Nws-j8-rp7"/>
                         <outlet property="progressView" destination="cZT-BZ-xn0" id="GNo-0z-Ab9"/>
                         <outlet property="settingsBarButtonItem" destination="Fvq-ub-PfY" id="xAB-tV-Hfy"/>
                         <outlet property="updateGoalsButton" destination="390-5j-tiR" id="chb-vw-l0p"/>
@@ -399,20 +426,232 @@
             </objects>
             <point key="canvasLocation" x="3691.3043478260875" y="636.83035714285711"/>
         </scene>
-        <!--Update Goals-->
+        <!--Update Goals & Stats-->
         <scene sceneID="kry-Av-zpH">
             <objects>
-                <viewController storyboardIdentifier="UpdateGoalsViewController" title="Update Goals" id="Hve-77-7wh" customClass="UpdateGoalsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateGoalsViewController" title="Update Goals &amp; Stats" id="Hve-77-7wh" customClass="UpdateGoalsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="csG-QU-xyZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Goals &amp; Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh5-gG-OwW">
+                                <rect key="frame" x="101.5" y="98" width="211" height="22"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBh-u3-2q7" customClass="GradientView" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="10" y="128" width="394" height="170"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9X5-qQ-Nbx">
+                                        <rect key="frame" x="8" y="10" width="378" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="g2m-R4-9XB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-d2-FHk">
+                                        <rect key="frame" x="8" y="50" width="378" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3sf-Zf-php"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypo-I4-Owz">
+                                        <rect key="frame" x="8" y="130" width="378" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fO4-fW-BRl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM3-Kr-sIX">
+                                        <rect key="frame" x="8" y="90" width="378" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="uZQ-Ym-i9d"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dM3-Kr-sIX" secondAttribute="trailing" constant="8" id="4ij-qk-fQn"/>
+                                    <constraint firstItem="9X5-qQ-Nbx" firstAttribute="leading" secondItem="bBh-u3-2q7" secondAttribute="leading" constant="8" id="DdE-ZZ-R98"/>
+                                    <constraint firstItem="Ypo-I4-Owz" firstAttribute="leading" secondItem="bBh-u3-2q7" secondAttribute="leading" constant="8" id="Elg-7G-cmZ"/>
+                                    <constraint firstItem="dM3-Kr-sIX" firstAttribute="top" secondItem="8NF-d2-FHk" secondAttribute="bottom" constant="10" id="Od0-iP-UgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="8NF-d2-FHk" secondAttribute="trailing" constant="8" id="YfK-F5-0qr"/>
+                                    <constraint firstItem="dM3-Kr-sIX" firstAttribute="leading" secondItem="bBh-u3-2q7" secondAttribute="leading" constant="8" id="Z4u-Go-xmf"/>
+                                    <constraint firstAttribute="height" constant="170" id="dsk-on-xv5"/>
+                                    <constraint firstAttribute="trailing" secondItem="9X5-qQ-Nbx" secondAttribute="trailing" constant="8" id="eXq-C2-F7M"/>
+                                    <constraint firstItem="8NF-d2-FHk" firstAttribute="leading" secondItem="bBh-u3-2q7" secondAttribute="leading" constant="8" id="ev7-rZ-ayr"/>
+                                    <constraint firstItem="Ypo-I4-Owz" firstAttribute="top" secondItem="dM3-Kr-sIX" secondAttribute="bottom" constant="10" id="f2f-6Q-Ufo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ypo-I4-Owz" secondAttribute="trailing" constant="8" id="j6k-4w-98E"/>
+                                    <constraint firstItem="8NF-d2-FHk" firstAttribute="top" secondItem="9X5-qQ-Nbx" secondAttribute="bottom" constant="10" id="kvP-Gg-BWH"/>
+                                    <constraint firstItem="9X5-qQ-Nbx" firstAttribute="top" secondItem="bBh-u3-2q7" secondAttribute="top" constant="10" id="qSX-dv-7qK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.41628528806804566" green="0.83324079948375629" blue="0.36875418026897139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bF-Eh-hM9" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
+                                <rect key="frame" x="77" y="674" width="260" height="40"/>
+                                <color key="backgroundColor" red="0.24570316076278687" green="0.73212450742721558" blue="0.57375597953796387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Jro-CH-qd1"/>
+                                    <constraint firstAttribute="height" constant="40" id="xQr-la-g3Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Update Goals &amp; Stats"/>
+                                <connections>
+                                    <action selector="onUpdateGoalsAndStatsButtonPressed:" destination="Hve-77-7wh" eventType="touchUpInside" id="YSJ-IT-gul"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDw-Df-TpQ">
+                                <rect key="frame" x="146" y="318" width="122" height="22"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8eT-iY-Ihf">
+                                <rect key="frame" x="97" y="345" width="220" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="JAL-CQ-bi1"/>
+                                    <constraint firstAttribute="height" constant="30" id="Zq8-IG-aqd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMU-Vc-6BA">
+                                <rect key="frame" x="145.5" y="390" width="123" height="22"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-2N-R4Z">
+                                <rect key="frame" x="97" y="417" width="220" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VX2-59-wrq"/>
+                                    <constraint firstAttribute="width" constant="220" id="mdj-uz-c1O"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3t-zo-hNV">
+                                <rect key="frame" x="142" y="462" width="130" height="22"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzR-QK-Jo4">
+                                <rect key="frame" x="97" y="489" width="220" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GKR-Ah-iHq"/>
+                                    <constraint firstAttribute="width" constant="220" id="NUe-YI-EIZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAE-rJ-Kx8" userLabel="Goal Weight View">
+                                <rect key="frame" x="107" y="534" width="200" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-0S-npS">
+                                        <rect key="frame" x="30" y="0.0" width="140" height="26.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26.5" id="VYq-fP-3fK"/>
+                                            <constraint firstAttribute="width" constant="140" id="pge-cO-huF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sS-EF-olk">
+                                        <rect key="frame" x="133" y="37" width="20.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-qM-bFI">
+                                        <rect key="frame" x="50" y="31.5" width="75" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="4VH-Rn-ZEA"/>
+                                            <constraint firstAttribute="height" constant="30" id="wPc-LC-33Y"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="01i-Gt-XuE"/>
+                                    <constraint firstItem="9sS-EF-olk" firstAttribute="leading" secondItem="HUv-qM-bFI" secondAttribute="trailing" constant="8" id="9ni-n9-KAj"/>
+                                    <constraint firstItem="HUv-qM-bFI" firstAttribute="top" secondItem="CUx-0S-npS" secondAttribute="bottom" constant="5" id="DmF-0d-nmn"/>
+                                    <constraint firstItem="CUx-0S-npS" firstAttribute="top" secondItem="JAE-rJ-Kx8" secondAttribute="top" id="SY9-1c-qeO"/>
+                                    <constraint firstAttribute="width" constant="200" id="dCX-0G-XGi"/>
+                                    <constraint firstItem="HUv-qM-bFI" firstAttribute="leading" secondItem="JAE-rJ-Kx8" secondAttribute="leading" constant="50" id="eZJ-tM-fEI"/>
+                                    <constraint firstItem="9sS-EF-olk" firstAttribute="top" secondItem="CUx-0S-npS" secondAttribute="bottom" constant="10.33" id="kBa-X1-tf4"/>
+                                    <constraint firstItem="CUx-0S-npS" firstAttribute="centerX" secondItem="JAE-rJ-Kx8" secondAttribute="centerX" id="zly-mN-MBL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w3t-zo-hNV" firstAttribute="top" secondItem="8eg-2N-R4Z" secondAttribute="bottom" constant="15" id="14s-cm-9Wu"/>
+                            <constraint firstItem="w3t-zo-hNV" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="2yC-CG-uA0"/>
+                            <constraint firstItem="Hh5-gG-OwW" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="5cG-0r-HP7"/>
+                            <constraint firstItem="Hh5-gG-OwW" firstAttribute="top" secondItem="Uje-my-XrH" secondAttribute="top" constant="10" id="C5O-hQ-ixk"/>
+                            <constraint firstItem="8eT-iY-Ihf" firstAttribute="top" secondItem="IDw-Df-TpQ" secondAttribute="bottom" constant="5" id="CYL-8w-ZZv"/>
+                            <constraint firstItem="3bF-Eh-hM9" firstAttribute="top" secondItem="JAE-rJ-Kx8" secondAttribute="bottom" constant="60" id="Gt9-Qc-AK7"/>
+                            <constraint firstItem="3bF-Eh-hM9" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="J4s-U2-1SD"/>
+                            <constraint firstItem="JAE-rJ-Kx8" firstAttribute="top" secondItem="qzR-QK-Jo4" secondAttribute="bottom" constant="15" id="TNS-Sf-PvA"/>
+                            <constraint firstItem="qzR-QK-Jo4" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="VU3-r8-zVT"/>
+                            <constraint firstItem="Uje-my-XrH" firstAttribute="trailing" secondItem="bBh-u3-2q7" secondAttribute="trailing" constant="10" id="Xk7-mN-EZD"/>
+                            <constraint firstItem="IDw-Df-TpQ" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="aeb-uo-HPu"/>
+                            <constraint firstItem="QMU-Vc-6BA" firstAttribute="top" secondItem="8eT-iY-Ihf" secondAttribute="bottom" constant="15" id="atg-TH-vTP"/>
+                            <constraint firstItem="QMU-Vc-6BA" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="dxY-VJ-56P"/>
+                            <constraint firstItem="bBh-u3-2q7" firstAttribute="leading" secondItem="Uje-my-XrH" secondAttribute="leading" constant="10" id="erG-Ws-n30"/>
+                            <constraint firstItem="IDw-Df-TpQ" firstAttribute="top" secondItem="bBh-u3-2q7" secondAttribute="bottom" constant="20" id="f6X-hp-ggO"/>
+                            <constraint firstItem="bBh-u3-2q7" firstAttribute="top" secondItem="Hh5-gG-OwW" secondAttribute="bottom" constant="8" id="jBg-cL-Yde"/>
+                            <constraint firstItem="8eg-2N-R4Z" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="jQ5-dp-YcP"/>
+                            <constraint firstItem="8eT-iY-Ihf" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="mMG-J0-k8w"/>
+                            <constraint firstItem="qzR-QK-Jo4" firstAttribute="top" secondItem="w3t-zo-hNV" secondAttribute="bottom" constant="5" id="mly-Mu-oyW"/>
+                            <constraint firstItem="JAE-rJ-Kx8" firstAttribute="centerX" secondItem="csG-QU-xyZ" secondAttribute="centerX" id="vdE-AR-4sp"/>
+                            <constraint firstItem="8eg-2N-R4Z" firstAttribute="top" secondItem="QMU-Vc-6BA" secondAttribute="bottom" constant="5" id="zQ1-QR-SFm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uje-my-XrH"/>
                     </view>
+                    <connections>
+                        <outlet property="activityLevelLabel" destination="dM3-Kr-sIX" id="BOG-sb-utD"/>
+                        <outlet property="activityLevelTextField" destination="qzR-QK-Jo4" id="lk6-3X-4PT"/>
+                        <outlet property="goalWeightLabel" destination="Ypo-I4-Owz" id="uWE-jY-gm8"/>
+                        <outlet property="goalWeightTextField" destination="HUv-qM-bFI" id="UXt-S0-CHs"/>
+                        <outlet property="goalsAndStatsView" destination="bBh-u3-2q7" id="Y9u-wn-ZC3"/>
+                        <outlet property="overallGoalLabel" destination="9X5-qQ-Nbx" id="vkq-rq-3ZC"/>
+                        <outlet property="overallGoalTextField" destination="8eT-iY-Ihf" id="aJa-VE-y7C"/>
+                        <outlet property="weeklyGoalLabel" destination="8NF-d2-FHk" id="wV6-h6-jen"/>
+                        <outlet property="weeklyGoalTextField" destination="8eg-2N-R4Z" id="Ec0-0o-4qE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gH-ds-sFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3003" y="1367"/>
+            <point key="canvasLocation" x="3002.898550724638" y="1366.7410714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="btf-sK-HAM">
