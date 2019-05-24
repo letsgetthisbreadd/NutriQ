@@ -185,7 +185,8 @@ class UpdateGoalsViewController: UIViewController, UIPickerViewDataSource, UIPic
                     return
                 }
                 // Goal weight must be set to current weight
-                if newGoalWeight != currentWeight || currentGoalWeight != currentWeight {
+                if newGoalWeight != currentWeight { //|| currentGoalWeight != currentWeight
+                    print(newGoalWeight, currentWeight, currentGoalWeight)
                     print("The goal weight must be set to current weight of \(currentWeight) since the new overall goal is to maintain weight!")
                     let invalidGoalWeightAlert = UIAlertController(title: "Invalid Goal Weight", message: "The goal weight must be set to current weight of \(currentWeight) pounds since the new overall goal is to maintain weight. The goal weight text field will now be changed to the current weight of \(currentWeight) pounds.", preferredStyle: .alert)
                     invalidGoalWeightAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
