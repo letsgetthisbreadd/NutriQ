@@ -15,6 +15,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let barButtonAppearance = UIBarButtonItem.appearance()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -30,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = .clear
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
+        let backButton = UIImage(named: "ButtonBack")
+        let backButtonPressed = UIImage(named: "ButtonBackPress")
+        let backButtonImage = backButton?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
+        let backButtonImagePressed = backButtonPressed?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
+        barButtonAppearance.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
+        barButtonAppearance.setBackButtonBackgroundImage(backButtonImagePressed, for: .highlighted, barMetrics: .default)
         
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID

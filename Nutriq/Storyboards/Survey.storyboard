@@ -443,7 +443,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bLf-CF-1jz" firstAttribute="leading" secondItem="ufK-4d-q4P" secondAttribute="trailing" constant="8" id="6Wg-T3-GM0"/>
                                     <constraint firstItem="LpM-hf-JWT" firstAttribute="leading" secondItem="Jbw-bL-tfR" secondAttribute="trailing" constant="8" id="7wD-MI-EKy"/>
@@ -498,7 +498,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="QrV-zg-e1v" firstAttribute="top" secondItem="aM8-7t-ms1" secondAttribute="top" id="7KV-Jm-EDF"/>
                                     <constraint firstItem="pnw-QJ-J2N" firstAttribute="top" secondItem="QrV-zg-e1v" secondAttribute="bottom" constant="10" id="BYi-BX-XBR"/>
@@ -549,7 +549,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="d67-3g-AIR" firstAttribute="leading" secondItem="wVg-TS-fIB" secondAttribute="trailing" constant="8" id="32I-Fn-ODj"/>
                                     <constraint firstItem="Vg7-OY-u4p" firstAttribute="leading" secondItem="O8w-Cg-JtV" secondAttribute="leading" constant="50" id="Eit-Hl-G0Z"/>
@@ -629,6 +629,12 @@
                         <viewLayoutGuide key="safeArea" id="wah-wy-Lab"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.36619782449999999" green="0.73588508370000005" blue="0.90599673989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" red="0.71252610670000005" green="1" blue="0.9787312507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4AL-mB-btL" appends="YES" id="U7i-LT-j6C"/>

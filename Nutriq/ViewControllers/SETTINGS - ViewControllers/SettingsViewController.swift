@@ -13,9 +13,6 @@ import GoogleSignIn
 class SettingsViewController: UIViewController {
 
     
-    // MARK: - Properties
-    
-    
     // MARK: - Init
     
     override func viewDidLoad() {
