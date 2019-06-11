@@ -31,13 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = .clear
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
+        
+        
+      
         let backButton = UIImage(named: "ButtonBack")
         let backButtonPressed = UIImage(named: "ButtonBackPress")
         let backButtonImage = backButton?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
         let backButtonImagePressed = backButtonPressed?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
         barButtonAppearance.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
         barButtonAppearance.setBackButtonBackgroundImage(backButtonImagePressed, for: .highlighted, barMetrics: .default)
-        
+        UINavigationBar.appearance().backIndicatorImage = UIImage()
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -20, vertical: 0), for: UIBarMetrics.default)
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
