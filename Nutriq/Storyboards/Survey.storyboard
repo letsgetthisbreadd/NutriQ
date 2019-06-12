@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="4458" y="822"/>
         </scene>
-        <!--Activity Level View Controller-->
+        <!--Health Survey-->
         <scene sceneID="fBP-4D-YTv">
             <objects>
                 <viewController storyboardIdentifier="ActivityLevelViewController" id="Sa0-Ar-ett" customClass="ActivityLevelViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
@@ -310,7 +310,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wws-tP-e1B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Klp-vP-pxw"/>
+                    <navigationItem key="navigationItem" title="Health Survey" id="Klp-vP-pxw"/>
                     <connections>
                         <outlet property="lightlyActiveButton" destination="N3Q-L3-iyO" id="BFt-69-cZZ"/>
                         <outlet property="moderatelyActiveButton" destination="O9P-nG-NMS" id="mFR-ue-9Oi"/>
@@ -324,7 +324,7 @@
             </objects>
             <point key="canvasLocation" x="5000" y="70.982142857142847"/>
         </scene>
-        <!--Health Stats View Controller-->
+        <!--Health Survey-->
         <scene sceneID="qOl-kE-pal">
             <objects>
                 <viewController storyboardIdentifier="HealthStatsViewController" id="b8f-5g-vua" customClass="HealthStatsViewController" customModule="Nutriq" customModuleProvider="target" sceneMemberID="viewController">
@@ -352,7 +352,7 @@
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
-                                <color key="tintColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20o-ve-CWb">
                                 <rect key="frame" x="138" y="206" width="138" height="28"/>
@@ -364,19 +364,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm/dd/yyyy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-b0-NPW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mm/dd/yyyy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-b0-NPW">
                                 <rect key="frame" x="137" y="244" width="140" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="EKx-QP-08L"/>
                                     <constraint firstAttribute="height" constant="30" id="KXy-4T-uvZ"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw1-3X-VV3" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
                                 <rect key="frame" x="129.66666666666666" y="680.66666666666663" width="154.99999999999997" height="50"/>
-                                <color key="backgroundColor" red="0.2225066423" green="0.71784073110000002" blue="0.60276746749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="8mg-0x-sHI"/>
                                     <constraint firstAttribute="height" constant="50" id="i1f-Ve-Dvl"/>
@@ -393,23 +394,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDQ-6j-M17" userLabel="Height View">
                                 <rect key="frame" x="102" y="294" width="210" height="80"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-bL-tfR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-bL-tfR">
                                         <rect key="frame" x="40" y="36.666666666666686" width="40" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="AIt-xh-Oib"/>
                                             <constraint firstAttribute="height" constant="30" id="s6z-5t-DSR"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Y-P2-w1f">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Y-P2-w1f">
                                         <rect key="frame" x="119" y="36.666666666666686" width="40" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="PjM-N1-g6z"/>
                                             <constraint firstAttribute="height" constant="30" id="kpx-lF-hw4"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
@@ -435,13 +438,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-4d-q4P">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="redStar" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-4d-q4P">
                                         <rect key="frame" x="45" y="2.6666666666666856" width="16" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="8zH-9o-Tro"/>
                                             <constraint firstAttribute="height" constant="21" id="GKf-PM-lxV"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSE-gj-nfo">
+                                        <rect key="frame" x="40" y="65" width="40" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7O-ZJ-5Ut">
+                                        <rect key="frame" x="119" y="65" width="40" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -474,13 +487,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnw-QJ-J2N">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnw-QJ-J2N">
                                         <rect key="frame" x="50" y="36.666666666666686" width="75" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="Kvx-JW-zqO"/>
                                             <constraint firstAttribute="height" constant="30" id="PiL-Zo-eDw"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
@@ -490,13 +504,18 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="YId-En-dDZ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="redStar" translatesAutoresizingMaskIntoConstraints="NO" id="YId-En-dDZ">
                                         <rect key="frame" x="-12.333333333333329" y="3" width="16" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="6ko-ia-msO"/>
                                             <constraint firstAttribute="height" constant="21" id="Adl-99-4OX"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ts-QO-4b8">
+                                        <rect key="frame" x="50" y="65" width="75" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -531,23 +550,29 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-OY-u4p">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-OY-u4p">
                                         <rect key="frame" x="50" y="36.666666666666629" width="75" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="1YV-8k-i9G"/>
                                             <constraint firstAttribute="height" constant="30" id="tzf-1N-ZLA"/>
                                         </constraints>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="wVg-TS-fIB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="redStar" translatesAutoresizingMaskIntoConstraints="NO" id="wVg-TS-fIB">
                                         <rect key="frame" x="1" y="3" width="16" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="m5m-kC-47w"/>
                                             <constraint firstAttribute="height" constant="21" id="yli-ZI-rAq"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HpH-li-fja">
+                                        <rect key="frame" x="50" y="65" width="75" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -573,30 +598,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-3H-86a">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-3H-86a">
                                 <rect key="frame" x="132" y="629.66666666666663" width="150" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="8iW-hC-OfS"/>
                                     <constraint firstAttribute="height" constant="30" id="Wdt-l5-ny2"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-Lv-mR9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="redStar" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-Lv-mR9">
                                 <rect key="frame" x="143" y="117" width="16" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ECT-RD-oyS"/>
                                     <constraint firstAttribute="width" constant="16" id="hTN-2u-Qln"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="AZ7-Gu-gA8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="redStar" translatesAutoresizingMaskIntoConstraints="NO" id="AZ7-Gu-gA8">
                                 <rect key="frame" x="114" y="210" width="16" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Wib-Dn-vFn"/>
                                     <constraint firstAttribute="width" constant="16" id="cEo-ax-BmX"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXe-eD-rfO">
+                                <rect key="frame" x="138" y="267" width="140" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jyo-qa-wks">
+                                <rect key="frame" x="132" y="658" width="150" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -630,17 +666,17 @@
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isAngled" value="NO"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" red="0.36619782449999999" green="0.73588508370000005" blue="0.90599673989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.36336866020000003" green="0.73823875189999999" blue="0.90429466960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="0.71252610670000005" green="1" blue="0.9787312507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.70261520150000001" green="0.79926019910000001" blue="0.95573836570000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4AL-mB-btL" appends="YES" id="U7i-LT-j6C"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="f35-BK-MW1">
+                    <navigationItem key="navigationItem" title="Health Survey" id="f35-BK-MW1">
                         <barButtonItem key="backBarButtonItem" title="Back" id="CaV-9U-V3L"/>
                     </navigationItem>
                     <connections>
@@ -682,8 +718,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="redStar" width="30" height="30"/>
         <image name="rightArrow" width="30" height="30"/>
-        <image name="star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wE5-hl-aYu"/>
