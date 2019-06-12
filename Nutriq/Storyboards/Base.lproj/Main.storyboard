@@ -272,6 +272,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <connections>
+                                    <action selector="usernameFieldDidFinishEditing:" destination="pkF-1e-Plc" eventType="editingDidEnd" id="aMr-3q-d6g"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hz-gm-GvO" customClass="ShadowButton" customModule="Nutriq" customModuleProvider="target">
                                 <rect key="frame" x="129.66666666666666" y="782" width="154.99999999999997" height="50"/>

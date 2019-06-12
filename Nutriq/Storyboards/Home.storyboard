@@ -137,7 +137,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b8t-g7-Fs0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NutriQ" id="hgc-W9-1go"/>
+                    <navigationItem key="navigationItem" title="NutriQ" id="hgc-W9-1go">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Fd1-uh-wLh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="sIC-9M-bIt" id="0ri-2h-0Gn"/>
                     </connections>

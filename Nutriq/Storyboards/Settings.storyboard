@@ -92,7 +92,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="YPV-HR-OQZ"/>
+                    <navigationItem key="navigationItem" id="YPV-HR-OQZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="R8i-4u-Sh7"/>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="changePasswordButton" destination="6Va-xh-27f" id="OA9-Aq-m4w"/>

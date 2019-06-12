@@ -23,7 +23,7 @@ class GetUsernameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameField.becomeFirstResponder()
+        continueButton.isEnabled = false
         
     }
     
@@ -66,6 +66,21 @@ class GetUsernameViewController: UIViewController {
         }
     }
     
+    func checkField(sender: AnyObject) {
+        if usernameField.text!.isEmpty
+        {
+            continueButton.isEnabled = false
+            
+        }
+        else
+        {
+            continueButton.isEnabled = true
+        }
+    }
+    
+    @IBAction func usernameFieldDidFinishEditing(_ sender: Any) {
+        checkField(sender: usernameField)
+    }
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)

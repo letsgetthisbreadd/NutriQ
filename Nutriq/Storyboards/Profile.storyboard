@@ -385,6 +385,7 @@
                         <viewLayoutGuide key="safeArea" id="rSa-sg-Xpn"/>
                     </view>
                     <navigationItem key="navigationItem" id="BCW-02-vvX">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Kth-yI-4bn"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Fvq-ub-PfY">
                             <connections>
                                 <segue destination="Cew-dE-tOt" kind="show" id="deR-s6-ReC"/>
